@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style_login.css">
+ <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+ -->
+  <title>login the user</title>
+</head>
+<body>
+<header>
+  <nav>
+    <img src="./icons/icon_menu.svg" alt="menu" class="menu">
+
+    <div class="navbar-left">
+      <img src="./recursos/logo_sisviansa.png" alt="logo" class="logo">
+
+      <ul>
+        <li></li>
+        <li>
+          <a href="/">Inicio</a>
+        </li>
+        <li>
+          <a href="/">Dieta</a>
+        </li>
+        <li>
+          <a href="/">Viandas</a>
+        </li>
+        <li>
+          <a href="/">Nuevo</a>
+        </li>
+        <li>
+          <a href="/">Nosotros</a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-right">
+      <ul>
+        <li class="navbar-email">sisviansa@gmail.com</li>
+        <li class="navbar-shopping-cart">
+          <img src="./icons/icon_shopping_cart.svg" alt="shopping cart">
+          <div>2</div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section class="form-login">
+  <h4>Iniciar sesión</h4>
+  <label>Rol</label>
+        <select id="rol" name="rol">
+              <!--<option value="cliente">Cliente</option>-->
+              <option value="gerente">Gerente</option>
+              <option value="administrativo">Administrativo</option>
+              <option value="jefe_cocina">Jefe Cocina</option>
+              <option value="cocinero">Cocinero</option>
+              <option value="atencion_al_publico">Atención al Publico</option>
+              <option value="informatico">Informatico</option>  
+        </select><br>
+  <input class="control" type="text" name="usuario" id="usuario" placeholder="identificador"><br>
+  <input class="control" type="password" name="contrasenia" id="contrasenia" placeholder="*******"><br>
+  <input class="botons" type="submit" value="Ingresar">
+</section>
+</body>
+</html>

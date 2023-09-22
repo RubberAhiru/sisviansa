@@ -1,6 +1,7 @@
 :root {
     --white: #FFFFFF;
     --black: #000000;
+    --blue: #0000ff;
     --very-light-pink: #C7C7C7;
     --text-input-field: #F7F7F7;
     --hospital-green: #ACD9B2;
@@ -12,6 +13,9 @@
     margin: 0;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
+    background-image: url("recursos/fondo_Sisviansa.png");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   nav {
     display: flex;
@@ -52,15 +56,15 @@
   .navbar-left ul li a,
   .navbar-right ul li a {
     text-decoration: none;
-    color: var(--very-light-pink);
-    border: 1px solid var(--white);
+    color: var(--hospital-green);
+    border: 1px solid var(--hospital-green);
     padding: 8px;
     border-radius: 8px;
   }
   .navbar-left ul li a:hover,
   .navbar-right ul li a:hover {
-    border: 1px solid var(--hospital-green);
-    color: var(--hospital-green);
+    border: 1px solid var(--blue);
+    color: var(--blue);
   }
   .navbar-email {
     color: var(--very-light-pink);
@@ -160,11 +164,11 @@
   }
   .form-login {
     width: 400px;
-    background:#71bb96fa;/*#24303c;*/
+    background:#24303c;
     padding: 30px;
     margin: auto;
     margin-top: 100px;
-    border-radius: 4px;
+    border-radius: 50%;
     font-family: 'calibri';
     color: white;
     box-shadow: 7px 13px 37px #52670b;/*#000;*/
@@ -205,8 +209,8 @@
   }
   
   .form-login .botons {
-    width: 89%;
-    background:#e72222;/* #1facc5;*/
+    width: 30%;
+    background: #1facc5;
     border: none;
     border-radius: 500px;
     padding: 12px;
