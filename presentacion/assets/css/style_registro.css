@@ -14,7 +14,7 @@
     margin: 0;
     /*position: fixed;*/
     font-family: 'Quicksand', sans-serif;
-    background-image: url("sisviansa/presentacion/assets/recursos/fondo_hd.png");
+    background-image: url("../recursos/fondo_hd.png");
     background-repeat: no-repeat;
     background-size: cover;
 }

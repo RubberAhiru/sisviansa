@@ -13,7 +13,7 @@
     margin: 0;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
-    background-image: url("./assets/recursos/fondo_Sisviansa.png");
+    background-image: url("../recursos/fondo_Sisviansa.png");/*uso .. porque la carpeta esta atras*/
     background-repeat: no-repeat;
     background-size: cover;
   }
