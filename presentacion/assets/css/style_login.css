@@ -36,6 +36,7 @@
     width: 227px;
     height: 151px;
     margin-right: 0;
+    opacity: 0.7;
   }
   .navbar-left ul,
   .navbar-right ul {
@@ -60,6 +61,7 @@
     border: 1px solid var(--hospital-green);
     padding: 8px;
     border-radius: 8px;
+    margin-right: 5px;
   }
   .navbar-left ul li a:hover,
   .navbar-right ul li a:hover {
@@ -151,24 +153,14 @@
     margin-top: 14px;
     margin-bottom: 30px;
   }
-  @media (max-width: 640px) {
-    .menu {
-      display: block;
-    }
-    .navbar-left ul {
-      display: none;
-    }
-    .navbar-email {
-      display: none;
-    }
-  }
+
   .form-login {
     width: 400px;
     background:#24303c;
     padding: 30px;
     margin: auto;
-    margin-top: 100px;
-    border-radius: 50%;
+    margin-top: 180px;
+    border-radius: 90px;
     font-family: 'calibri';
     color: white;
     box-shadow: 7px 13px 37px #52670b;/*#000;*/
@@ -219,3 +211,37 @@
     font-size: 16px;
   }
   
+  @media (max-width: 768px) {
+    .menu {
+      display: block;
+    }
+    .navbar-left ul {
+      display: none;
+    }
+    .navbar-email {
+      display: none;
+    }
+    h2{
+      margin-top: 100px;
+    }
+    fieldset {
+      width: 300px;
+    }
+    form{
+     width: 170px;
+    }
+    .input{
+      position: center;
+    }
+    .form-login{
+      width: 55vw;
+      height: 35vh;
+      margin: auto;
+      margin-top: 190px;
+      border-radius: 60%;
+  }
+  .navbar-right ul {
+    height: 68px;
+    width: 33px;
+  }
+}

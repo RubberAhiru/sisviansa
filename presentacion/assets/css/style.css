@@ -19,7 +19,7 @@
     text-align: center;
     background-image: url("../recursos/fondo_Sisviansa.png");/*uso .. porque la carpeta esta atras*/
     background-repeat:no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-attachment: fixed;/*para que el fondo me quede fijo ;)*/
   }
   nav {
@@ -41,7 +41,7 @@
   .logo {
     width: 227px;
     height: 151px;
-    margin-right: 0;
+    margin-left: 0;
     opacity: 0.7;
   }
   .navbar-left ul,
@@ -111,37 +111,11 @@
     justify-self: center;
     display: none;
   }
-  .title {
+.title {
     font-size: var(--lg);
     margin-bottom: 36px;
     text-align: start;
-  }
-
-@media (max-width: 768px) {
-    .menu {
-      display: block;
-    }
-    .navbar-left ul {
-      display: none;
-    }
-    .navbar-email {
-      display: none;
-    }
-    h2{
-      margin-top: 100px;
-    }
-    fieldset {
-      width: 300px;
-    }
-    form{
-     width: 170px;
-    }
-    .input{
-      position: center;
-    }
 }
-
-
 .carrusel{
   width: 45vw;
   height: 65vh;
@@ -153,7 +127,6 @@
   /*position: relative;*/
   transform-origin: top right;
   transform: skewY(-20deg);
-  
 }
 .carousel-item{
   border: solid 5px #ACD9B2;
@@ -164,9 +137,8 @@
 footer {
   background-color: var(--black);
   margin-bottom: 0;
-  margin-right: 0%;
-  /*bottom: 0;*/
-  width: 100%;
+  bottom: 0;
+  width: 100vw;
   height: 100px;
   color: gray;
   text-align: center;
@@ -204,3 +176,51 @@ h5{
   border-color: #ACD9B2;
   border-radius: 5px;
 }
+
+
+@media (max-width: 768px) {
+  nav{
+    position: no-relative;
+  }
+  .menu {
+    display: block;
+  }
+  .navbar-left ul {
+    display: none;
+  }
+  .navbar-email {
+    display: none;
+  }
+  h2{
+    margin-top: 100px;
+  }
+  fieldset {
+    width: 300px;
+  }
+  form{
+   width: 170px;
+  }
+  .input{
+    position: center;
+  }
+  .form-login{
+    width: 55vw;
+    height: 35vh;
+    margin: auto;
+    margin-top: 190px;
+    border-radius: 60%;
+}
+.navbar-right ul {
+  height: 68px;
+  width: 33px;
+}
+  .logo{
+    margin-left: 0;
+    margin: 0;
+  }
+  .carrusel{
+    margin-top: 15%;
+  }
+
+}
+  

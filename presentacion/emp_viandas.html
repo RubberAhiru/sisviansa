@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style_emp_viandas.css">
+  <link rel="icon" sizes="16x16 32x32 48x48" type="imagen/png" href="assets/recursos/logo_sisviansa.png"/>
+
+  <title> Viandas</title>
+</head>
+<body>
+<header>
+  <nav>
+    <img src="./assets/icons/icon_menu.svg" alt="menu" class="menu">
+
+    <div class="navbar-left">
+      <img src="./assets/recursos/logo_sisviansa.png" alt="logo" class="logo">
+
+      <ul>
+        <li></li>
+        <li>
+          <a href="index.html">Inicio</a>
+        </li>
+        <li>
+          <a href="emp_dietas.html">Dieta</a>
+        </li>
+        <li>
+          <a href="emp_viandas.html">Viandas</a>
+        </li>
+        <li>
+          <a href="emp_nuevo.html">Nuevo</a>
+        </li>
+        <li>
+          <a href="emp_ayudas.html">Nosotros</a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-right">
+      <ul>
+        <li class="navbar-email">sisviansa@gmail.com</li>
+        <li class="navbar-shopping-cart">
+          <img src="./assets/icons/icon_shopping_cart.svg" alt="shopping cart">
+          <div>0</div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section>
+    <h2>ABM Viandas</h2>
+    <form action="../logica/controladorCliente.php" method="post">
+      <fieldset>
+        <input
+          type="radio"
+          name="TipoFormulario"
+          class="form-check-input"
+          value="alta"
+          id="radioAlta"
+          checked/>
+        <label for="TipoFormulario">Alta</label>
+        <input
+          type="radio"
+          name="TipoFormulario"
+          value="baja"
+          id="radioBaja"/>
+        <label for="TipoFormulario">Baja</label>
+        <input
+        type="radio"
+        name="TipoFormulario"
+        value="modificar"
+        id="radioModificar"/>
+        <label for="TipoFormulario">Modificación</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Agregar Vianda</legend>
+        <div>
+          <label for="text">Nombre</label>
+          <br />
+          <input type="text" id="nombre"  value="" />
+          <br />
+          <label for="text">Precio</label>
+          <br />
+          <input type="text" id="precioU" pattern="" value="" />
+          <br />
+          <label for="text">tiempo de preparación</label>
+          <br />
+          <input type="text" id="tiempo" pattern="" value="" />
+          <br />
+          <label>Composición</label><br />
+          <input
+            type="text"
+            id="ingrediente1"
+            value=""
+            placeholder="ingrediente 1"
+          /><br />
+          <input
+            type="text"
+            id="ingrediente2"
+            value=""
+            placeholder="ingrediente 2"
+          /><br />
+          <input type="text" id="ingrediente3" value="" placeholder="ingrediente 3" />
+        </div>
+      </fieldset>
+      <br />
+      <fieldset id="bloqueAlta">
+        <legend>Eliminar Vianda</legend>
+        <div>
+          <label for="antes">Antes</label>
+          <br />
+          <input type="text" maxlength="18" id="antes" value="" />
+          <br />
+          <label for="despues">Despues</label>
+          <br />
+          <input type="text" id="despues" maxlength="18" value="" />
+        </div>
+      </fieldset>
+      <br />
+      <fieldset id="bloqueBaja" style="display: none">
+        <legend>Modificar Vianda</legend>
+        <div>
+            <label for="nom">Nombre</label>
+            <br />
+            <input type="text"  id="nom" value="" />
+            <br />
+            <label for="antes">antes</label>
+            <br />
+            <input type="text" id="ant"  value="" />
+            <label for="despues">despues</label>
+            <br />
+            <input type="text" id="desp"  value="" />
+          </div>
+        </fieldset>
+        <br />
+        <fieldset id="bloqueModificar" style="display: none">
+      </fieldset>
+    </form>
+</section>
+</body>
+</html>
