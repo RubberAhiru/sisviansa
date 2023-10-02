@@ -1,6 +1,7 @@
 :root {
     --white: #FFFFFF;
     --black: #000000;
+    --blue: #0000ff;
     --very-light-pink: #C7C7C7;
     --text-input-field: #F7F7F7;
     --hospital-green: #ACD9B2;
@@ -10,7 +11,13 @@
   }
   body {
     margin: 0;
+    width: 100%;
+    height: 80vh;
     font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    background-image: url("../recursos/fondo_Sisviansa.png");/*uso .. porque la carpeta esta atras*/
+    background-repeat:repeat;
+    background-size: cover;
   }
   nav {
     display: flex;
@@ -18,17 +25,12 @@
     height: 58px;
     justify-content: space-between;
     padding: 0 -100px;
+    margin-top: auto;
     border-bottom: 1px solid var(--very-light-pink);
     background-color: papayawhip;
     position: fixed;
-  }
-  .header{
-    padding: 1rem 0;
-    position: fixed;
-    left: 0;
     top:0;
-    width: 100%;
-
+    z-index:5;
   }
   .menu {
     display: none;
@@ -45,7 +47,8 @@
     margin: 0;
     display: flex;
     align-items: center;
-    height: 60px;
+    height: 64px;
+    width: 202px;
   }
   .navbar-left {
     display: flex;
@@ -56,15 +59,15 @@
   .navbar-left ul li a,
   .navbar-right ul li a {
     text-decoration: none;
-    color: var(--very-light-pink);
-    border: 1px solid var(--white);
+    color: var(--hospital-green);
+    border: 1px solid var(--hospital-green);
     padding: 8px;
     border-radius: 8px;
   }
   .navbar-left ul li a:hover,
   .navbar-right ul li a:hover {
-    border: 1px solid var(--hospital-green);
-    color: var(--hospital-green);
+    border: 1px solid var(--blue);
+    color: var(--blue);
   }
   .navbar-email {
     color: var(--very-light-pink);
@@ -97,7 +100,6 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     width: 300px;
-    margin-top: 100px;
   }
   .logo2 {
     width: 150px;
@@ -110,49 +112,8 @@
     margin-bottom: 36px;
     text-align: start;
   }
-  .form {
-    display: flex;
-    flex-direction: column;
-  }
-  .form div {
-    display: flex;
-    flex-direction: column;
-  }
-  .label {
-    font-size: var(--sm);
-    font-weight: bold;
-    margin-bottom: 4px;
-  }
-  .input {
-    background-color: var(--text-input-field);
-    border: none;
-    border-radius: 8px;
-    height: 30px;
-    font-size: var(--md);
-    padding: 6px;
-    margin-bottom: 12px;
-  }
-  .input-name,
-  .input-email,
-  .input-password {
-    margin-bottom: 22px;
-  }
-  .primary-button {
-    background-color: var(--hospital-green);
-    border-radius: 8px;
-    border: none;
-    color: var(--white);
-    width: 100%;
-    cursor: pointer;
-    font-size: var(--md);
-    font-weight: bold;
-    height: 50px;
-  }
-  .login-button {
-    margin-top: 14px;
-    margin-bottom: 30px;
-  }
-  @media (max-width: 640px) {
+
+@media (max-width: 640px) {
     .menu {
       display: block;
     }
@@ -162,4 +123,48 @@
     .navbar-email {
       display: none;
     }
-  }
+}
+
+@media (min-width: 300px) {
+           
+}/*min = desde o max = hasta*/  
+
+.carrusel{
+  width: 45vw;
+  height: 65vh;
+  content: "";
+  margin-top: 65px;
+  margin-left: 85px;
+  margin-right: 50px;
+  /*border: solid 5px #ACD9B2;*/
+  /*position: relative;*/
+  transform-origin: top right;
+  transform: skewY(-20deg);
+}
+.carousel-item{
+  border: solid 5px #ACD9B2;
+  /*width: 45vw;
+  height: 65vh;*/
+}
+
+footer {
+  background-color: var(--black);
+  margin-bottom: 0;
+  margin-right: 0%;
+  /*bottom: 0;*/
+  width: 100%;
+  height: 100px;
+  color: gray;
+  text-align: center;
+  opacity: 0.5;
+}
+.text{
+  width: 50vw;
+  height: 200vh;
+  margin-top: 500px;
+  text-align: center;
+  margin-left: 10px;
+
+}
+
+
