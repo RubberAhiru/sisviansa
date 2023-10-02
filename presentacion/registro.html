@@ -11,7 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap"
       rel="stylesheet"
     />
-
     <title>Nuevo Cliente</title>
   </head>
 
@@ -67,8 +66,20 @@
       </nav>
 
       <section>
-        <form method="get" action="action.php"></form>
         <h2>Formulario de registro</h2>
+
+        <fieldset>
+          <input
+            type="radio"
+            name="TipoFormulario"
+            id="formCliente"
+            class="form-check-input"
+          />
+          <label for="TipoFormulario">Cliente</label>
+          <input type="radio" name="TipoFormulario" id="formEmpresa" />
+          <label for="TipoFormulario">Empresa</label>
+        </fieldset>
+        <form method="get" action="action.php"></form>
         <fieldset>
           <legend>Cliente</legend>
           <form name="datos personales">
@@ -229,6 +240,7 @@
         </fieldset>
       </section>
     </header>
+
     <script src="js/registro.js"></script>
   </body>
 </html>

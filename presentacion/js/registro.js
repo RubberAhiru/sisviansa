@@ -1,7 +1,9 @@
+let opcionSeleccionada = document.getElementById('documento');
+let formularioSeleccionado = document.querySelector('#tipoCliente');
+
 document.addEventListener('DOMContentLoaded', () => {
   ValidarDocumento();
 });
-let opcionSeleccionada = document.getElementById('documento');
 
 function ValidarDocumento() {
   opcionSeleccionada.addEventListener('change', () => {
@@ -24,3 +26,4 @@ function ValidarDocumento() {
     }
   });
 }
+function validarFormulario() {}
