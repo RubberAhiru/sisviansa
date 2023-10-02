@@ -38,7 +38,7 @@ nav {
 }
 
 h2 {
-  margin-top:auto;
+  margin-top:23px;
   text-align: center;
   color: rgb(138, 21, 56);
 }
@@ -213,9 +213,7 @@ input:hover {
   .navbar-email {
     display: none;
   }
-  h2{
-    margin-top: 100px;
-  }
+
   fieldset {
     width: 300px;
   }
