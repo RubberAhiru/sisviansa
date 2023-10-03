@@ -1,5 +1,5 @@
 let opcionSeleccionada = document.getElementById('documento');
-let formularioSeleccionado = document.getElementsByTagName('tipoFormulario');
+let formularioSeleccionado = document.getElementsByName('TipoFormulario');
 
 document.addEventListener('DOMContentLoaded', () => {
   validarFormulario();
@@ -28,8 +28,8 @@ function ValidarDocumento() {
   });
 }
 function validarFormulario() {
-  let persona = document.querySelector('#bloquePersona');
-  let empresa = document.querySelector('#bloqueEmpresa');
+  let persona = document.getElementById('bloquePersona');
+  let empresa = document.getElementById('bloqueEmpresa');
 
   for (var i = 0; i < formularioSeleccionado.length; i++) {
     formularioSeleccionado[i].addEventListener('change', function () {

@@ -7,10 +7,16 @@
     <link rel="stylesheet" href="assets/css/style_registro.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" sizes="16x16 32x32 48x48" type="imagen/png" href="assets/recursos/logo_sisviansa.png"/>
+    <link
+      rel="icon"
+      sizes="16x16 32x32 48x48"
+      type="imagen/png"
+      href="assets/recursos/logo_sisviansa.png"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap"
-      rel="stylesheet"/>
+      rel="stylesheet"
+    />
     <title>Nuevo Cliente</title>
   </head>
 
@@ -74,15 +80,22 @@
               name="TipoFormulario"
               id="formPersona"
               class="form-check-input"
+              value="persona"
+              checked
             />
             <label for="TipoFormulario">Cliente</label>
-            <input type="radio" name="TipoFormulario" id="formEmpresa" />
+            <input
+              type="radio"
+              name="TipoFormulario"
+              id="formEmpresa"
+              value="empresa"
+            />
             <label for="TipoFormulario">Empresa</label>
           </fieldset>
 
           <fieldset>
             <legend>Cliente</legend>
-            <div name="datos personales">
+            <div>
               <label for="tel">Telefono</label>
               <br />
               <input type="tel" id="tel" minlength="8" maxlength="9" value="" />
@@ -112,9 +125,9 @@
             </div>
           </fieldset>
           <br />
-          <fieldset>
+          <fieldset id="bloquePersona">
             <legend>Persona</legend>
-            <div id="bloquePersona">
+            <div>
               <label for="nombre">Nombre</label>
               <br />
               <input type="text" maxlength="18" id="nombre" value="" />
@@ -154,9 +167,9 @@
             </div>
           </fieldset>
           <br />
-          <fieldset>
+          <fieldset id="bloqueEmpresa" style="display: none">
             <legend>Empresa</legend>
-            <div id="bloqueEmpresa">
+            <div>
               <label>Razon Social</label>
               <br />
               <input
