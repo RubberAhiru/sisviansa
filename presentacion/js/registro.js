@@ -1,4 +1,4 @@
-let opcionSeleccionada = document.getElementById('documento');
+let opcionSeleccionada = document.querySelector('#documento');
 let formularioSeleccionado = document.getElementsByName('TipoFormulario');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -28,12 +28,13 @@ function ValidarDocumento() {
   });
 }
 function validarFormulario() {
-  let persona = document.getElementById('bloquePersona');
-  let empresa = document.getElementById('bloqueEmpresa');
+  let persona = document.querySelector('#bloquePersona');
+  let empresa = document.querySelector('#bloqueEmpresa');
+  let radioEmpresa = document.querySelector('#radioEmpresa');
 
-  for (var i = 0; i < formularioSeleccionado.length; i++) {
-    formularioSeleccionado[i].addEventListener('change', function () {
-      if (formularioSeleccionado[1].checked) {
+  formularioSeleccionado.forEach((bloqueSeleccionado) => {
+    bloqueSeleccionado.addEventListener('change', function () {
+      if (radioEmpresa.checked) {
         empresa.setAttribute('style', 'display: block'); //'visibility:visible'
         persona.setAttribute('style', 'display: none');
       } else {
@@ -41,5 +42,5 @@ function validarFormulario() {
         empresa.setAttribute('style', 'display: none');
       }
     });
-  }
+  });
 }
