@@ -108,7 +108,7 @@
     text-align: start;
   }
 
-@media (max-width: 640px) {
+  @media (max-width: 768px) {
     .menu {
       display: block;
     }
@@ -117,6 +117,18 @@
     }
     .navbar-email {
       display: none;
+    }
+    h2{
+      margin-top: 100px;
+    }
+    fieldset {
+      width: 300px;
+    }
+    form{
+     width: 170px;
+    }
+    .input{
+      position: center;
     }
 }
 section{

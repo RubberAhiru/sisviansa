@@ -10,14 +10,17 @@
     --lg: 18px;
   }
   body {
-    margin: 0;
-    width: 100%;
-    height: 80vh;
+    position: absolute;
+    margin:0;
+    width: 300vw;
+    height: 50vh;
+    margin-right: 5px;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     background-image: url("../recursos/fondo_Sisviansa.png");/*uso .. porque la carpeta esta atras*/
-    background-repeat:repeat;
+    background-repeat:no-repeat;
     background-size: cover;
+    background-attachment: fixed;/*para que el fondo me quede fijo ;)*/
   }
   nav {
     display: flex;
@@ -39,6 +42,7 @@
     width: 227px;
     height: 151px;
     margin-right: 0;
+    opacity: 0.7;
   }
   .navbar-left ul,
   .navbar-right ul {
@@ -113,7 +117,7 @@
     text-align: start;
   }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .menu {
       display: block;
     }
@@ -123,11 +127,20 @@
     .navbar-email {
       display: none;
     }
+    h2{
+      margin-top: 100px;
+    }
+    fieldset {
+      width: 300px;
+    }
+    form{
+     width: 170px;
+    }
+    .input{
+      position: center;
+    }
 }
 
-@media (min-width: 300px) {
-           
-}/*min = desde o max = hasta*/  
 
 .carrusel{
   width: 45vw;
@@ -140,6 +153,7 @@
   /*position: relative;*/
   transform-origin: top right;
   transform: skewY(-20deg);
+  
 }
 .carousel-item{
   border: solid 5px #ACD9B2;
@@ -167,4 +181,26 @@ footer {
 
 }
 
-
+form{
+  border-color: #ACD9B2;
+  width: 45vw;
+  height: 65vh;
+  margin-top: 65px;
+  margin-left: 85px;
+  margin-right: 50px;
+  transform-origin: top right;
+  transform: skewY(-20deg);
+}
+h5{
+  background-color: #ACD9B2;
+  opacity: 0.5;
+}
+.botons{
+  background-color: #ACD9B2;
+  border-radius: 8px;
+  opacity: 0.6;
+}
+.control{
+  border-color: #ACD9B2;
+  border-radius: 5px;
+}

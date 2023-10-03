@@ -65,6 +65,7 @@ fieldset {
   border-radius: 50px 20px;
   margin: auto;
   width: 450px;
+  margin-bottom: 10px;
 }
 
 fieldset:hover {
