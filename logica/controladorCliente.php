@@ -54,5 +54,21 @@ if( ($_GET['insert']) == 'cliente-persona' ){
             //error
         }
     }
+
+    //si la validacion fue exitosa la variable $valido sera true y se procedera a crear el objeto
+    if($valido){
+        $persona = new Persona();
+        //$persona->setNroCliente(NULL);
+        $persona->setEmail($_POST['email']);
+        $persona->setContrasenia($_POST['contrasenia']);
+        $persona->setTelefono($_POST['telefono']);
+        $persona->setCalle($_POST['calle']);
+        $persona->setNumCalle($_POST['numerocalle']);
+        $persona->setBarrio($_POST['barrio']);
+        $persona->setNombre($_POST['nombre']);
+        $persona->setApellido($_POST['apellido']);
+        $persona->setNroDocumento($_POST['nrodocumento']);
+        $persona->setTipoDocumento($_POST['tipodocumento']);
+    }
     
 }
