@@ -1,38 +1,33 @@
 <?php
 require_once 'cliente.php';
 
+//tipos de datos que cliente-persona y cliente-empresa tienen en comun
+//$_POST['nrocliente']; Es un dato autoincrement en la bd
+$email = $_POST['email'];
+$cont  = $_POST['contrasenia'];
+$tel   = $_POST['telefono'];
+$calle = $_POST['calle'];
+$numC  = $_POST['numerocalle'];
+$barr  = $_POST['barrio'];
+
+$valido = false;
+
 if( ($_GET['insert']) == 'cliente-persona' ){
-    //insert para cliente persona
+    //////////////////////////////insert para cliente persona/////////////////////////////////////
+    //tipos de datos de cliente-persona
+    $nom   = $_POST['nombre'];
+    $ape   = $_POST['apellido'];
+    $nroDoc  = $_POST['nrodocumento'];
+    $tipoDoc = $_POST['tipodocumento'];
 
-        //comprueba que todos los campos esten llenos
-    if( //$_POST['nrocliente']; Es autoincrement en la bd
-        !empty(trim($_POST['email'])) &&
-        !empty(trim($_POST['contrasenia'])) &&
-        !empty(trim($_POST['telefono'])) &&
-        !empty(trim($_POST['calle'])) &&
-        !empty(trim($_POST['numerocalle'])) &&
-        !empty(trim($_POST['barrio'])) &&
-
-        !empty(trim($_POST['nombre'])) &&
-        !empty(trim($_POST['apellido'])) &&
-        !empty(trim($_POST['nrodocumento'])) &&
-        !empty(trim($_POST['tipodocumento']))
+    //comprueba que todos los campos esten llenos
+    if( 
+        !empty(trim($email)) && !empty(trim($cont))  && !empty(trim($tel))   && !empty(trim($calle)) &&
+        !empty(trim($numC))  && !empty(trim($barr))  && !empty(trim($nom)) && !empty(trim($ape)) &&
+        !empty(trim($nroDoc)) && !empty(trim($tipoDoc))
     ){
-        echo "1";
-        $email = $_POST['email'];
-        $cont  = $_POST['contrasenia'];
-        $tel   = $_POST['telefono'];
-        $calle = $_POST['calle'];
-        $numC  = $_POST['numerocalle'];
-        $barr  = $_POST['barrio'];
-        $nom   = $_POST['nombre'];
-        $ape   = $_POST['apellido'];
-        $nroDoc  = $_POST['nrodocumento'];
-        $tipoDoc = $_POST['tipodocumento'];
-        $valido = false;
-
         //VALIDACION
-    
+            //comprueba que cada campo contenga los caracteres correspondientes
         if( //correo electronico 
             ( is_string($email) && filter_var($email, FILTER_VALIDATE_EMAIL) ) &&
             //contrasenia
@@ -55,9 +50,9 @@ if( ($_GET['insert']) == 'cliente-persona' ){
             ( is_string($tipoDoc)  && preg_match("/[a-zA-Z ]+/", $tipoDoc) )
         ){
             $valido = true;
-
+        }else{
+            //error
         }
     }
-
     
 }
