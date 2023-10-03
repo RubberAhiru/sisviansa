@@ -1,7 +1,8 @@
 let opcionSeleccionada = document.getElementById('documento');
-let formularioSeleccionado = document.querySelector('#tipoCliente');
+let formularioSeleccionado = document.getElementsByTagName('tipoFormulario');
 
 document.addEventListener('DOMContentLoaded', () => {
+  validarFormulario();
   ValidarDocumento();
 });
 
@@ -26,4 +27,19 @@ function ValidarDocumento() {
     }
   });
 }
-function validarFormulario() {}
+function validarFormulario() {
+  let persona = document.querySelector('#bloquePersona');
+  let empresa = document.querySelector('#bloqueEmpresa');
+
+  for (var i = 0; i < formularioSeleccionado.length; i++) {
+    formularioSeleccionado[i].addEventListener('change', function () {
+      if (formularioSeleccionado[1].checked) {
+        empresa.setAttribute('style', 'display: block'); //'visibility:visible'
+        persona.setAttribute('style', 'display: none');
+      } else {
+        persona.setAttribute('style', 'display: block');
+        empresa.setAttribute('style', 'display: none');
+      }
+    });
+  }
+}
