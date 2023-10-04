@@ -69,6 +69,10 @@ if( ($_GET['insert']) == 'cliente-persona' ){
         $persona->setApellido($_POST['apellido']);
         $persona->setNroDocumento($_POST['nrodocumento']);
         $persona->setTipoDocumento($_POST['tipodocumento']);
+
+        //$persona->ver(); //test
+
+        //$persona->guardar();
     }
     
 }
