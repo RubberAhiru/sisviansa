@@ -1,9 +1,12 @@
-let opcionSeleccionada = document.querySelector('#documento');
-let formularioSeleccionado = document.getElementsByName('TipoFormulario');
+const opcionSeleccionada = document.querySelector('#documento');
+const formularioSeleccionado = document.getElementsByName('TipoFormulario');
+const email = document.querySelector('#email');
 
 document.addEventListener('DOMContentLoaded', () => {
-  validarFormulario();
+  validarCliente();
   ValidarDocumento();
+
+  email.addEventListener('input', validarFormulario);
 });
 
 function ValidarDocumento() {
@@ -27,7 +30,7 @@ function ValidarDocumento() {
     }
   });
 }
-function validarFormulario() {
+function validarCliente() {
   let persona = document.querySelector('#bloquePersona');
   let empresa = document.querySelector('#bloqueEmpresa');
   let radioEmpresa = document.querySelector('#radioEmpresa');
@@ -43,4 +46,40 @@ function validarFormulario() {
       }
     });
   });
+}
+function validarEmail(email) {
+  const regexEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+  const resultado = regexEmail.test(email);
+  return resultado;
+}
+
+function validarFormulario(event) {
+  if (event.target.id === 'email' && !validarEmail(event.target.value)) {
+    mostrarAlerta('El email no es valido', event.target.parentElement);
+    return;
+  }
+  if (event.target.value.trim() === '') {
+    mostrarAlerta(
+      `El campo ${event.target.id} es obligatorio`,
+      event.target.parentElement
+    );
+
+    return;
+  }
+}
+function limpiarAlerta(referencia) {
+  const alerta = referencia.querySelector('.alerta-error');
+  if (alerta) {
+    alerta.remove();
+  }
+}
+function mostrarAlerta(mensaje, referencia) {
+  //Comprueba si existe la alerta
+  limpiarAlerta(referencia);
+  //Genera alerta
+  const error = document.createElement('P');
+  error.textContent = mensaje;
+  error.classList.add('alerta-error');
+  //Agrega el error al formulario
+  referencia.appendChild(error);
 }

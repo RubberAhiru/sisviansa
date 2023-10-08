@@ -229,3 +229,9 @@ input:hover {
 #InputPasaporte {
   display: none;
 }
+.alerta-error {
+  background-color: rgba(204, 10, 10, 0.911);
+  color: var(--white);
+  text-align: center;
+  padding: 2px;
+}
