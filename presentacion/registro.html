@@ -73,7 +73,10 @@
 
       <section>
         <h2>Formulario de registro</h2>
-        <form action="../logica/controladorCliente.php?insert=cliente-persona" method="post">
+        <form
+          action="../logica/controladorCliente.php?insert=cliente-persona"
+          method="post"
+        >
           <fieldset>
             <input
               type="radio"
@@ -124,7 +127,32 @@
               <input type="text" id="num" value="" placeholder="número" />
             </div>
           </fieldset>
-          <br />
+
+          <fieldset>
+            <legend>INICIAR SESIÓN</legend>
+            <div name="iniciarSesion">
+              <label for="contraseña">Contraseña</label>
+              <br />
+              <input
+                type="password"
+                minlength="8"
+                maxlength="12"
+                id="contraseña"
+                value=""
+              />
+              <br />
+              <label for="contraseña2">Vuelva a escribir la contraseña</label>
+              <br />
+              <input
+                type="password"
+                id="contraseña2"
+                minlength="8"
+                maxlength="12"
+                value=""
+              />
+            </div>
+          </fieldset>
+
           <fieldset id="bloquePersona">
             <legend>Persona</legend>
             <div>
@@ -166,7 +194,7 @@
               </select>
             </div>
           </fieldset>
-          <br />
+
           <fieldset id="bloqueEmpresa" style="display: none">
             <legend>Empresa</legend>
             <div>
@@ -193,32 +221,7 @@
               />
             </div>
           </fieldset>
-          <br />
-          <fieldset>
-            <legend>INICIAR SESIÓN</legend>
-            <div name="iniciarSesion">
-              <label for="contraseña">Contraseña</label>
-              <br />
-              <input
-                type="password"
-                minlength="8"
-                maxlength="12"
-                id="contraseña"
-                value=""
-              />
-              <br />
-              <label for="contraseña2">Vuelva a escribir la contraseña</label>
-              <br />
-              <input
-                type="password"
-                id="contraseña2"
-                minlength="8"
-                maxlength="12"
-                value=""
-              />
-            </div>
-          </fieldset>
-          <br />
+
           <fieldset>
             <legend>CONDICIONES DE REGISTRO</legend>
             <div name="condicionesRegistro">
