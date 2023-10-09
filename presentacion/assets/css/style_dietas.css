@@ -5,12 +5,13 @@
     --very-light-pink: #C7C7C7;
     --text-input-field: #F7F7F7;
     --hospital-green: #ACD9B2;
+    --bordo: rgb(136, 30, 12);
     --sm: 14px;
     --md: 16px;
     --lg: 18px;
   }
   body {
-    margin: 0;
+    margin-top: 10px;
     width: 100%;
     height: 80vh;
     font-family: 'Quicksand', sans-serif;
@@ -121,17 +122,6 @@ fieldset{
     width: 50vw;
     height: auto;
 }
-footer {
-  background-color: var(--black);
-  margin-bottom: 0;
-  margin-right: 0%;
-  /*bottom: 0;*/
-  width: 100%;
-  height: 100px;
-  color: gray;
-  text-align: center;
-  opacity: 0.5;
-}
 .text{
   width: 50vw;
   height: 200vh;
@@ -143,7 +133,7 @@ footer {
 h2{
   color: #ACD9B2;
   font-style: oblique;
-  text-decoration-line: underlineÑ;
+  text-decoration-line: underline;
 }
 .botons{
   background-color: #ACD9B2;
