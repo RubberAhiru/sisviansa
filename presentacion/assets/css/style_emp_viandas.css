@@ -11,7 +11,7 @@
     --lg: 18px;
   }
   body {
-    margin: 0;
+    margin-top: 95px;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     background-image: url("../recursos/fondo_Sisviansa.png");
@@ -276,6 +276,9 @@ label {
 }
 
 @media (max-width: 768px) {
+    body{
+      margin-top: 150px;
+    }
     .menu {
       display: block;
     }

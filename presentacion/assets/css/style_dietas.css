@@ -17,7 +17,8 @@
     text-align: center;
     background-image: url("../recursos/fondo_Sisviansa.png");/*uso .. porque la carpeta esta atras*/
     background-repeat:repeat;
-    background-size: cover;
+    background-size: contain;
+    background-attachment: fixed;
   }
   nav {
     display: flex;
@@ -38,7 +39,8 @@
   .logo {
     width: 227px;
     height: 151px;
-    margin-right: 0;
+    margin-left: 0;
+    opacity: 0.7;
   }
   .navbar-left ul,
   .navbar-right ul {
@@ -107,18 +109,6 @@
     margin-bottom: 36px;
     text-align: start;
   }
-
-@media (max-width: 640px) {
-    .menu {
-      display: block;
-    }
-    .navbar-left ul {
-      display: none;
-    }
-    .navbar-email {
-      display: none;
-    }
-}
 section{
     width: 100px;
     height: 200vh;
@@ -149,4 +139,44 @@ footer {
   text-align: center;
   margin-left: 10px;
 
+}
+h2{
+  color: #ACD9B2;
+  font-style: oblique;
+  text-decoration-line: underlineÑ;
+}
+.botons{
+  background-color: #ACD9B2;
+  border-radius: 8px;
+  opacity: 0.6;
+}
+.control{
+  border-color: #ACD9B2;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: var(--black);
+  margin-bottom: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100px;
+  color: gray;
+  text-align: center;
+  opacity: 0.5;
+}
+@media (max-width: 768px) {
+  .menu {
+    display: block;
+  }
+  .navbar-left ul {
+    display: none;
+  }
+  .navbar-email {
+    display: none;
+  }
+  .logo{
+    margin-left: 0;
+    margin: 0;
+  }
 }
