@@ -1,12 +1,14 @@
 const opcionSeleccionada = document.querySelector('#documento');
 const formularioSeleccionado = document.getElementsByName('TipoFormulario');
 const email = document.querySelector('#email');
+const inputs = document.querySelectorAll('#formulario input[type="text"]');
 
 document.addEventListener('DOMContentLoaded', () => {
   validarCliente();
   ValidarDocumento();
-
-  email.addEventListener('input', validarFormulario);
+});
+inputs.forEach((inputActual) => {
+  inputActual.addEventListener('blur', validarFormulario);
 });
 
 function ValidarDocumento() {
