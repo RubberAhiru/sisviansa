@@ -2,13 +2,15 @@ const opcionSeleccionada = document.querySelector('#documento');
 const formularioSeleccionado = document.getElementsByName('TipoFormulario');
 const email = document.querySelector('#email');
 const inputs = document.querySelectorAll('#formulario input[type="text"]');
+const password = document.querySelector('#password');
+const reptirPassword = document.querySelector('#password2');
 
 document.addEventListener('DOMContentLoaded', () => {
   validarCliente();
   ValidarDocumento();
 });
 inputs.forEach((inputActual) => {
-  inputActual.addEventListener('blur', validarFormulario);
+  inputActual.addEventListener('input', validarFormulario);
 });
 
 function ValidarDocumento() {
@@ -68,6 +70,12 @@ function validarFormulario(event) {
 
     return;
   }
+
+  if (password.value != reptirPassword.value) {
+    mostrarAlerta(`Las contraseñas no coinciden`, event.target.parentElement);
+  }
+
+  limpiarAlerta(event.target.parentElement);
 }
 function limpiarAlerta(referencia) {
   const alerta = referencia.querySelector('.alerta-error');
