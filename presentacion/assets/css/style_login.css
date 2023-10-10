@@ -11,11 +11,13 @@
   }
   body {
     margin: 0;
+    overflow-x:hidden;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     background-image: url("../recursos/fondo_Sisviansa.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
   }
   nav {
     display: flex;
@@ -209,6 +211,18 @@
     color: white;
     margin: 16px 0;
     font-size: 16px;
+  }
+  footer {
+    overflow: auto;
+    background-color: var(--black);
+    margin-top: 100px;
+    margin-bottom: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 98.5px;
+    color: gray;
+    text-align: center;
+    opacity: 0.5;
   }
   
   @media (max-width: 768px) {
