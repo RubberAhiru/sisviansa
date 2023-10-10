@@ -1,18 +1,29 @@
+//VARIABLES
 const opcionSeleccionada = document.querySelector('#documento');
 const formularioSeleccionado = document.getElementsByName('TipoFormulario');
 const email = document.querySelector('#email');
 const inputs = document.querySelectorAll('#formulario input[type="text"]');
 const password = document.querySelector('#password');
-const reptirPassword = document.querySelector('#password2');
+const repetirPassword = document.querySelector('#password2');
+const btnSubmit = document.querySelector('#btnSubmit');
 
+const inputsPassword = document.querySelectorAll(
+  '#formulario input[type="password"]'
+);
+//EVENTOS
 document.addEventListener('DOMContentLoaded', () => {
   validarCliente();
   ValidarDocumento();
 });
+inputsPassword.forEach((campo) => {
+  campo.addEventListener('keyup', validarFormulario);
+});
+
 inputs.forEach((inputActual) => {
   inputActual.addEventListener('input', validarFormulario);
 });
 
+//FUNCIONES
 function ValidarDocumento() {
   opcionSeleccionada.addEventListener('change', () => {
     let inputCi = document.getElementById('InputCi');
@@ -42,7 +53,7 @@ function validarCliente() {
   formularioSeleccionado.forEach((bloqueSeleccionado) => {
     bloqueSeleccionado.addEventListener('change', function () {
       if (radioEmpresa.checked) {
-        empresa.setAttribute('style', 'display: block'); //'visibility:visible'
+        empresa.setAttribute('style', 'display: block');
         persona.setAttribute('style', 'display: none');
       } else {
         persona.setAttribute('style', 'display: block');
@@ -59,6 +70,7 @@ function validarEmail(email) {
 
 function validarFormulario(event) {
   if (event.target.id === 'email' && !validarEmail(event.target.value)) {
+    console.log('entroo..1');
     mostrarAlerta('El email no es valido', event.target.parentElement);
     return;
   }
@@ -71,12 +83,14 @@ function validarFormulario(event) {
     return;
   }
 
-  if (password.value != reptirPassword.value) {
+  if (password.value != repetirPassword.value) {
     mostrarAlerta(`Las contraseñas no coinciden`, event.target.parentElement);
+    return;
   }
 
   limpiarAlerta(event.target.parentElement);
 }
+
 function limpiarAlerta(referencia) {
   const alerta = referencia.querySelector('.alerta-error');
   if (alerta) {
@@ -92,4 +106,8 @@ function mostrarAlerta(mensaje, referencia) {
   error.classList.add('alerta-error');
   //Agrega el error al formulario
   referencia.appendChild(error);
+}
+
+function enviarRegistro(event) {
+  event.preventDefault();
 }
