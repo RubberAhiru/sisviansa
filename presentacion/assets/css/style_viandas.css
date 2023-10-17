@@ -163,16 +163,20 @@ nav {
   margin: 16px 0;
   font-size: 16px;
 }
-
 fieldset {
   border: 3px solid var(--bordo);
   border-radius: 50px 20px;
   margin: auto;
+  /*margin-left: 150px;*/
   width: 390px;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
 }
+fieldset:hover {
+  background-color: papayawhip;
+}
+
 legend {
   font-family: Georgia, Helvetica, serif;
   font-weight: bold;
@@ -205,16 +209,16 @@ label {
 .label {
   font-size: var(--sm);
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .input {
+  margin-bottom: 10px;
   background-color: var(--text-input-field);
   border-color: #ACD9B2;
   border-radius: 10px;
   height: 100px;
   font-size: var(--md);
   padding: 6px;
-  margin-bottom: 12px;
 }
 .img{
 width: 10vw;
@@ -232,21 +236,42 @@ h2{
 .botons{
   width: 20wh;
   height: 5vh;
-  background-color: #ACD9B2;
+  background-color: var(--hospital-green);
   border-radius: 8px;
   opacity: 0.6;
 }
+.botons:hover{
+  background-color: var(--bordo);
+  transform: rotate(360deg);
+  color: var(--white);
+}
 .control{
-  border-color: #ACD9B2;
+  border-color: var(--hospital-green);
   border-radius: 5px;
 }
 .agregar{
   display: inline;
 }
+.colum{
+  width: 15vw;
+  height: 350vh;
+  margin-top: -40px;
+  padding: 0;
+  float: left;
+  background-color: var(--hospital-green);
+  /*border: 2px solid #74bb7e;*/
+}
+h1{
+  margin-top: 125px;
+  font-family:fantasy;
+  color: var(--bordo);
+  opacity: 0.7;
+}
 
 footer {
   background-color: var(--black);
   margin-bottom: 0;
+  margin-top: 100%;
   bottom: 0;
   width: 100%;
   height: 100px;
@@ -254,6 +279,9 @@ footer {
   text-align: center;
   opacity: 0.5;
 }
+
+
+
 @media (max-width: 768px) {
   .menu {
     display: block;
