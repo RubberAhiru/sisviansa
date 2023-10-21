@@ -1,0 +1,5 @@
+//FETCHS
+
+const URL = '';
+
+fetch()

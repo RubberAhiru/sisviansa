@@ -109,5 +109,8 @@ function mostrarAlerta(mensaje, referencia) {
 }
 
 function enviarRegistro(event) {
-  event.preventDefault();
+  
+
+
+
 }
