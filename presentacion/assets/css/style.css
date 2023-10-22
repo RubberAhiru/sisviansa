@@ -119,6 +119,7 @@
     margin-bottom: 36px;
     text-align: start;
 }
+/*carrusel en diagonal*/
 .carrusel{
   width: 45vw;
   height: 65vh;
@@ -130,6 +131,7 @@
   /*position: relative;*/
   transform-origin: top right;
   transform: skewY(-20deg);
+  z-index: 3;
 }
 .carousel-item{
   border: solid 5px #ACD9B2;
@@ -157,10 +159,10 @@ footer {
 
 form{
   border-color: #ACD9B2;
-  width: 45vw;
+  width: 30vw;
   height: 65vh;
-  margin-top: 65px;
-  margin-left: 85px;
+  margin-top: 110px;
+  margin-left: 100px;
   margin-right: 50px;
   transform-origin: top right;
   transform: skewY(-20deg);
@@ -191,6 +193,8 @@ h5{
 }
 
 .pop-up{
+  width: 800px;
+  height: 600px;
   background: rgba(48, 48, 48, 0.5);
   position: fixed;
   top: 0;
@@ -201,6 +205,8 @@ h5{
   justify-content: center;
   align-items: center;
   visibility: hidden;
+  /*overflow: hidden;*/
+  z-index: 5;
 }
 
 .pop-up-wrap{
@@ -216,13 +222,13 @@ h5{
 .pop-up-title{
   flex-basis: 0;
   flex-grow:1.5;
-  height: 465px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  background-image: url('../img/office.jpg');
+  background-image: url('../recursos/dieta/menu1/garbanzos-con-tomatitos-y-atun.jpg');
   background-size: 165%;
   background-position: center;
   background-repeat: no-repeat;
@@ -281,7 +287,7 @@ h5{
   background: #fff;
   flex-basis: 0;
   flex-grow: 2;
-  height: 500px;
+  height: 605px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -291,7 +297,9 @@ h5{
 }
 
 .sub-content{
-  width: 75%;
+  justify-content: center;
+  width: 550px;
+  height: 450px;
 }
 
 .sub-content h2{
@@ -307,24 +315,29 @@ h5{
   margin-bottom: 30px;
 }
 
-.subs-email{
-  width: 100%;
+.subs-cosas{
+  margin-left:-32px;
+  width: 25vw;
   padding: 15px;
   border: none;
   background: #ccc;
   margin-bottom: 15px;
+  transform: skewY(+20deg);
 }
 
 .subs-send{
-  width: 100%;
+  margin-left: -21px;
+  width: 20vw;
   padding: 15px;
   border: none;
+  color: #1F4068;/*no funciona*/
   background: var(--hospital-green);
   color: #fff;
   font-size: 18px;
   cursor: pointer;
   margin-bottom: 20px;
   transition: .25s ease background;
+  transform: skewY(+20deg);
 }
 
 .subs-send:hover{
@@ -339,8 +352,8 @@ h5{
 
 #close{
   position: absolute;
-  top: 40px;
-  right: 25px;
+  top: -12px;
+  right: 7px;
   font-size: 25px;
   color: #1bc59b;
   cursor: pointer;
@@ -372,18 +385,21 @@ h5{
 @media (max-width: 768px) {
   nav{
     position: no-relative;
+    display: flex;
   }
   .menu {
     display: block;
   }
-  .navbar-left ul {
-    display: none;
-  }
-  .navbar-email {
-    display: none;
-  }
+  
   h2{
     margin-top: 100px;
+  }
+  body{
+    margin-bottom: 0;
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    overflow: hidden;
   }
   fieldset {
     width: 300px;
@@ -405,13 +421,25 @@ h5{
   height: 68px;
   width: 33px;
 }
-  .logo{
-    margin-left: 0;
-    margin: 0;
-  }
-  .carrusel{
-    margin-top: 15%;
-  }
-
+.logo{
+  margin-left: 0;
+  margin: 0;
+}
+.carrusel{
+  margin-top: 120px;
+  justify-content: center;
+  position: absolute;
+}
+.pop-up{
+  width: 80%;
+  height: 90%;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 }
   
