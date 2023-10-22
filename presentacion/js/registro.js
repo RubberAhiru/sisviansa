@@ -6,6 +6,7 @@ const inputs = document.querySelectorAll('#formulario input[type="text"]');
 const password = document.querySelector('#password');
 const repetirPassword = document.querySelector('#password2');
 const btnSubmit = document.querySelector('#btnSubmit');
+const insertCliente = document.querySelector('#insertCliente');
 
 const inputsPassword = document.querySelectorAll(
   '#formulario input[type="password"]'
@@ -55,9 +56,11 @@ function validarCliente() {
       if (radioEmpresa.checked) {
         empresa.setAttribute('style', 'display: block');
         persona.setAttribute('style', 'display: none');
+        insertCliente.value = 'cliente-empresa';
       } else {
         persona.setAttribute('style', 'display: block');
         empresa.setAttribute('style', 'display: none');
+        insertCliente.value = 'cliente-persona';
       }
     });
   });
@@ -108,9 +111,4 @@ function mostrarAlerta(mensaje, referencia) {
   referencia.appendChild(error);
 }
 
-function enviarRegistro(event) {
-  
-
-
-
-}
+function enviarRegistro(event) {}
