@@ -25,8 +25,8 @@ $(document).ready(function () {
         $('.pop-up-wrap').removeClass('show');
     });
 
-    $(".btn-abrir").click(showPopup);
+    $(".btn-abrir").click(showPopup); //cuando toque el carrito se abre
 
-    setTimeout(showPopup, 2000);
+    //setTimeout(showPopup, 2000); //lo ejecutaba apensa entraba 
 
 });

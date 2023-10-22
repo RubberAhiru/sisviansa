@@ -22,7 +22,7 @@
       
           <div class="navbar-left">
             <!--<img src="./assets/recursos/logo_sisviansa.png" alt="logo" class="logo">-->
-            <a href="login.html"><img src="./assets/recursos/logo_sisviansa.png" alt="logo" class="logo"></a><!--redirecciona al login empleados-->
+            <a href="login.html"><img src="./assets/recursos/logo_sisviansa.png" alt="logo" class="logo" title="login empleados"></a><!--redirecciona al login empleados-->
       
             <ul>
               <li></li>
@@ -57,6 +57,7 @@
             </ul>
           </div>
         </nav>
+        <!--POP-UP/Modal-->
         <div class="pop-up">
           <div class="pop-up-wrap">
               <div class="pop-up-title">
@@ -71,8 +72,16 @@
                   <i class="far fa-times-circle" id="close">[x]</i>
                   <div class="sub-content">
                       <h2>Su pedido:</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur.</p>
+                      <p>Agrega, elimina o medifica en tu carrito a voluntad :D</p>
                       <form>
+                        <button>x</button>
+                        <img src="/" alt="">
+                        <label for="/"></label>
+                        (-)<input type="number" name="cantidad" id="cantidad">(+)
+                        <label for="/">$</label>
+                        <span id="total">0</span><!--usas el span para rellenar algo, en este caso el resultado de la cuenta-->
+                        <button>Pagar</button>
+                        <hr>
                           <input type="text" class="subs-cosas" placeholder="Agregar cosas">
                           <button class="subs-send" type="submit">Enviar</button>
                       </form>
