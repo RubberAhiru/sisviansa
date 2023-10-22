@@ -17,6 +17,7 @@
     height: 50vh;
     margin-right: 5px;
     overflow-x:hidden;
+    box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     background-image: url("../recursos/fondo_Sisviansa.png");/*uso .. porque la carpeta esta atras*/
