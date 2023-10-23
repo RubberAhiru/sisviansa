@@ -1,7 +1,7 @@
 <?php
 
-/*include("../persistencia/conexion.php");
-$conex = conectar();*/
+include("../persistencia/conexion.php");
+
 
 class Cliente
 {
@@ -13,11 +13,12 @@ class Cliente
     protected $calle;
     protected $numCalle;
     protected $barrio;
+    protected $conex;
 
     //Constructor
     protected function __construct()
     {
-
+        $this->conex = BaseDeDatos::conectar();
     }
 
     //Setters
@@ -134,35 +135,45 @@ class Persona extends Cliente
     }
 
     public function guardar(){
-        //inserta datos a la tabla cliente
-        $sql = "INSERT INTO cliente VALUES('{$this->getEmail()}','{$this->getContrasenia()}',
-        ','{$this->getCalle()}','{$this->getNumCalle()}','{$this->getBarrio()}');" ;
-        mysqli_query($conex, $sql);
+    //Inserta datos a la tabla cliente
+    //con Prepared Statement (Declaracion Preparada)
 
-        //obtiene el nroCliente asignado
-        $sql = "SELECT nroCliente FROM cliente WHERE email = '{$this->getEmail()}';" ;
-        $res = mysqli_query($conex, $sql);
+        //Prepara una declaracion de INSERT
+        $stmt = $this->conex ->prepare("INSERT INTO cliente (email, contrasenia, dir_calle, dir_num, dir_barrio)
+            VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssis", $this->getEmail(),$this->getContrasenia(), $this->getCalle(), 
+            $this->getNumCalle(), $this->getBarrio());
+        //Ejecuta declaracion para insertar
+        $stmt->execute();
 
-        //guarda el nroCliente en la variable
-        $nroCli = mysqli_fetch_array($res);
+        //Obtiene el nroCliente asignado
+        //prepara una declaracion de consulta SELECT
+        $stmt = $this->conex ->prepare("SELECT nroCliente FROM cliente WHERE email = ?");
+        $stmt->bind_param("s", $this->getEmail());
+        //Ejecuta declaracion para hacer consulta
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $nCliente = $result->fetch_assoc();
+        //Guarda el numero de cliente en variable numC
+        $numC = ($nCliente['nroCliente']);
+        //var_dump($numC);
+
+        //Inserta en tabla cliente-telefono
+        $stmt = $this->conex ->prepare("INSERT INTO telefono (nroCliente, num_cliente) VALUES (?, ?)");
+        $stmt->bind_param("is", $numC, $this->getTel());
+        $stmt->execute();
         
-        //inserta numero de telefono
-        $sql = "INSERT INTO telefono VALUES('$nroCli', '{$this->getTel()}');" ;
-        mysqli_query($conex, $sql);
-
-        //inserta datos a la tabla persona
-        $sql = "INSERT INTO persona VALUES ('$nroCli','{$this->getNombre()}','{$this->getApellido()}', 
-        '{$this->getNroDocumento()}', '{$this->getTipoDocumento()}');" ;
-        mysqli_query($conex, $sql);
-
-        $conex->close();
-    }
-
-    //test
-    public function ver()
-    {
-        var_dump(get_object_vars($this));
-
+        //Inserta en tabla cliente-persona 
+        $stmt = $this->conex ->prepare("INSERT INTO persona (nroCliente, nombre, apellido, doc_tipo, doc_num) 
+            VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("issss", $numC, $this->getNombre(), $this->getApellido(),
+            $this->getTipoDocumento(), $this->getNroDocumento());
+        $stmt->execute();
+        
+        //Cerrar instancia
+        $stmt->close();
+        //Cerrar conexion
+        $this->conex ->close();
     }
 
 }
