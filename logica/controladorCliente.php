@@ -1,6 +1,8 @@
 <?php
 
-require_once 'cliente.php';
+require 'cliente-persona.php';
+require 'cliente-empresa.php';
+
 
 //Tipos de datos que cliente-persona y cliente-empresa tienen en comun
 //nroCliente Es un dato autoincrement en la bd
@@ -52,18 +54,17 @@ if( ($_POST['insert']) == 'cliente-persona' ){
             ( is_string($tipoDoc)  && preg_match("/[a-zA-Z ]+/", $tipoDoc) )
         ){
             $valido = true;
-
+            
         }else{
             //error
-            
+        
         }
     }
 
     //si la validacion fue exitosa la variable $valido sera true y se procedera a crear el objeto
     if($valido){
-        
+
         $persona = new Persona();
-        
         
         $persona->setEmail($_POST['email']);
         $persona->setContrasenia($_POST['contrasenia']);
@@ -77,7 +78,7 @@ if( ($_POST['insert']) == 'cliente-persona' ){
         $persona->setTipoDocumento($_POST['tipodocumento']);
 
         $persona->guardar();
-    
+
     }
     
 }/*else if(($_POST['insert']) == 'cliente-empresa'){
