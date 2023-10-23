@@ -1,16 +1,13 @@
 <?php
 
-function conectar()
-{
-    $host = "192.168.2.209/phpmyadmin";
-    $usr = "rubberahiru";
-    $pwd = ""; //introducir contraseña!!
-    $bd = "rubber_ahiru";
+class BaseDeDatos{
 
-    $con = mysqli_connect($host, $usr, $pwd, $bd) 
-        or die("<h3>No hay conexión con la base de datos </h3><br>".mysqli_connect_error());
-
-    return $con;
+    public static function conectar(){ //introducir el password en el 3er parametro!!
+                        //(host, usuario, password, base de datos)
+        $db = new mysqli("192.168.2.209/phpmyadmin", "rubberahiru", "", "rubber_ahiru");
+        $db->query("SET NAMES 'utf8'");
+        return $db;
+    }
 }
 
 ?>
