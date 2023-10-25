@@ -74,7 +74,7 @@
       <section>
         <h2>Formulario de registro</h2>
         <form
-          action="../logica/controladorCliente.php?insert=cliente-persona"
+          action="../logica/controladorCliente.php"
           method="post"
           id="formulario"
         >
@@ -119,7 +119,7 @@
               <br />
               <label for="email">Correo Electronico</label>
               <br />
-              <input type="text" id="email" value="" />
+              <input type="text" id="email" name="email" value="" />
               <br />
               <label>Dirección</label><br />
               <input
@@ -127,6 +127,7 @@
                 id="barrio"
                 min="1"
                 max="30"
+                name="barrio"
                 value=""
                 placeholder="barrio"
               /><br />
@@ -136,9 +137,10 @@
                 value=""
                 min="1"
                 max="30"
+                name="calle"
                 placeholder="calle"
               /><br />
-              <input type="text" id="num" value="" placeholder="número" />
+              <input type="text" id="num" name="numerocalle" value="" placeholder="número" />
             </div>
           </fieldset>
 
@@ -162,6 +164,7 @@
                 id="password2"
                 minlength="8"
                 maxlength="12"
+                name="contrasenia"
                 value=""
               />
             </div>
@@ -172,36 +175,36 @@
             <div>
               <label for="nombre">Nombre</label>
               <br />
-              <input type="text" maxlength="18" id="nombre" value="" />
+              <input type="text" maxlength="18" id="nombre" name="nombre" value="" />
               <br />
               <label for="apellido">Apellido</label>
               <br />
-              <input type="text" id="apellido" maxlength="18" value="" />
+              <input type="text" id="apellido" maxlength="18" name="apellido" value="" />
               <br />
               <label>Documento</label>
               <br />
-              <select id="documento" name="doc_tipo">
+              <select id="documento" name="tipodocumento">
                 <option value="ci" id="ci" selected="selected">CI</option>
                 <option value="dni" id="dni">DNI</option>
                 <option value="pasaporte" id="pasaporte">Pasaporte</option>
                 <input
                   type="text"
                   id="InputCi"
-                  name="ci"
+                  name="nrodocumento"
                   value=""
                   placeholder="Introduce tu cedula"
                 />
                 <input
                   type="text"
                   id="InputDni"
-                  name="dni"
+                  name="nrodocumento"
                   value=""
                   placeholder="Introduce tu DNI"
                 />
                 <input
                   type="text"
                   id="InputPasaporte"
-                  name="pasaporte"
+                  name="nrodocumento"
                   value=""
                   placeholder="Introduce tu Pasaporte"
                 />
@@ -218,7 +221,7 @@
                 type="text"
                 minlength="1"
                 maxlength="18"
-                name="razon_social"
+                name="razon-social"
                 id="razon_social"
                 value=""
               />
