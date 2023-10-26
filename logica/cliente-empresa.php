@@ -48,19 +48,19 @@ class Empresa extends Cliente {
         $stmt->execute();
         $result = $stmt->get_result();
         $nCliente = $result->fetch_assoc();
-        //Guarda el numero de cliente en variable numC
-        $numC = ($nCliente['nroCliente']);
-        //var_dump($numC);
+        //Guarda el numero de cliente en variable numCli
+        $numCli = ($nCliente['nroCliente']);
+        //var_dump($numCli);
 
         //Inserta en tabla cliente-telefono
         $stmt = $this->conex ->prepare("INSERT INTO telefono (nroCliente, num_cliente) VALUES (?, ?)");
-        $stmt->bind_param("is", $numC, $this->getTel());
+        $stmt->bind_param("is", $numCli, $this->getTel());
         $stmt->execute();
 
         //Inserta en tabla cliente-empresa 
         $stmt = $this->conex ->prepare("INSERT INTO empresa (nroCliente, rut, razon_social) 
             VALUES (?, ?, ?)");
-        $stmt->bind_param("iss", $numC, $this->getRut(), $this->getRazonSocial());
+        $stmt->bind_param("iss", $numCli, $this->getRut(), $this->getRazonSocial());
         $stmt->execute();
         
         //Cerrar instancia

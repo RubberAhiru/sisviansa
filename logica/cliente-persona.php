@@ -74,19 +74,19 @@ class Persona extends Cliente
         $stmt->execute();
         $result = $stmt->get_result();
         $nCliente = $result->fetch_assoc();
-        //Guarda el numero de cliente en variable numC
-        $numC = ($nCliente['nroCliente']);
-        //var_dump($numC);
+        //Guarda el numero de cliente en variable numCli
+        $numCli = ($nCliente['nroCliente']);
+        //var_dump($numCli);
 
         //Inserta en tabla cliente-telefono
         $stmt = $this->conex ->prepare("INSERT INTO telefono (nroCliente, num_cliente) VALUES (?, ?)");
-        $stmt->bind_param("is", $numC, $this->getTel());
+        $stmt->bind_param("is", $numCli, $this->getTel());
         $stmt->execute();
         
         //Inserta en tabla cliente-persona 
         $stmt = $this->conex ->prepare("INSERT INTO persona (nroCliente, nombre, apellido, doc_tipo, doc_num) 
             VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("issss", $numC, $this->getNombre(), $this->getApellido(),
+        $stmt->bind_param("issss", $numCli, $this->getNombre(), $this->getApellido(),
             $this->getTipoDocumento(), $this->getNroDocumento());
         $stmt->execute();
         
