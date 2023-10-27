@@ -33,17 +33,26 @@ function ValidarDocumento() {
 
     if (opcionSeleccionada.value === 'ci') {
       inputDni.style.display = 'none';
+      inputDni.disabled = true;
       inputPasaporte.style.display = 'none';
+      inputPasaporte.disabled= true;
+      inputCi.disabled = false;
       inputCi.style.display = 'inline-block';
     } else if (opcionSeleccionada.value === 'dni') {
       inputCi.style.display = 'none';
+      inputCi.disabled = true;
       inputPasaporte.style.display = 'none';
+      inputPasaporte.disabled = true;
+      inputDni.disabled = false;
       inputDni.style.display = 'inline-block';
     } else if (opcionSeleccionada.value === 'pasaporte') {
       inputCi.style.display = 'none';
+      inputCi.disabled = true;
+      inputPasaporte.disabled = false;
       inputPasaporte.style.display = 'inline-block';
       inputDni.style.display = 'none';
-    }
+      inputDni.disabled = true;
+    }  
   });
 }
 function validarCliente() {
