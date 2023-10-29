@@ -140,7 +140,15 @@
                 name="calle"
                 placeholder="calle"
               /><br />
-              <input type="text" id="num" name="numerocalle" value="" placeholder="número" />
+              <input
+                type="text"
+                id="num"
+                name="numerocalle"
+                value=""
+                placeholder="número"
+                minlength="3"
+                maxlength="4"
+              />
             </div>
           </fieldset>
 
@@ -175,11 +183,23 @@
             <div>
               <label for="nombre">Nombre</label>
               <br />
-              <input type="text" maxlength="18" id="nombre" name="nombre" value="" />
+              <input
+                type="text"
+                maxlength="18"
+                id="nombre"
+                name="nombre"
+                value=""
+              />
               <br />
               <label for="apellido">Apellido</label>
               <br />
-              <input type="text" id="apellido" maxlength="18" name="apellido" value="" />
+              <input
+                type="text"
+                id="apellido"
+                maxlength="18"
+                name="apellido"
+                value=""
+              />
               <br />
               <label>Documento</label>
               <br />
@@ -193,6 +213,9 @@
                   name="nrodocumento"
                   value=""
                   placeholder="Introduce tu cedula"
+                  pattern="[0-9]"
+                  minlength="8"
+                  maxlength="9"
                 />
                 <input
                   type="text"
