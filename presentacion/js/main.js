@@ -1,8 +1,8 @@
 //FETCHS
 
-const URL = '';
+//const URL = '';
 
-fetch()
+//fetch()
 
 
 
