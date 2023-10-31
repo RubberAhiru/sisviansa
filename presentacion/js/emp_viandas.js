@@ -1,9 +1,14 @@
 //VARIABLES
 const formularioSeleccionado = document.getElementsByName('TipoFormulario');
+const btnAgregarIngrediente = document.querySelector('#agregar-ingrediente');
+const divIngredientes = document.getElementById('inputs-ingredientes');
+const inputsIngredientes = document.getElementsByClassName('ingrediente');
 
 //EVENTOS
-document.addEventListener('DOMContentLoaded', () => {
-  ocultarForm();
+document.addEventListener('DOMContentLoaded', ocultarForm());
+btnAgregarIngrediente.addEventListener('click', (e) => {
+  e.preventDefault;
+  agregarIngrediente();
 });
 
 //FUNCIONES
@@ -33,4 +38,32 @@ function ocultarForm() {
       }
     });
   });
+}
+
+function agregarIngrediente() {
+  for (
+    let ingredienteActual = 0;
+    ingredienteActual < inputsIngredientes.length;
+    ingredienteActual++
+  ) {
+    console.log(ingredienteActual);
+    if (ingredienteActual === inputsIngredientes.length) {
+      //Crea un nuevo div
+      let nuevoDiv = document.createElement('div');
+      nuevoDiv.classList.add('contenido-input');
+
+      //Crea un nuevo input
+      let nuevoInput = document.createElement('input');
+      nuevoInput.type = 'text';
+      nuevoInput.id = `ingrediente${inputsIngredientes.length++}`;
+      nuevoInput.placeholder = `Ingrediente ${inputsIngredientes.length++}`;
+      nuevoInput.classList.add('ingrediente');
+
+      //Agrega el input al nuevo div
+      nuevoDiv.appendChild(nuevoInput);
+
+      // Agrega el nuevo div al contenedor externo
+      divIngredientes.appendChild(nuevoDiv);
+    }
+  }
 }

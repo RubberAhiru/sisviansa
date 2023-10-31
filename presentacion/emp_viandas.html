@@ -99,10 +99,11 @@
             <br />
             <input type="text" id="tiempo" pattern="" value="" />
             <br />
-            <div class="contenido-inputs">
+            <div class="contenido-inputs" id="inputs-ingredientes">
               <label>Contenido</label>
               <div class="contenido-input">
                 <input
+                  class="ingrediente"
                   type="text"
                   id="ingrediente1"
                   value=""
@@ -111,6 +112,7 @@
               </div>
               <div class="contenido-input">
                 <input
+                  class="ingrediente"
                   type="text"
                   id="ingrediente2"
                   value=""
@@ -119,6 +121,7 @@
               </div>
               <div class="contenido-input">
                 <input
+                  class="ingrediente"
                   type="text"
                   id="ingrediente3"
                   value=""
@@ -132,7 +135,9 @@
               <img src="assets/viandas/2.jpg" class="img" />
             </fieldset>
             <div class="contenido-botones">
-              <button class="secondary-button">Agregar Ingrediente</button>
+              <button class="secondary-button" id="agregar-ingrediente">
+                Agregar Ingrediente
+              </button>
             </div>
             <br />
             <div class="contenido-botones">

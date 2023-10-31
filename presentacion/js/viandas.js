@@ -23,9 +23,12 @@ function mostrarViandas(viandasJSON) {
       </fieldset>
     </div>
     <div>
-      <label for="text">cosas</label>
+      <span>Precio: $${viandaActual.precio}</span>
       <br>
-      <input type="text" id="1"  value="" />
+      <span>Duracion: ${viandaActual.tiempo} minutos</span>
+      <br>
+      <br>
+      <span>Contenido: ${viandaActual.contenido}</span>
       <br>
       <input class="botons" type="submit" value="Agregar al carrito">  
     </div>
