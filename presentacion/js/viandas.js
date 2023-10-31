@@ -5,7 +5,9 @@ fetch('../persistencia/viandaJSON.php')
   .then((response) => response.json())
   .then((jsonData) => {
     //Utilizar jSON
-    console.log(jsonData); //ej. para ver objeto en consola
+    arrayViandas = jsonData;
+
+    mostrarViandas(arrayViandas); //ej. para ver objeto en consola
   });
 
 function mostrarViandas(viandasJSON) {
@@ -17,7 +19,7 @@ function mostrarViandas(viandasJSON) {
     <legend>${viandaActual.nombre}</legend>
     <div>
       <fieldset class="img">
-        <img src="assets/viandas/1.jpg" class="img">
+        <img src="assets/viandas/${viandaActual.imagen}" class="img">
       </fieldset>
     </div>
     <div>
