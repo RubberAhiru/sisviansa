@@ -16,44 +16,55 @@ fetch('../persistencia/viandaJSON.php')
   });
 
 function mostrarViandas(viandasJSON) {
-  let contenidoHTML = '';
-
-  viandasJSON.forEach((viandaActual) => {
-    contenidoHTML += `
-    <fieldset>
-    <legend>${viandaActual.nombre}</legend>
-    <div>
-      <fieldset class="img">
-        <img src="assets/viandas/${viandaActual.imagen}" class="img">
+  // Crear un arreglo para almacenar el contenido de todas las viandas
+  const viandasHTML = viandasJSON.map(
+    (viandaActual) => `
+      <fieldset>
+        <legend>${viandaActual.nombre}</legend>
+        <div>
+          <fieldset class="img">
+            <img src="assets/viandas/${viandaActual.imagen}" class="img">
+          </fieldset>
+        </div>
+        <div>
+          <span>Precio: $${viandaActual.precio}</span>
+          <br>
+          <span>Duracion: ${viandaActual.tiempo} minutos</span>
+          <br>
+          <br>
+          <span>Contenido: ${viandaActual.contenido}</span>
+          <br>
+          <input class="botons" type="submit" value="Agregar al carrito">
+        </div>
       </fieldset>
-    </div>
-    <div>
-      <span>Precio: $${viandaActual.precio}</span>
-      <br>
-      <span>Duracion: ${viandaActual.tiempo} minutos</span>
-      <br>
-      <br>
-      <span>Contenido: ${viandaActual.contenido}</span>
-      <br>
-      <input class="botons" type="submit" value="Agregar al carrito">  
-    </div>
-  </fieldset>
-    `;
+    `
+  );
 
-    viandas.innerHTML = contenidoHTML;
-  });
+  // Unir todas las viandas en una sola cadena
+  const contenidoHTML = viandasHTML.join('');
+
+  // Asignar el contenido HTML al elemento viandas una sola vez
+  viandas.innerHTML = contenidoHTML;
 }
 
 function cargarViandas(nuevasViandas) {
-  let posicionActual = 0;
-  const siguientesViandas = arrayViandas.splice(
+  const cantidadARecorrer = 4; // Cantidad de viandas a mostrar en cada carga
+  const posicionActual = cargarViandas.posicionActual || 0; // Inicializar la posición actual si no está definida
+
+  // Obtener las siguientes viandas a mostrar
+  const siguientesViandas = arrayViandas.slice(
     posicionActual,
-    posicionActual + 4
+    posicionActual + cantidadARecorrer
   );
 
-  siguientesViandas.forEach((vianda) => {
-    mostrarViandas(siguientesViandas);
-  });
+  // Mostrar las siguientes viandas
+  mostrarViandas(siguientesViandas);
 
-  posicionActual += 4;
+  // Actualizar la posición actual para la próxima carga
+  cargarViandas.posicionActual = posicionActual + cantidadARecorrer;
+
+  // Deshabilitar el botón "Ver más" si no hay más viandas por cargar
+  if (cargarViandas.posicionActual >= nuevasViandas.length) {
+    btnVerMas.setAttribute('disabled', true);
+  }
 }
