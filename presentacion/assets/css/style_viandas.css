@@ -1,11 +1,11 @@
 :root {
-  --white: #FFFFFF;
+  --white: #ffffff;
   --black: #000000;
   --blue: #0000ff;
   --bordo: rgb(136, 30, 12);
-  --very-light-pink: #C7C7C7;
-  --text-input-field: #F7F7F7;
-  --hospital-green: #ACD9B2;
+  --very-light-pink: #c7c7c7;
+  --text-input-field: #f7f7f7;
+  --hospital-green: #acd9b2;
   --sm: 14px;
   --md: 16px;
   --lg: 18px;
@@ -14,10 +14,10 @@ body {
   margin-top: 80px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  background-image: url("../recursos/fondo_Sisviansa.png");
+  background-image: url('../recursos/fondo_Sisviansa.png');
   background-repeat: no-repeat;
   background-size: contain;
-  background-attachment: fixed;/*para que el fondo me quede fijo ;)*/
+  background-attachment: fixed; /*para que el fondo me quede fijo ;)*/
 }
 nav {
   display: flex;
@@ -29,7 +29,7 @@ nav {
   border-bottom: 1px solid var(--very-light-pink);
   background-color: papayawhip;
   position: fixed;
-  top:0;
+  top: 0;
 }
 .menu {
   display: none;
@@ -214,45 +214,45 @@ label {
 .input {
   margin-bottom: 10px;
   background-color: var(--text-input-field);
-  border-color: #ACD9B2;
+  border-color: #acd9b2;
   border-radius: 10px;
   height: 100px;
   font-size: var(--md);
   padding: 6px;
 }
-.img{
-width: 10vw;
-height: 10vh;
-margin-top: 9px;
-margin-right: 15px;
-display: flex;
-justify-content: space-between;
+.img {
+  width: 10vw;
+  height: 10vh;
+  margin-top: 9px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: space-between;
 }
-h2{
+h2 {
   color: var(--bordo);
   font-style: oblique;
   text-decoration-line: underline;
 }
-.botons{
+.botons {
   width: 20wh;
   height: 5vh;
   background-color: var(--hospital-green);
   border-radius: 8px;
   opacity: 0.6;
 }
-.botons:hover{
+.botons:hover {
   background-color: var(--bordo);
   transform: rotate(360deg);
   color: var(--white);
 }
-.control{
+.control {
   border-color: var(--hospital-green);
   border-radius: 5px;
 }
-.agregar{
+.agregar {
   display: inline;
 }
-.colum{
+.colum {
   width: 15vw;
   height: 350vh;
   margin-top: -40px;
@@ -261,9 +261,9 @@ h2{
   background-color: var(--hospital-green);
   /*border: 2px solid #74bb7e;*/
 }
-h1{
+h1 {
   margin-top: 125px;
-  font-family:fantasy;
+  font-family: fantasy;
   color: var(--bordo);
   opacity: 0.7;
 }
@@ -282,16 +282,16 @@ footer {
 
 /* VENTANA MODAL */
 
-.btn-abrir{
+.btn-abrir {
   background: papayawhip;
-  color:#fff;
+  color: #fff;
   padding: 10px;
   display: inline-block;
   border: none;
   cursor: pointer;
 }
 
-.pop-up{
+.pop-up {
   width: 800px;
   height: 600px;
   background: rgba(48, 48, 48, 0.5);
@@ -308,19 +308,19 @@ footer {
   z-index: 5;
 }
 
-.pop-up-wrap{
+.pop-up-wrap {
   display: flex;
   align-items: center;
   width: 700vw;
   max-width: 500px;
   transform: scale(0.6);
   opacity: 0;
-  transition: .3s ease all;
+  transition: 0.3s ease all;
 }
 
-.pop-up-title{
+.pop-up-title {
   flex-basis: 0;
-  flex-grow:1.5;
+  flex-grow: 1.5;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -333,17 +333,17 @@ footer {
   background-repeat: no-repeat;
 }
 
-.pop-up-title::after{
+.pop-up-title::after {
   content: '';
   position: absolute;
-  background: rgba(172,217, 178, 0.75);
+  background: rgba(172, 217, 178, 0.75);
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 }
 
-.pop-up-title::before{
+.pop-up-title::before {
   content: '';
   position: absolute;
   top: 0;
@@ -354,7 +354,7 @@ footer {
   z-index: -1;
 }
 
-.subcription::before{
+.subcription::before {
   content: '';
   position: absolute;
   top: 0;
@@ -366,23 +366,22 @@ footer {
 }
 
 .pop-up-title h2,
-.pop-up-title p{
+.pop-up-title p {
   z-index: 10;
   color: #fff;
 }
 
-.pop-up-title h2{
+.pop-up-title h2 {
   font-family: 'Chiller';
   font-size: 80px;
 }
 
-
-.pop-up-title p{
+.pop-up-title p {
   font-size: 20px;
   font-weight: 300;
 }
 
-.subcription{
+.subcription {
   background: #fff;
   flex-basis: 0;
   flex-grow: 2;
@@ -395,19 +394,19 @@ footer {
   text-align: center;
 }
 
-.sub-content{
+.sub-content {
   width: 550px;
   height: 450px;
 }
 
-.sub-content h2{
+.sub-content h2 {
   font-weight: 500;
   font-size: 40px;
-  color: #1F4068;
+  color: #1f4068;
   margin-bottom: 15px;
 }
 
-.sub-content p{
+.sub-content p {
   font-weight: 500;
   color: #1bc59b;
   margin-bottom: 30px;
@@ -422,31 +421,31 @@ footer {
   margin-bottom: 15px;
 }*/
 
-.subs-send{
+.subs-send {
   margin-left: -21px;
   width: 25vw;
   padding: 15px;
   border: none;
-  color: #1F4068;/*no funciona*/
+  color: #1f4068; /*no funciona*/
   background: var(--hospital-green);
   color: #fff;
   font-size: 18px;
   cursor: pointer;
   margin-bottom: 20px;
-  transition: .25s ease background;
+  transition: 0.25s ease background;
 }
 
-.subs-send:hover{
+.subs-send:hover {
   background: #1bc59b;
 }
 
-.line{
+.line {
   width: 100%;
   height: 20px;
-  background: #1F4068;
+  background: #1f4068;
 }
 
-#close{
+#close {
   position: absolute;
   top: -12px;
   right: 7px;
@@ -455,25 +454,24 @@ footer {
   cursor: pointer;
 }
 
-.pop-up.show{
+.pop-up.show {
   visibility: visible;
 }
 
-.pop-up-wrap.show{
+.pop-up-wrap.show {
   transform: scale(1);
   opacity: 1;
 }
 
-@media only screen and (max-width: 980px){
-  .pop-up-title{
-      display: none;
+@media only screen and (max-width: 980px) {
+  .pop-up-title {
+    display: none;
   }
-
 }
 
-@media only screen and (max-width: 320px){
-  .sub-content h2{
-      font-size: 30px;
+@media only screen and (max-width: 320px) {
+  .sub-content h2 {
+    font-size: 30px;
   }
 }
 
@@ -487,16 +485,22 @@ footer {
   .navbar-email {
     display: none;
   }
-  h2{
+  h2 {
     margin-top: 100px;
   }
   fieldset {
     width: 300px;
   }
-  form{
-   width: 170px;
+  form {
+    width: 170px;
   }
-  .input{
+  .input {
     position: center;
   }
+}
+
+.grid-contenedor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
 }
