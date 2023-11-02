@@ -113,8 +113,8 @@ nav {
   text-align: start;
 }
 
-.primary-button {
-  background-color: var(--hospital-green);
+.primary-button,
+.secondary-button {
   border-radius: 8px;
   border: none;
   color: var(--white);
@@ -123,6 +123,13 @@ nav {
   font-size: var(--md);
   font-weight: bold;
   height: 50px;
+  text-transform: uppercase;
+}
+.primary-button {
+  background-color: var(--hospital-green);
+}
+.secondary-button {
+  background-color: var(--blue);
 }
 .controls {
   width: 100%;

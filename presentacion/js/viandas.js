@@ -1,5 +1,10 @@
 //VARIABLES
+const btnVerMas = document.querySelector('#ver-mas');
+const viandas = document.getElementById('viandas');
 let arrayViandas = [];
+
+//EVENTOS
+btnVerMas.addEventListener('click', cargarViandas);
 
 fetch('../persistencia/viandaJSON.php')
   .then((response) => response.json())
@@ -7,7 +12,7 @@ fetch('../persistencia/viandaJSON.php')
     //Utilizar jSON
     arrayViandas = jsonData;
 
-    mostrarViandas(arrayViandas); //ej. para ver objeto en consola
+    cargarViandas(arrayViandas);
   });
 
 function mostrarViandas(viandasJSON) {
@@ -35,6 +40,20 @@ function mostrarViandas(viandasJSON) {
   </fieldset>
     `;
 
-    document.getElementById('viandas').innerHTML = contenidoHTML;
+    viandas.innerHTML = contenidoHTML;
   });
+}
+
+function cargarViandas(nuevasViandas) {
+  let posicionActual = 0;
+  const siguientesViandas = arrayViandas.splice(
+    posicionActual,
+    posicionActual + 4
+  );
+
+  siguientesViandas.forEach((vianda) => {
+    mostrarViandas(siguientesViandas);
+  });
+
+  posicionActual += 4;
 }
