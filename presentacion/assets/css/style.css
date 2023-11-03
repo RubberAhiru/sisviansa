@@ -1,134 +1,148 @@
 :root {
-    --white: #FFFFFF;
-    --black: #000000;
-    --blue: #0000ff;
-    --very-light-pink: #C7C7C7;
-    --text-input-field: #F7F7F7;
-    --hospital-green: #ACD9B2;/*(172,217,178)*/
-    --bordo: rgb(136, 30, 12);
-    --sm: 14px;
-    --md: 16px;
-    --lg: 18px;
-  }
-  body {
-    position: absolute;
-    margin:0;
-    width: 300vw;
-    height: 50vh;
-    margin-right: 5px;
-    overflow-x:hidden;
-    box-sizing: border-box;
-    font-family: 'Quicksand', sans-serif;
-    text-align: center;
-    background-image: url("../recursos/fondo_Sisviansa.png");/*uso .. porque la carpeta esta atras*/
-    background-repeat:no-repeat;
-    background-size: contain;
-    background-attachment: fixed;/*para que el fondo me quede fijo ;)*/
-  }
-  nav {
-    display: flex;
-    width: 100vw;
-    height: 58px;
-    justify-content: space-between;
-    padding: 0 -100px;
-    margin-top: auto;
-    border-bottom: 1px solid var(--very-light-pink);
-    background-color: papayawhip;
-    position: fixed;
-    top:0;
-    z-index:5;
-  }
-  .menu {
-    display: none;
-  }
-  .logo {
-    width: 227px;
-    height: 151px;
-    margin-left: 0;
-    opacity: 0.7;
-  }
-  .navbar-left ul,
-  .navbar-right ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    /*height: 64px;
-    width: 600px;*/
-  }
-  .navbar-left {
-    display: flex;
-    height: 64px;
-    width: 202px;
-  }
-    .navbar-right {
-    display: flex;
-    height: 64px;
-    width: 46vw;
-  }
-  .navbar-left ul {
-    margin-left: 12px;
-  }
-
-  .navbar-left ul li a,
-  .navbar-right ul li a {
-    text-decoration: none;
-    color: var(--hospital-green);
-    border: 1px solid var(--hospital-green);
-    padding: 8px;
-    border-radius: 8px;
-  }
-  .navbar-left ul li a:hover,
-  .navbar-right ul li a:hover {
-    border: 1px solid var(--blue);
-    color: var(--blue);
-  }
-  /*.navbar-email {
-    color: var(--very-light-pink);
-    font-size: var(--sm);
-    margin-right: 12px;
-  }*/
-  .navbar-shopping-cart {
-    position: relative;
-  }
-  .navbar-shopping-cart div {
-    width: 16px;
-    height: 16px;
-    background-color: var(--hospital-green);
-    border-radius: 50%;
-    font-size: var(--sm);
-    font-weight: bold;
-    position: absolute;
-    top: -6px;
-    right: -3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .login {
-    width: 100%;
-    display: grid;
-    place-items: center;
-  }
-  .form-container {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    width: 300px;
-  }
-  .logo2 {
-    width: 150px;
-    margin-bottom: 48px;
-    justify-self: center;
-    display: none;
-  }
-.title {
-    font-size: var(--lg);
-    margin-bottom: 36px;
-    text-align: start;
+  --white: #FFFFFF;
+  --black: #000000;
+  --blue: #0000ff;
+  --very-light-pink: #C7C7C7;
+  --text-input-field: #F7F7F7;
+  --hospital-green: #ACD9B2;
+  /*(172,217,178)*/
+  --bordo: rgb(136, 30, 12);
+  --sm: 14px;
+  --md: 16px;
+  --lg: 18px;
 }
+
+body {
+  position: absolute;
+  margin: 0;
+  width: 300vw;
+  height: 50vh;
+  margin-right: 5px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  background-image: url("../recursos/fondo_Sisviansa.png");
+  /*uso .. porque la carpeta esta atras*/
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  /*para que el fondo me quede fijo ;)*/
+}
+
+nav {
+  display: flex;
+  width: 100vw;
+  height: 58px;
+  justify-content: space-between;
+  padding: 0 -100px;
+  margin-top: auto;
+  border-bottom: 1px solid var(--very-light-pink);
+  background-color: papayawhip;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+
+.menu {
+  display: none;
+}
+
+.logo {
+  width: 227px;
+  height: 151px;
+  margin-left: 0;
+  opacity: 0.7;
+}
+
+.navbar-left ul,
+.navbar-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  /*height: 64px;
+    width: 600px;*/
+}
+
+.navbar-left {
+  display: flex;
+  height: 64px;
+  width: 202px;
+}
+
+.navbar-right {
+  display: flex;
+  height: 64px;
+  width: 46vw;
+}
+
+.navbar-left ul {
+  margin-left: 12px;
+}
+
+.navbar-left ul li a,
+.navbar-right ul li a {
+  text-decoration: none;
+  color: var(--hospital-green);
+  border: 1px solid var(--hospital-green);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.navbar-left ul li a:hover,
+.navbar-right ul li a:hover {
+  border: 1px solid var(--blue);
+  color: var(--blue);
+}
+
+.navbar-shopping-cart {
+  position: relative;
+}
+
+.navbar-shopping-cart div {
+  width: 16px;
+  height: 16px;
+  background-color: var(--hospital-green);
+  border-radius: 50%;
+  font-size: var(--sm);
+  font-weight: bold;
+  position: absolute;
+  top: -6px;
+  right: -3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.form-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 300px;
+}
+
+.logo2 {
+  width: 150px;
+  margin-bottom: 48px;
+  justify-self: center;
+  display: none;
+}
+
+.title {
+  font-size: var(--lg);
+  margin-bottom: 36px;
+  text-align: start;
+}
+
 /*carrusel en diagonal*/
-.carrusel{
+.carrusel {
   width: 45vw;
   height: 65vh;
   content: "";
@@ -141,7 +155,8 @@
   transform: skewY(-20deg);
   z-index: 3;
 }
-.carousel-item{
+
+.carousel-item {
   border: solid 5px #ACD9B2;
   /*width: 45vw;
   height: 65vh;*/
@@ -157,7 +172,8 @@ footer {
   text-align: center;
   opacity: 0.5;
 }
-.text{
+
+.text {
   width: 50vw;
   height: 200vh;
   margin-top: 500px;
@@ -165,7 +181,7 @@ footer {
   margin-left: 10px;
 }
 
-form{
+form {
   border-color: #ACD9B2;
   width: 30vw;
   height: 65vh;
@@ -175,32 +191,35 @@ form{
   transform-origin: top right;
   transform: skewY(-20deg);
 }
-h5{
+
+h5 {
   background-color: #ACD9B2;
   opacity: 0.5;
 }
-.botons{
+
+.botons {
   background-color: #ACD9B2;
   border-radius: 8px;
   opacity: 0.6;
 }
-.control{
+
+.control {
   border-color: #ACD9B2;
   border-radius: 5px;
 }
 
 /* VENTANA MODAL */
 
-.btn-abrir{
+.btn-abrir {
   background: papayawhip;
-  color:#fff;
+  color: #fff;
   padding: 10px;
   display: inline-block;
   border: none;
   cursor: pointer;
 }
 
-.pop-up{
+.pop-up {
   width: 800px;
   height: 600px;
   background: rgba(48, 48, 48, 0.5);
@@ -217,7 +236,7 @@ h5{
   z-index: 5;
 }
 
-.pop-up-wrap{
+.pop-up-wrap {
   display: flex;
   align-items: center;
   width: 700vw;
@@ -227,9 +246,9 @@ h5{
   transition: .3s ease all;
 }
 
-.pop-up-title{
+.pop-up-title {
   flex-basis: 0;
-  flex-grow:1.5;
+  flex-grow: 1.5;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -242,17 +261,17 @@ h5{
   background-repeat: no-repeat;
 }
 
-.pop-up-title::after{
+.pop-up-title::after {
   content: '';
   position: absolute;
-  background: rgba(172,217, 178, 0.75);
+  background: rgba(172, 217, 178, 0.75);
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 }
 
-.pop-up-title::before{
+.pop-up-title::before {
   content: '';
   position: absolute;
   top: 0;
@@ -263,7 +282,7 @@ h5{
   z-index: -1;
 }
 
-.subcription::before{
+.subcription::before {
   content: '';
   position: absolute;
   top: 0;
@@ -275,23 +294,23 @@ h5{
 }
 
 .pop-up-title h2,
-.pop-up-title p{
+.pop-up-title p {
   z-index: 10;
   color: #fff;
 }
 
-.pop-up-title h2{
+.pop-up-title h2 {
   font-family: 'Chiller';
   font-size: 80px;
 }
 
 
-.pop-up-title p{
+.pop-up-title p {
   font-size: 20px;
   font-weight: 300;
 }
 
-.subcription{
+.subcription {
   background: #fff;
   flex-basis: 0;
   flex-grow: 2;
@@ -304,27 +323,27 @@ h5{
   text-align: center;
 }
 
-.sub-content{
+.sub-content {
   justify-content: center;
   width: 550px;
   height: 450px;
 }
 
-.sub-content h2{
+.sub-content h2 {
   font-weight: 500;
   font-size: 40px;
   color: #1F4068;
   margin-bottom: 15px;
 }
 
-.sub-content p{
+.sub-content p {
   font-weight: 500;
   color: #1bc59b;
   margin-bottom: 30px;
 }
 
-.subs-cosas{
-  margin-left:-32px;
+.subs-cosas {
+  margin-left: -32px;
   width: 25vw;
   padding: 15px;
   border: none;
@@ -333,12 +352,13 @@ h5{
   transform: skewY(+20deg);
 }
 
-.subs-send{
+.subs-send {
   margin-left: -21px;
   width: 20vw;
   padding: 15px;
   border: none;
-  color: #1F4068;/*no funciona*/
+  color: #1F4068;
+  /*no funciona*/
   background: var(--hospital-green);
   color: #fff;
   font-size: 18px;
@@ -348,17 +368,17 @@ h5{
   transform: skewY(+20deg);
 }
 
-.subs-send:hover{
+.subs-send:hover {
   background: #1bc59b;
 }
 
-.line{
+.line {
   width: 100%;
   height: 20px;
   background: #1F4068;
 }
 
-#close{
+#close {
   position: absolute;
   top: -12px;
   right: 7px;
@@ -367,125 +387,162 @@ h5{
   cursor: pointer;
 }
 
-.pop-up.show{
+.pop-up.show {
   visibility: visible;
   width: 100%;
   height: 100%;
 }
 
-.pop-up-wrap.show{
+.pop-up-wrap.show {
   transform: scale(1);
   opacity: 1;
 }
 
-@media only screen and (max-width: 980px){
-  .pop-up-title{
-      display: none;
+/*selector_de_inicio*/
+.us {
+  font-size: 35px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--hospital-green);
+  -webkit-text-stroke: 1px var(--white);
+  text-decoration: underline;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* Estilo para el fondo oscuro que cubre la página cuando se muestra el modal */
+.selec_inicio {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* Estilo para el contenedor del modal */
+.selector {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.8s;
+  z-index: 2;
+}
+
+/* Estilo para el botón "Cliente" dentro del modal */
+.transp {
+  background: transparent;
+  width: 100%;
+  height: 45px;
+  margin: 5px;
+  border-radius: 55px;
+  background: rgba(255, 255, 255, 0.137);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.transp:hover {
+  box-shadow: 0px 0px 8px #ffffffa4;
+}
+
+@media only screen and (max-width: 980px) {
+  .pop-up-title {
+    display: none;
   }
 
 }
 
-@media only screen and (max-width: 320px){
-  .sub-content h2{
-      font-size: 30px;
+@media only screen and (max-width: 320px) {
+  .sub-content h2 {
+    font-size: 30px;
   }
 }
 
 /*@media*/
 @media (max-width: 768px) {
-  nav{
+  nav {
     position: no-relative;
     display: flex;
   }
+
   .menu {
     display: block;
   }
-  
-  h2{
+
+  h2 {
     margin-top: 100px;
   }
-  body{
+
+  body {
     margin-bottom: 0;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-size: contain;
     background-attachment: fixed;
     overflow: hidden;
   }
+
   fieldset {
     width: 300px;
   }
-  form{
-   width: 170px;
+
+  form {
+    width: 170px;
   }
-  .input{
+
+  .input {
     position: center;
   }
-  .form-login{
+
+  .form-login {
     width: 55vw;
     height: 35vh;
     margin: auto;
     margin-top: 190px;
     border-radius: 60%;
-}
-.navbar-right ul {
-  height: 68px;
-  width: 33px;
-}
-.logo{
-  margin-left: 0;
-  margin: 0;
-}
-.carrusel{
-  margin-top: 120px;
-  justify-content: center;
-  position: absolute;
-}
-.pop-up{
-  width: 80%;
-  height: 90%;
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-}
-  
-@media screen and (mix-width:500px ) {
-	header nav {
-		width:80%;
-		height:100%;
-		left:-100%;
-		margin:0;
-		position: fixed;
-	}
+  }
 
-	header nav ul li {
-		display:block;
-		float:none;
-		border-bottom:1px solid rgba(255,255,255, .3);
-	}
+  .navbar-right ul {
+    height: 68px;
+    width: 33px;
+  }
 
-	.menu {
-		display:block;
-		width:100%;
-	}
+  .logo {
+    margin-left: 0;
+    margin: 0;
+  }
 
-	.menu .bt-menu {
-		display:block;
-		padding:20px;
-		text-decoration:none;
-		font-weight: bold;
-		font-size:25px;
-		-webkit-box-sizing:border-box;
-		-moz-box-sizing:border-box;
-		box-sizing:border-box;
-	}
+  .carrusel {
+    margin-top: 120px;
+    justify-content: center;
+    position: absolute;
+  }
 
-	.menu span {
-		float:right;
-		font-size:40px;
-	}
+  .pop-up {
+    width: 80%;
+    height: 90%;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

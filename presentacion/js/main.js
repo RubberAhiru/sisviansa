@@ -10,6 +10,35 @@
 
 
 
+
+
+//Selector_de_Inicio:
+$(document).ready(function () {
+    // Función para mostrar el selector
+    function mostrarSelector() {
+        $('.selec_inicio').css('display', 'block');
+    }
+
+    // Función para ocultar el selector
+    function ocultarSelector() {
+        $('.selec_inicio').css('display', 'none');
+    }
+
+    // Cuando se hace clic en el botón con el ID "cerrar"
+    $("#cerrar").click(function () {
+        ocultarSelector();
+    });
+
+    // Cuando se hace clic en el botón "Empleado"
+    $("#empleadoButton").click(function () {
+        window.location.href = "login.html";
+    });
+
+    // Cuando se inicia la página, mostrar el selector después de 2000 ms (2 segundos)
+    setTimeout(mostrarSelector, 2000);
+});
+
+
 //Menu:
 $(document).ready(main);
 
@@ -50,6 +79,5 @@ $(document).ready(function () {
 
     $(".btn-abrir").click(showPopup); //cuando toque el carrito se abre
 
-    //setTimeout(showPopup, 2000); //lo ejecutaba apensa entraba 
-
 });
+
