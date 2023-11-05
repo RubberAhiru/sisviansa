@@ -34,8 +34,9 @@ $(document).ready(function () {
         window.location.href = "login.html";
     });
 
-    // Cuando se inicia la página, mostrar el selector después de 2000 ms (2 segundos)
-    setTimeout(mostrarSelector, 2000);
+    setTimeout(mostrarSelector, 2000); // Cuando se inicia la página, mostrar el selector después de 2000 ms (2 segundos)
+
+    $(".logo").click(mostrarSelector); //cuando toque el logo se abre
 });
 
 

@@ -1,204 +1,154 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style_emp_viandas.css" />
-    <link
-      rel="icon"
-      sizes="16x16 32x32 48x48"
-      type="imagen/png"
-      href="assets/recursos/logo_sisviansa.png"
-    />
 
-    <title>Viandas</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <img src="./assets/icons/icon_menu.svg" alt="menu" class="menu" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/css/style_emp_viandas.css" />
+  <link rel="icon" sizes="16x16 32x32 48x48" type="imagen/png" href="assets/recursos/logo_sisviansa.png" />
+  <script src="js/main.js"></script>
 
-        <div class="navbar-left">
-          <img
-            src="./assets/recursos/logo_sisviansa.png"
-            alt="logo"
-            class="logo"
-          />
+  <title>Viandas</title>
+</head>
 
-          <ul>
-            <li></li>
-            <li>
-              <a href="index.html">Inicio</a>
-            </li>
-            <li>
-              <a href="dietas.html">Dieta</a>
-            </li>
-            <li>
-              <a href="emp_viandas.html">Viandas</a>
-            </li>
-            <li>
-              <a href="nuevo.html">Nuevo</a>
-            </li>
-            <li>
-              <a href="nosotros.html">Nosotros</a>
-            </li>
-          </ul>
-        </div>
-        <div class="navbar-right">
-          <ul>
-            <li class="navbar-email">sisviansa@gmail.com</li>
-            <li class="navbar-shopping-cart">
-              <img
-                src="./assets/icons/icon_shopping_cart.svg"
-                alt="shopping cart"
-              />
-              <div>0</div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+<body>
+  <header>
+    <nav>
+      <img src="./assets/icons/icon_menu.svg" alt="menu" class="menu" />
 
-    <section>
-      <h2>ABM Viandas</h2>
+      <div class="navbar-left">
+        <img src="./assets/recursos/logo_sisviansa.png" alt="logo" class="logo" />
+
+        <ul>
+          <li></li>
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+          <li>
+            <a href="dietas.html">Dieta</a>
+          </li>
+          <li>
+            <a href="emp_viandas.html">Viandas</a>
+          </li>
+          <li>
+            <a href="nuevo.html">Nuevo</a>
+          </li>
+          <li>
+            <a href="nosotros.html">Nosotros</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-right">
+        <ul>
+          <li class="navbar-email">sisviansa@gmail.com</li>
+          <li class="navbar-shopping-cart">
+            <img src="./assets/icons/icon_shopping_cart.svg" alt="shopping cart" />
+            <div>0</div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+    <h2>ABM Viandas</h2>
+    <fieldset>
+      <input type="radio" name="TipoFormulario" class="form-check-input" value="alta" id="radioAlta" checked />
+      <label for="TipoFormulario">Alta</label>
+      <input type="radio" name="TipoFormulario" value="baja" id="radioBaja" />
+      <label for="TipoFormulario">Baja</label>
+      <input type="radio" name="TipoFormulario" value="modificar" id="radioModificar" />
+      <label for="TipoFormulario">Modificación</label>
+    </fieldset>
+    <form method="post" id="bloqueAlta">
+      <input type="hidden" name="accion" value="alta" />
       <fieldset>
-        <input
-          type="radio"
-          name="TipoFormulario"
-          class="form-check-input"
-          value="alta"
-          id="radioAlta"
-          checked
-        />
-        <label for="TipoFormulario">Alta</label>
-        <input type="radio" name="TipoFormulario" value="baja" id="radioBaja" />
-        <label for="TipoFormulario">Baja</label>
-        <input
-          type="radio"
-          name="TipoFormulario"
-          value="modificar"
-          id="radioModificar"
-        />
-        <label for="TipoFormulario">Modificación</label>
+        <legend>Agregar Vianda</legend>
+        <div>
+          <label for="nombre">Nombre</label>
+          <br />
+          <input type="text" id="nombre" value="" />
+          <br />
+          <label for="precioU">Precio</label>
+          <br />
+          <input type="text" id="precioU" pattern="" value="" />
+          <br />
+          <label for="tiempo">Tiempo de preparación</label>
+          <br />
+          <input type="text" id="tiempo" pattern="" value="" />
+          <br />
+          <div class="contenido-inputs" id="inputs-ingredientes">
+            <label>Contenido</label>
+            <div class="contenido-input">
+              <input class="ingrediente" type="text" id="ingrediente1" value="" placeholder="Ingrediente 1" />
+            </div>
+            <div class="contenido-input">
+              <input class="ingrediente" type="text" id="ingrediente2" value="" placeholder="Ingrediente 2" />
+            </div>
+            <div class="contenido-input">
+              <input class="ingrediente" type="text" id="ingrediente3" value="" placeholder="Ingrediente 3" />
+            </div>
+          </div>
+        </div>
+        <div>
+          <fieldset class="img">
+            <img src="assets/viandas/2.jpg" class="img" />
+          </fieldset>
+          <div class="contenido-botones">
+            <button class="secondary-button" id="agregar-ingrediente">
+              Agregar Ingrediente
+            </button>
+          </div>
+          <br />
+          <div class="contenido-botones">
+            <input type="submit" value="Agregar vianda" class="primary-button" />
+          </div>
+        </div>
       </fieldset>
-      <form method="post" id="bloqueAlta">
-        <input type="hidden" name="accion" value="alta" />
-        <fieldset>
-          <legend>Agregar Vianda</legend>
-          <div>
-            <label for="nombre">Nombre</label>
-            <br />
-            <input type="text" id="nombre" value="" />
-            <br />
-            <label for="precioU">Precio</label>
-            <br />
-            <input type="text" id="precioU" pattern="" value="" />
-            <br />
-            <label for="tiempo">Tiempo de preparación</label>
-            <br />
-            <input type="text" id="tiempo" pattern="" value="" />
-            <br />
-            <div class="contenido-inputs" id="inputs-ingredientes">
-              <label>Contenido</label>
-              <div class="contenido-input">
-                <input
-                  class="ingrediente"
-                  type="text"
-                  id="ingrediente1"
-                  value=""
-                  placeholder="Ingrediente 1"
-                />
-              </div>
-              <div class="contenido-input">
-                <input
-                  class="ingrediente"
-                  type="text"
-                  id="ingrediente2"
-                  value=""
-                  placeholder="Ingrediente 2"
-                />
-              </div>
-              <div class="contenido-input">
-                <input
-                  class="ingrediente"
-                  type="text"
-                  id="ingrediente3"
-                  value=""
-                  placeholder="Ingrediente 3"
-                />
-              </div>
-            </div>
-          </div>
-          <div>
-            <fieldset class="img">
-              <img src="assets/viandas/2.jpg" class="img" />
-            </fieldset>
-            <div class="contenido-botones">
-              <button class="secondary-button" id="agregar-ingrediente">
-                Agregar Ingrediente
-              </button>
-            </div>
-            <br />
-            <div class="contenido-botones">
-              <input
-                type="submit"
-                value="Agregar vianda"
-                class="primary-button"
-              />
-            </div>
-          </div>
-        </fieldset>
-      </form>
+    </form>
 
-      <br />
-      <form
-        action="../logica/controladorVianda.php"
-        id="bloqueBaja"
-        style="display: none"
-      >
-        <input type="hidden" name="accion" value="baja" />
-        <fieldset>
-          <legend>Eliminar Vianda</legend>
-          <div>
-            <label for="id_vianda">ID vianda</label>
-            <br />
-            <input type="text" maxlength="18" id="antes" value="" />
-          </div>
-          <div>
-            <fieldset class="img">
-              <img src="assets/viandas/2.jpg" class="img" />
-            </fieldset>
-          </div>
-        </fieldset>
-      </form>
-      <br />
-      <form
-        action="../logica/controladorVianda.php"
-        id="bloqueModificar"
-        style="display: none"
-      >
-        <input type="hidden" name="accion" value="modificacion" />
-        <fieldset>
-          <legend>Modificar Vianda</legend>
-          <div>
-            <label for="nom">Nombre</label>
-            <br />
-            <input type="text" id="nom" value="" />
-            <br />
-            <label for="despues">Nuevo nombre</label>
-            <br />
-            <input type="text" id="desp" value="" />
-          </div>
-          <div>
-            <fieldset class="img">
-              <img src="assets/viandas/2.jpg" class="img" />
-            </fieldset>
-          </div>
-        </fieldset>
-      </form>
-      <br />
-    </section>
-    <script src="./js/emp_viandas.js"></script>
-  </body>
+    <br />
+    <form action="../logica/controladorVianda.php" id="bloqueBaja" style="display: none">
+      <input type="hidden" name="accion" value="baja" />
+      <fieldset>
+        <legend>Eliminar Vianda</legend>
+        <div>
+          <label for="id_vianda">ID vianda</label>
+          <br />
+          <input type="text" maxlength="18" id="antes" value="" />
+        </div>
+        <div>
+          <fieldset class="img">
+            <img src="assets/viandas/2.jpg" class="img" />
+          </fieldset>
+        </div>
+      </fieldset>
+    </form>
+    <br />
+    <form action="../logica/controladorVianda.php" id="bloqueModificar" style="display: none">
+      <input type="hidden" name="accion" value="modificacion" />
+      <fieldset>
+        <legend>Modificar Vianda</legend>
+        <div>
+          <label for="nom">Nombre</label>
+          <br />
+          <input type="text" id="nom" value="" />
+          <br />
+          <label for="despues">Nuevo nombre</label>
+          <br />
+          <input type="text" id="desp" value="" />
+        </div>
+        <div>
+          <fieldset class="img">
+            <img src="assets/viandas/2.jpg" class="img" />
+          </fieldset>
+        </div>
+      </fieldset>
+    </form>
+    <br />
+  </section>
+  <script src="./js/emp_viandas.js"></script>
+</body>
+
 </html>
