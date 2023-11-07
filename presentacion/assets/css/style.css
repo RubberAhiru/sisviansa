@@ -579,7 +579,7 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   fieldset {
@@ -620,6 +620,9 @@ footer {
     margin-top: 120px;
     justify-content: center;
     position: absolute;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
 
   .pop-up {
@@ -632,5 +635,13 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .input_menues{
+    margin-top: 700px;
+    justify-content: center;
+    transform: none;
+  }
+  input{
+    margin-bottom: 10px;
   }
 }
