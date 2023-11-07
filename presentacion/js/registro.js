@@ -35,7 +35,7 @@ function ValidarDocumento() {
       inputDni.style.display = 'none';
       inputDni.disabled = true;
       inputPasaporte.style.display = 'none';
-      inputPasaporte.disabled= true;
+      inputPasaporte.disabled = true;
       inputCi.disabled = false;
       inputCi.style.display = 'inline-block';
     } else if (opcionSeleccionada.value === 'dni') {
@@ -52,7 +52,7 @@ function ValidarDocumento() {
       inputPasaporte.style.display = 'inline-block';
       inputDni.style.display = 'none';
       inputDni.disabled = true;
-    }  
+    }
   });
 }
 function validarCliente() {
@@ -82,7 +82,6 @@ function validarEmail(email) {
 
 function validarFormulario(event) {
   if (event.target.id === 'email' && !validarEmail(event.target.value)) {
-    console.log('entroo..1');
     mostrarAlerta('El email no es valido', event.target.parentElement);
     return;
   }

@@ -1,11 +1,15 @@
 //VARIABLES
 const btnVerMas = document.querySelector('#ver-mas');
 const viandas = document.getElementById('viandas');
+const btnAgregarViandas = document.querySelectorAll('.btn-carrito');
 let arrayViandas = [];
+
+let objArrayViandas = [];
 
 //EVENTOS
 btnVerMas.addEventListener('click', cargarViandas);
 
+//FETCH
 fetch('../persistencia/viandaJSON.php')
   .then((response) => response.json())
   .then((jsonData) => {
@@ -15,11 +19,12 @@ fetch('../persistencia/viandaJSON.php')
     cargarViandas(arrayViandas);
   });
 
+//FUNCIONES
 function mostrarViandas(viandasJSON) {
   // Crear un arreglo para almacenar el contenido de todas las viandas
   const viandasHTML = viandasJSON.map(
     (viandaActual) => `
-      <fieldset>
+      <fieldset id="vianda${viandaActual.id}">
         <legend>${viandaActual.nombre}</legend>
         <div>
           <fieldset class="img">
@@ -34,7 +39,7 @@ function mostrarViandas(viandasJSON) {
           <br>
           <span>Contenido: ${viandaActual.contenido}</span>
           <br>
-          <input class="botons" type="submit" value="Agregar al carrito">
+          <input class="botons btn-carrito" onclick="agregarCarrito(viandaActual)" type="submit" value="Agregar al carrito">
         </div>
       </fieldset>
     `
@@ -67,4 +72,24 @@ function cargarViandas(nuevasViandas) {
   if (cargarViandas.posicionActual >= nuevasViandas.length) {
     btnVerMas.setAttribute('disabled', true);
   }
+}
+
+function agregarCarrito(array) {
+  let vianda = {
+    id: array.id,
+    nombre: array.nombre,
+    tiempo: array.tiempo,
+    precio: array.precio,
+    imagen: array.imagen,
+    contenido: array.contenido,
+  };
+  objArrayViandas.push(vianda);
+  Swal.fire({
+    title: 'Añadiendo al carrito',
+    html: '../assets/icons/icon_shopping_cart.svg',
+    timer: 2000,
+    showConfirmButton: false,
+  });
+
+  localStorage.setItem('miCarrito', JSON.stringify(objArrayViandas));
 }
