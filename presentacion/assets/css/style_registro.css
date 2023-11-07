@@ -17,6 +17,7 @@ body {
   background-image: url('../recursos/fondo_hd.png');
   background-repeat: no-repeat;
   background-size: cover;
+  overflow-x: hidden;
 }
 nav {
   display: flex;
@@ -213,9 +214,12 @@ input:hover {
   .navbar-email {
     display: none;
   }
-
+  h2{
+    margin-top: 100px;
+  }
   fieldset {
     width: 300px;
+    margin-left: 80px;
   }
   form {
     width: 170px;

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/style_nosotros.css">
-  <script src="js/main.js"></script>
+  <script src="js/carrito.js"></script>
   <link rel="icon" sizes="16x16 32x32 48x48" type="imagen/png" href="assets/recursos/logo_sisviansa.png" />
   <title>Sobre Nosotros</title>
 </head>
@@ -28,9 +28,6 @@
           </li>&nbsp;
           <li>
             <a href="viandas.html">Viandas</a>
-          </li>&nbsp;
-          <li>
-            <a href="nuevo.html">Nuevo</a>
           </li>&nbsp;
           <li>
             <a href="nosotros.html">Nosotros</a>
@@ -63,7 +60,7 @@
             ng-if="!vm.contactForm.sending && !vm.contactForm.send">
             <div class="row">
               <div class="col-1">
-                <legend>Buzon de quejas o recomendaciones:</legend>
+                <legend class="buzon">Buzon de quejas o recomendaciones:</legend>
                 <div class="form-group">
                   <label>Nombre y Apellido</label>
                   <input type="text" ng-model="vm.contactForm.name"
@@ -91,15 +88,15 @@
                     placeholder="Comentarios" aria-invalid="false"></textarea>
                 </div>
               </div>
-              ::after
+
             </div>
             <div class="row">
               <div class="col-2">
-                <h3>Atención al cliente</h3>
+                <h5>Atención al cliente</h5>
                 <p>
-                  <i class="fa fa-envelope">::before</i>
+                  <i class="fa fa-envelope"></i>
                   "sisviansa@gmail.com"<br>
-                  <i class="fa fa-phone">::before</i>
+                  <i class="fa fa-phone"></i>
                   "26225497"
                 </p>
                 <p>
@@ -110,11 +107,9 @@
               <div class="col-1">
                 <input type="hidden" ng-model="vm.contactForm.type" ng-init="vm.contactForm.type ='contact'"
                   class="ng-pristine ng-untouched ng-valid ng-not-empty" aria-invalid="false">
-                <input type="submit" class="btn btn-lg pull-right" value="Enviar mensaje">
+                <input type="submit" class="botons" value="Enviar mensaje">
               </div>
-              ::after
             </div>
-            ::after
           </form>
         </div>
       </div>

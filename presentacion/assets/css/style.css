@@ -563,6 +563,7 @@ footer {
   nav {
     position: no-relative;
     display: flex;
+    justify-content: flex-start;
   }
 
   .menu {
@@ -576,7 +577,7 @@ footer {
   body {
     margin-bottom: 0;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
   }
@@ -586,13 +587,17 @@ footer {
   }
 
   form {
-    width: 170px;
+    width: 120px;
   }
 
-  .input {
-    position: center;
-  }
+  input {
+    position: center;   
+     width: 90px;
 
+  }
+.navbar-left{
+  display: none;
+}
   .form-login {
     width: 55vw;
     height: 35vh;
