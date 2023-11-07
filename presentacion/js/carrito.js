@@ -1,10 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const cantidadCarrito = document.getElementById('cantCarrito');
-
-  let articulosCarrito = JSON.parse(localStorage.getItem('miCarrito'));
-
-  cantidadCarrito.innerText = articulosCarrito.length + 1;
-});
+//VARIABLES
+const cantidadCarrito = document.getElementById('cantCarrito');
+let articulosCarrito = JSON.parse(localStorage.getItem('miCarrito'));
+document.addEventListener('DOMContentLoaded', mostrarCantidad);
 
 //Carrito:
 $(document).ready(function () {
@@ -20,3 +17,8 @@ $(document).ready(function () {
 
   $('.btn-abrir').click(showPopup); //cuando toque el carrito se abre
 });
+
+//FUNCIONES
+function mostrarCantidad() {
+  cantidadCarrito.innerText = articulosCarrito.length + 1;
+}
