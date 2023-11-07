@@ -245,6 +245,7 @@ label {
   display: flex;
   justify-content: space-between;
 }
+
 h2 {
   color: var(--bordo);
   font-style: oblique;
@@ -284,7 +285,6 @@ h1 {
   color: var(--bordo);
   opacity: 0.7;
 }
-
 
 /* VENTANA MODAL */
 .btn-abrir {
@@ -420,8 +420,8 @@ h1 {
   margin-bottom: 30px;
 }
 
-.precio_total{
-  margin-left:-32px;
+.precio_total {
+  margin-left: -32px;
   width: 25vw;
   padding: 15px;
   border: none;
@@ -471,7 +471,6 @@ h1 {
   opacity: 1;
 }
 
-
 /*pedidos_dentro_del_carrito*/
 .cantidad {
   border: none;
@@ -488,14 +487,14 @@ h1 {
   height: 40px;
   margin-left: 80px;
   margin-bottom: 10px;
-  flex: 1;/*ocupa todo el espacio disponible horizontalmente*/
+  flex: 1; /*ocupa todo el espacio disponible horizontalmente*/
   display: flex; /* Los elementos dentro de la lista se alinearán horizontalmente */
   /*margin: 10px 0; /* Agrega un margen entre las listas */
   align-items: center;
   padding: 10px;
   border-color: var(--hospital-green);
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, .1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   box-sizing: border-box;
   overflow: hidden;
@@ -505,7 +504,7 @@ h1 {
 .input-cant {
   width: 30px;
   height: 26px;
-  border: 1PX solid rgba(10, 1, 1, 0.267);
+  border: 1px solid rgba(10, 1, 1, 0.267);
   border-radius: 2px;
   background-color: var(--text-input-field);
 }
@@ -619,7 +618,6 @@ footer {
   text-align: center;
   opacity: 0.5;
 }
-
 
 @media only screen and (max-width: 980px) {
   .pop-up-title {
