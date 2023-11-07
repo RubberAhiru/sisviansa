@@ -14,7 +14,7 @@ body {
   margin-top: 80px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  background-image: url('../recursos/fondo_Sisviansa.png');
+  background-image: url('../recursos/fondo_Sisviansa.webp');
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: fixed; /*para que el fondo me quede fijo ;)*/
@@ -244,6 +244,8 @@ label {
   margin-right: 15px;
   display: flex;
   justify-content: space-between;
+  border: 2px solid var(--bordo);
+  border-radius: 4px;
 }
 
 h2 {

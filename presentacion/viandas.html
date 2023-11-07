@@ -1,180 +1,224 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style_viandas.css" />
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/carrito.js"></script>
+    <link
+      rel="icon"
+      sizes="16x16 32x32 48x48"
+      type="imagen/png"
+      href="assets/recursos/logo_sisviansa.png"
+    />
+    <title>Viandas</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/css/style_viandas.css" />
-  <script src="js/jquery-3.5.1.min.js"></script>
-  <script src="js/carrito.js"></script>
-  <link rel="icon" sizes="16x16 32x32 48x48" type="imagen/png" href="assets/recursos/logo_sisviansa.png" />
-  <title>Viandas</title>
-</head>
+  <body>
+    <header>
+      <nav>
+        <img src="./assets/icons/icon_menu.svg" alt="menu" class="menu" />
 
-<body>
-  <header>
-    <nav>
-      <img src="./assets/icons/icon_menu.svg" alt="menu" class="menu" />
+        <div class="navbar-left">
+          <img
+            src="./assets/recursos/logo_sisviansa.png"
+            alt="logo"
+            class="logo"
+            title="cambiar de usuario"
+          />
 
-      <div class="navbar-left">
-        <img src="./assets/recursos/logo_sisviansa.png" alt="logo" class="logo" title="cambiar de usuario" />
-
-        <ul>
-          <li></li>
-          <li>
-            <a href="index.html">Inicio</a>
-          </li>
-          &nbsp;
-          <li>
-            <a href="dietas.html">Dietas</a>
-          </li>
-          &nbsp;
-          <li>
-            <a href="viandas.html">Viandas</a>
-          </li>
-          &nbsp;
-          <li>
-            <a href="nosotros.html">Nosotros</a>
-          </li>
-        </ul>
-      </div>
-      <!--login-->
-      <div class="navbar-right">
-        <ul>
-          <li>
-            <input class="control" type="email" name="usuario" id="usuario" placeholder="n° cliente o correo" />
-          </li>
-          &nbsp;
-          <li>
-            <input class="control" type="password" name="contrasenia" id="contrasenia" placeholder="*******" />
-          </li>
-          &nbsp;
-          <li><input class="botons" type="submit" value="Ingresar" /></li>
-          &nbsp;
-          <!--<li class="navbar-email">sisviansa@gmail.com</li>-->
-          <p><a href="registro.html">Registrarse</a></p>
-          &nbsp;
-          <li class="navbar-shopping-cart">
-            <!--<button type="image" class="btn-abrir" img src="./assets/icons/icon_shopping_cart.svg" alt="shopping cart"></button>-->
-            <button type="button" class="btn-abrir">
-              <img img src="./assets/icons/icon_shopping_cart.svg" alt="shopping cart" />
-            </button>
-            <div>0</div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Selector_de_Inicio -->
-    <div class="selec_inicio">
-      <div class="selector">
-        <p class="us">Usuario</p>
-        <button class="transp" id="cerrar">Cliente</button>
-        <button class="transp" id="empleadoButton">Empleado</button>
-      </div>
-    </div>
-
-    <!--POP-UP/Modal/Carrito-->
-    <div class="pop-up">
-      <div class="pop-up-wrap">
-        <div class="pop-up-title">
-          <h2>Sisviansa</h2>
-          <p>Sistema de viandas saludables.</p>
-          <!--<a href="#"><img src="assets/icons/icons-play-button.svg" alt=""></a>-->
-          <a href="#"><img src="assets/icons/icons-facebook.svg" alt="" /></a>
-          <a href="#"><img src="assets/icons/icons-instagram.svg" alt="" /></a>
+          <ul>
+            <li></li>
+            <li>
+              <a href="index.html">Inicio</a>
+            </li>
+            &nbsp;
+            <li>
+              <a href="dietas.html">Dietas</a>
+            </li>
+            &nbsp;
+            <li>
+              <a href="viandas.html">Viandas</a>
+            </li>
+            &nbsp;
+            <li>
+              <a href="nosotros.html">Nosotros</a>
+            </li>
+          </ul>
         </div>
-        <div class="pedido">
-          <div class="line"></div>
-          <i class="cerrar" id="close">[x]</i>
-          <div class="sub-content">
-            <h2>Su pedido:</h2>
-            <p>Agregar, eliminar o medificar tu carrito a voluntad :D</p>
-            <div class="box">
-              <form>
-                <div class="carrito">
-                  <input type="hidden" name="cantidad" class="cantidad" />
-                  <button type="button" class="menos" label="Quitar una unidad">
-                    <span> - </span><!--usas el span para rellenar algo, en este caso el resultado de la cuenta-->
-                  </button>
-                  <input rows="1" class="input-cant" />
-                  <button type="button" class="mas" label="Agregar una unidad">
-                    <span>+</span>
-                  </button>
-                  <button>img</button>
-                  <label for=""> nombre</label>
-                  <div class="precio">
-                    <input type="text" class="precio" placeholder="$" />
-                  </div>
-                  <button class="eliminar">x</button>
-                </div>
-                <!--ejemplo 2 (hay que eliminarlo cuando hagas que se generen mas solos Agustin)-->
-                <div class="carrito">
-                  <input type="hidden" name="cantidad" class="cantidad" />
-                  <button type="button" class="menos" label="Quitar una unidad">
-                    <span> - </span>
-                  </button>
-                  <input rows="1" class="input-cant" />
-                  <button type="button" class="mas" label="Agregar una unidad">
-                    <span>+</span>
-                  </button>
-                  <button>img</button>
-                  <label for=""> nombre</label>
-                  <div class="precio">
-                    <input type="text" class="precio" placeholder="$" />
-                  </div>
-                  <button class="eliminar">x</button>
-                </div>
-                <br />
-                <hr />
-                <p>Total: $</p>
-                <input type="text" class="precio_total" placeholder="$" />
-                <button class="pagar" type="submit">Pagar</button>
-              </form>
-            </div>
+        <!--login-->
+        <div class="navbar-right">
+          <ul>
+            <li>
+              <input
+                class="control"
+                type="email"
+                name="usuario"
+                id="usuario"
+                placeholder="n° cliente o correo"
+              />
+            </li>
+            &nbsp;
+            <li>
+              <input
+                class="control"
+                type="password"
+                name="contrasenia"
+                id="contrasenia"
+                placeholder="*******"
+              />
+            </li>
+            &nbsp;
+            <li><input class="botons" type="submit" value="Ingresar" /></li>
+            &nbsp;
+            <!--<li class="navbar-email">sisviansa@gmail.com</li>-->
+            <p><a href="registro.html">Registrarse</a></p>
+            &nbsp;
+            <li class="navbar-shopping-cart">
+              <!--<button type="image" class="btn-abrir" img src="./assets/icons/icon_shopping_cart.svg" alt="shopping cart"></button>-->
+              <button type="button" class="btn-abrir">
+                <img
+                  img
+                  src="./assets/icons/icon_shopping_cart.svg"
+                  alt="shopping cart"
+                />
+              </button>
+              <div id="cantCarrito"></div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Selector_de_Inicio -->
+      <div class="selec_inicio">
+        <div class="selector">
+          <p class="us">Usuario</p>
+          <button class="transp" id="cerrar">Cliente</button>
+          <button class="transp" id="empleadoButton">Empleado</button>
+        </div>
+      </div>
+
+      <!--POP-UP/Modal/Carrito-->
+      <div class="pop-up">
+        <div class="pop-up-wrap">
+          <div class="pop-up-title">
+            <h2>Sisviansa</h2>
+            <p>Sistema de viandas saludables.</p>
+            <!--<a href="#"><img src="assets/icons/icons-play-button.svg" alt=""></a>-->
+            <a href="#"><img src="assets/icons/icons-facebook.svg" alt="" /></a>
+            <a href="#"
+              ><img src="assets/icons/icons-instagram.svg" alt=""
+            /></a>
+          </div>
+          <div class="pedido">
             <div class="line"></div>
+            <i class="cerrar" id="close">[x]</i>
+            <div class="sub-content">
+              <h2>Su pedido:</h2>
+              <p>Agregar, eliminar o medificar tu carrito a voluntad :D</p>
+              <div class="box">
+                <form>
+                  <div class="carrito">
+                    <input type="hidden" name="cantidad" class="cantidad" />
+                    <button
+                      type="button"
+                      class="menos"
+                      label="Quitar una unidad"
+                    >
+                      <span> - </span
+                      ><!--usas el span para rellenar algo, en este caso el resultado de la cuenta-->
+                    </button>
+                    <input rows="1" class="input-cant" />
+                    <button
+                      type="button"
+                      class="mas"
+                      label="Agregar una unidad"
+                    >
+                      <span>+</span>
+                    </button>
+                    <button>img</button>
+                    <label for=""> nombre</label>
+                    <div class="precio">
+                      <input type="text" class="precio" placeholder="$" />
+                    </div>
+                    <button class="eliminar">x</button>
+                  </div>
+                  <!--ejemplo 2 (hay que eliminarlo cuando hagas que se generen mas solos Agustin)-->
+                  <div class="carrito">
+                    <input type="hidden" name="cantidad" class="cantidad" />
+                    <button
+                      type="button"
+                      class="menos"
+                      label="Quitar una unidad"
+                    >
+                      <span> - </span>
+                    </button>
+                    <input rows="1" class="input-cant" />
+                    <button
+                      type="button"
+                      class="mas"
+                      label="Agregar una unidad"
+                    >
+                      <span>+</span>
+                    </button>
+                    <button>img</button>
+                    <label for=""> nombre</label>
+                    <div class="precio">
+                      <input type="text" class="precio" placeholder="$" />
+                    </div>
+                    <button class="eliminar">x</button>
+                  </div>
+                  <br />
+                  <hr />
+                  <p>Total: $</p>
+                  <input type="text" class="precio_total" placeholder="$" />
+                  <button class="pagar" type="submit">Pagar</button>
+                </form>
+              </div>
+              <div class="line"></div>
+            </div>
           </div>
         </div>
       </div>
+    </header>
+
+    <div class="colum" id="dieta">
+      <h1>Ordenar por dieta</h1>
+      <hr />
+      <input type="checkbox" /> <label>clasicos</label><br />
+      <input type="checkbox" /> <label>mediterranea</label><br />
+      <input type="checkbox" /> <label>celiacos</label><br />
+      <input type="checkbox" /> <label>sin-carboidratos</label><br />
+      <input type="checkbox" /> <label>sin-sal</label><br />
+      <input type="checkbox" /> <label>vegetariana</label><br />
+      <input type="checkbox" /> <label>veganos</label><br />
+      <input type="checkbox" /> <label>crudiveganos</label><br />
+      <input type="checkbox" /> <label>flexivegetariana</label><br />
+      <input type="checkbox" /> <label>pescetariana</label><br />
+      <input type="checkbox" /> <label>apivegetariana</label><br />
+      <input type="checkbox" /> <label>lactovegetariana</label><br />
+      <input type="checkbox" /> <label>ovovegetariana</label><br />
+      <input type="checkbox" /> <label>ovolactovegetariana</label><br /><br />
+      <input class="botons" type="submit" value="Buscar" />
     </div>
-  </header>
 
-  <div class="colum" id="dieta">
-    <h1>Ordenar por dieta</h1>
-    <hr />
-    <input type="checkbox" /> <label>clasicos</label><br />
-    <input type="checkbox" /> <label>mediterranea</label><br />
-    <input type="checkbox" /> <label>celiacos</label><br />
-    <input type="checkbox" /> <label>sin-carboidratos</label><br />
-    <input type="checkbox" /> <label>sin-sal</label><br />
-    <input type="checkbox" /> <label>vegetariana</label><br />
-    <input type="checkbox" /> <label>veganos</label><br />
-    <input type="checkbox" /> <label>crudiveganos</label><br />
-    <input type="checkbox" /> <label>flexivegetariana</label><br />
-    <input type="checkbox" /> <label>pescetariana</label><br />
-    <input type="checkbox" /> <label>apivegetariana</label><br />
-    <input type="checkbox" /> <label>lactovegetariana</label><br />
-    <input type="checkbox" /> <label>ovovegetariana</label><br />
-    <input type="checkbox" /> <label>ovolactovegetariana</label><br /><br />
-    <input class="botons" type="submit" value="Buscar" />
-  </div>
+    <section>
+      <h2>Listado de Viandas</h2>
+      <div id="viandas" class="grid-contenedor"></div>
+      <button id="ver-mas" class="botons">Ver mas</button>
+      <br />
+    </section>
 
-  <section>
-    <h2>Listado de Viandas</h2>
-    <div id="viandas" class="grid-contenedor"></div>
-    <button id="ver-mas" class="botons">Ver mas</button>
-    <br />
-  </section>
+    <footer>
+      <b>Empresa de alimentos SISVIANSA sisviansa@gmail.com 093301602.</b>
+      <img src="./assets/recursos/isotipo.png" height="55px" width="55" />
+      <b
+        >Pagina web creada por Rubber Ahiru &copy;<br />
+        Todos los derechos reservados
+      </b>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <footer>
-    <b>Empresa de alimentos SISVIANSA sisviansa@gmail.com 093301602.</b>
-    <img src="./assets/recursos/isotipo.png" height="55px" width="55" />
-    <b>Pagina web creada por Rubber Ahiru &copy;<br />
-      Todos los derechos reservados
-    </b>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-  <script src="js/viandas.js"></script>
-</body>
-
+    <script src="js/viandas.js"></script>
+  </body>
 </html>

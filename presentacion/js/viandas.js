@@ -26,7 +26,7 @@ function mostrarViandas(viandasJSON) {
     <fieldset id="vianda${viandaActual.id}">
       <legend>${viandaActual.nombre}</legend>
       <div>
-        <div class="img">
+        <div >
           <img src="assets/viandas/${viandaActual.imagen}" class="img">
         </div>
       </div>
