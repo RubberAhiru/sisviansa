@@ -22,7 +22,7 @@ body {
   box-sizing: border-box;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  background-image: url("../recursos/fondo_Sisviansa.png");
+  background-image: url("../recursos/fondo_Sisviansa.webp");
   /*uso .. porque la carpeta esta atras*/
   background-repeat: no-repeat;
   background-size: contain;
@@ -366,7 +366,7 @@ h5 {
   font-size: 18px;
   cursor: pointer;
   margin-bottom: 20px;
-  transition: .25s ease background;
+  transition: .25s ease background-color;
 }
 
 .pagar:hover {
@@ -492,7 +492,7 @@ h5 {
   height: 100%;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1;
+  z-index: 5;
 }
 
 /* Estilo para el contenedor del modal */

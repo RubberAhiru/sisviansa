@@ -14,10 +14,11 @@ body {
   margin-top: 80px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  background-image: url('../recursos/fondo_Sisviansa.png');
+  background-image: url('../recursos/fondo_Sisviansa.webp');
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: fixed; /*para que el fondo me quede fijo ;)*/
+  background-color: rgba(255, 255, 255, 0.9);
 }
 nav {
   display: flex;
@@ -140,6 +141,17 @@ nav {
 .input-password {
   margin-bottom: 22px;
 }
+fieldset:hover {
+  background-color: lightgreen;
+}
+
+input:focus {
+  background-color: rgb(238, 188, 113);
+}
+
+input:hover {
+  background-color: rgba(15, 22, 119, 0.5);
+}
 .primary-button,
 .secondary-button {
   display: inline-block;
@@ -151,13 +163,17 @@ nav {
   font-size: var(--md);
   font-weight: bold;
 
-  text-transform: uppercase;
 }
 .primary-button {
   background-color: var(--hospital-green);
+  text-transform: uppercase;
 }
 .secondary-button {
   background-color: var(--blue);
+  width: 50px;
+  height: 50px;
+  margin-left: 60px;
+  opacity: 0.5;
 }
 
 .login-button {
@@ -309,9 +325,9 @@ label {
   .input {
     position: center;
   }
+
 }
 
-/*saghksahj*/
 
 /* Estilos para el diseño del formulario */
 #bloqueAlta {
