@@ -116,63 +116,12 @@
               <h2>Su pedido:</h2>
               <p>Agregar, eliminar o medificar tu carrito a voluntad :D</p>
               <div class="box">
-                <form>
-                  <div class="carrito">
-                    <input type="hidden" name="cantidad" class="cantidad" />
-                    <button
-                      type="button"
-                      class="menos"
-                      label="Quitar una unidad"
-                    >
-                      <span> - </span
-                      ><!--usas el span para rellenar algo, en este caso el resultado de la cuenta-->
-                    </button>
-                    <input rows="1" class="input-cant" />
-                    <button
-                      type="button"
-                      class="mas"
-                      label="Agregar una unidad"
-                    >
-                      <span>+</span>
-                    </button>
-                    <button>img</button>
-                    <label for=""> nombre</label>
-                    <div class="precio">
-                      <input type="text" class="precio" placeholder="$" />
-                    </div>
-                    <button class="eliminar">x</button>
-                  </div>
-                  <!--ejemplo 2 (hay que eliminarlo cuando hagas que se generen mas solos Agustin)-->
-                  <div class="carrito">
-                    <input type="hidden" name="cantidad" class="cantidad" />
-                    <button
-                      type="button"
-                      class="menos"
-                      label="Quitar una unidad"
-                    >
-                      <span> - </span>
-                    </button>
-                    <input rows="1" class="input-cant" />
-                    <button
-                      type="button"
-                      class="mas"
-                      label="Agregar una unidad"
-                    >
-                      <span>+</span>
-                    </button>
-                    <button>img</button>
-                    <label for=""> nombre</label>
-                    <div class="precio">
-                      <input type="text" class="precio" placeholder="$" />
-                    </div>
-                    <button class="eliminar">x</button>
-                  </div>
-                  <br />
-                  <hr />
-                  <p>Total: $</p>
-                  <input type="text" class="precio_total" placeholder="$" />
-                  <button class="pagar" type="submit">Pagar</button>
-                </form>
+                <div id="carrito"></div>
+                <br />
+                <hr />
+                <p>Total: $</p>
+                <input type="text" class="precio_total" placeholder="$" />
+                <button class="pagar" type="submit">Pagar</button>
               </div>
               <div class="line"></div>
             </div>

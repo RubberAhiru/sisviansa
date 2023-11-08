@@ -1,7 +1,11 @@
 //VARIABLES
-const cantidadCarrito = document.getElementById('cantCarrito');
+const cantidadCarrito = document.querySelector('#cantCarrito');
+const carrito = document.querySelector('#carrito');
 let articulosCarrito = JSON.parse(localStorage.getItem('miCarrito'));
-document.addEventListener('DOMContentLoaded', mostrarCantidad);
+document.addEventListener('DOMContentLoaded', () => {
+  mostrarCantidad();
+  productosCarrito(articulosCarrito);
+});
 
 //Carrito:
 $(document).ready(function () {
@@ -20,5 +24,42 @@ $(document).ready(function () {
 
 //FUNCIONES
 function mostrarCantidad() {
-  cantidadCarrito.innerText = articulosCarrito.length + 1;
+  cantidadCarrito.innerText = articulosCarrito.length;
+}
+
+function productosCarrito(arrayProductos) {
+  const productosHTML = arrayProductos.map(
+    (productoActual) => `
+    <div class="carrito" >
+    <input type="hidden" name="cantidad" class="cantidad" />
+                    <button
+                      type="button"
+                      class="menos"
+                      label="Quitar una unidad"
+                    >
+                      <span> - </span
+                      ><!--usas el span para rellenar algo, en este caso el resultado de la cuenta-->
+                    </button>
+                    <input type="number" "rows="1" class="input-cant" value="1"/>
+                    <button
+                      type="button"
+                      class="mas"
+                      label="Agregar una unidad"
+                    >
+                      <span>+</span>
+                    </button>
+                    
+                    <img src="assets/viandas/${productoActual.imagen}"  class="img-carrito">
+                    <label for=""> ${productoActual.nombre}</label>
+                    <div class="precio">
+                      <span>$${productoActual.precio}</span>
+                    </div>
+                    <button class="eliminar">x</button>
+                    </div>
+                    `
+  );
+
+  // Unir todas las viandas en una sola cadena
+  const contenidoHTML = productosHTML.join(''); // Asignar el contenido HTML al elemento viandas una sola vez
+  carrito.innerHTML = contenidoHTML;
 }
