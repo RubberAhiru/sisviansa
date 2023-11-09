@@ -1,68 +1,49 @@
 <?php
 
-require 'cliente-persona.php';
-require 'cliente-empresa.php';
+require 'funciones.php';
+require 'clientePersona.php';
+require 'clienteEmpresa.php';
+include '../persistencia/clienteDAO.php';
+include '../persistencia/clientePersonaDAO.php';
+include '../persistencia/clienteEmpresaDAO.php';
 
 //Tipos de datos que cliente-persona y cliente-empresa tienen en comun
 //nroCliente Es un dato autoincrement en la bd
-$email = $_POST['email'];
-$cont  = $_POST['contrasenia'];
-$tel   = $_POST['telefono'];
-$calle = $_POST['calle'];
-$nCalle  = $_POST['numerocalle'];
-$barr  = $_POST['barrio'];
-
-$valido = false;
+$email  = $_POST['email'];
+$cont   = $_POST['contrasenia'];
+$tel    = $_POST['telefono'];
+$calle  = $_POST['calle'];
+$nCalle = $_POST['numerocalle'];
+$barr   = $_POST['barrio'];
 
 
-if( ($_POST['insert']) == 'cliente-persona' ){
+if (($_POST['insert']) == 'cliente-persona') {
     //////////////////////////////insert para cliente persona/////////////////////////////////////
     //tipos de datos de cliente-persona
-    $nom   = $_POST['nombre'];
-    $ape   = $_POST['apellido'];
-    $nroDoc  = $_POST['nrodocumento'];
+    $nom = $_POST['nombre'];
+    $ape = $_POST['apellido'];
+    $nroDoc = $_POST['nrodocumento'];
     $tipoDoc = $_POST['tipodocumento'];
 
-
-    //comprueba que todos los campos esten llenos
-    if( 
-        !empty(trim($email)) && !empty(trim($cont))  && !empty(trim($tel))   && !empty(trim($calle)) &&
-        !empty(trim($nCalle))  && !empty(trim($barr))  && !empty(trim($nom)) && !empty(trim($ape)) &&
-        !empty(trim($nroDoc)) && !empty(trim($tipoDoc))
-    ){
-        //VALIDACION
-            //comprueba que cada campo contenga los caracteres correspondientes
-        if( //correo electronico 
-            ( is_string($email) && filter_var($email, FILTER_VALIDATE_EMAIL) ) &&
-            //contrasenia
-            ( is_string($cont)  && strlen($cont)>6 ) &&
-            //calle
-            ( is_string($calle) && preg_match("/[a-zA-Z ]+/", $calle) ) &&
-            //numero de calle
-            ( is_numeric($nCalle) && filter_var($nCalle, FILTER_VALIDATE_INT) ) &&
-            //numero de telefono
-            ( is_numeric($tel)  && preg_match("/[0-9]/", $tel) ) &&
-            //barrio
-            ( is_string($barr)  && preg_match("/[a-zA-Z ]+/", $barr) ) &&
-            //nombre
-            ( is_string($nom)   && preg_match("/[a-zA-Z ]+/", $nom) ) &&
-            //apellido
-            ( is_string($ape)   && preg_match("/[a-zA-Z ]+/", $ape) ) &&
-            //numero de documento
-            ( is_numeric($nroDoc)  && preg_match("/[0-9]/", $nroDoc) ) &&
-            //tipo de documento
-            ( is_string($tipoDoc)  && preg_match("/[a-zA-Z ]+/", $tipoDoc) )
-        ){
-            $valido = true;
-        }else{
-            //error  
+    $camposLlenos;
+    //Verfica que cada campo no este vacio
+    foreach ($_POST as $campos) {
+        if (!empty(trim($campos))) {
+            $camposLlenos = true;
+        } else {
+            $camposLlenos = false;
         }
     }
 
-    //si la validacion fue exitosa la variable $valido sera true y se procedera a crear el objeto
-    if($valido){
-        $persona = new Persona();
+    //Guarda en variable datosValidos el resultado que da la invocacion de la funcion validaPersona (true o false)
+    $datosValidos = validaPersona($email, $cont, $calle, $nCalle, $tel, $barr, $nom, $ape, $nroDoc, $tipoDoc);
 
+    //VALIDACION
+    //comprueba que todos los campos esten llenos y si los datos ingresados son validos
+    if ($camposLlenos && $datosValidos) {
+        //crea objeto Persona
+        $persona = new Persona();
+        //setea atributos al objeto
         $persona->setEmail($email);
         $persona->setContrasenia($cont);
         $persona->setTelefono($tel);
@@ -74,49 +55,41 @@ if( ($_POST['insert']) == 'cliente-persona' ){
         $persona->setNroDocumento($nroDoc);
         $persona->setTipoDocumento($tipoDoc);
 
+        //crea objeto clientePersonaDAO
+        $insertPersona = new clientePersonaDAO();
         //Invoca a la funcion guardar, para realizar los inserts a la base de datos
-        $persona->guardar();
+        $insertPersona->guardar( $persona->getEmail(), $persona->getContrasenia(), $persona->getTelefono(),
+            $persona->getCalle(), $persona->getNumCalle(), $persona->getBarrio(), $persona->getNombre(),
+            $persona->getApellido(), $persona->getNroDocumento(), $persona->getTipoDocumento() );
+    }else{
+        //echo "N";
     }
-    
-}else if( ($_POST['insert']) == 'cliente-empresa' ){
+
+} else if (($_POST['insert']) == 'cliente-empresa') {
     //////////////////////////////insert para cliente empresa/////////////////////////////////////
     //tipos de datos de cliente-empresa
     $rut = $_POST['rut'];
     $rSocial = $_POST['razon-social'];
 
-    //comprueba que todos los campos esten llenos
-    if( 
-        !empty(trim($email)) && !empty(trim($cont))  && !empty(trim($tel))   && !empty(trim($calle)) &&
-        !empty(trim($nCalle))  && !empty(trim($barr))  && !empty(trim($rut)) && !empty(trim($rSocial))
-    ){      
-        //VALIDACION
-            //comprueba que cada campo contenga los caracteres correspondientes
-        if( 
-            //correo electronico 
-            ( is_string($email) && filter_var($email, FILTER_VALIDATE_EMAIL) ) &&
-            //contrasenia
-            ( is_string($cont)  && strlen($cont)>6 ) &&
-            //calle
-            ( is_string($calle) && preg_match("/[a-zA-Z ]+/", $calle) ) &&
-            //numero de calle
-            ( is_numeric($nCalle) && filter_var($nCalle, FILTER_VALIDATE_INT) ) &&
-            //numero de telefono
-            ( is_numeric($tel)  && preg_match("/[0-9]/", $tel) ) &&
-            //barrio
-            ( is_string($barr)  && preg_match("/[a-zA-Z ]+/", $barr) ) &&
-            //rut
-            ( is_numeric($rut)  && preg_match("/[0-9]/", $rut) ) &&
-            //razon social
-            ( is_string($rSocial)  && preg_match("/[a-zA-Z ]+/", $rSocial) )
-        ){
-            $valido = true;
-        }else{
-            //error
+    $camposLlenos;
+
+    foreach ($_POST as $campos) {
+
+        if (!empty(trim($campos))) {
+            $camposLlenos = true;
+        } else {
+            $camposLlenos = false;
         }
     }
 
-    //si la validacion fue exitosa la variable $valido sera true y se procedera a crear el objeto
-    if($valido){
+
+    $datosValidos = validaEmpresa($email, $cont, $calle, $nCalle, $tel, $barr, $rut, $rSocial);
+
+    //comprueba que todos los campos esten llenos
+    if ($camposLlenos && $datosValidos) {
+
+        echo "SI";
+
         $empresa = new Empresa();
 
         $empresa->setEmail($email);
@@ -128,7 +101,28 @@ if( ($_POST['insert']) == 'cliente-persona' ){
         $empresa->setRut($rut);
         $empresa->setRazonSocial($rSocial);
 
-        //Invoca a la funcion guardar, para realizar los inserts a la base de datos
-        $empresa->guardar();
+        $insertEmpresa = new clienteEmpresaDAO();
+        $insertEmpresa->guardar(
+            $empresa->getEmail(), $empresa->getContrasenia(), $empresa->getTelefono(), $empresa->getCalle(),
+            $empresa->getNumCalle(), $empresa->getBarrio(), $empresa->getRut(), $empresa->getRazonSocial()
+        );
+
+    } else {
+        //echo "NO";
     }
+
+} else if (($_POST['login']) == 'cliente-persona') {
+    
+    $usu = $_POST['usuario'];
+    $con = $_POST['contrasenia'];
+    $clienteLogin = new clienteDAO();
+    $login = $clienteLogin->login($usu, $con);
+
+    if ($login) {
+        session_start();
+        //session_destroy();
+        $_SESSION['usuario'] = $usu;
+        var_dump($_SESSION);
+    }
+
 }
