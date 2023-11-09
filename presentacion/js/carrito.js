@@ -34,8 +34,9 @@ function productosCarrito(arrayProductos) {
     <input type="hidden" name="cantidad" class="cantidad" />
                     <button
                       type="button"
-                      class="menos"
+                      class="cantidad"
                       label="Quitar una unidad"
+                      name='cantidad'
                     >
                       <span> - </span
                       ><!--usas el span para rellenar algo, en este caso el resultado de la cuenta-->
@@ -43,7 +44,8 @@ function productosCarrito(arrayProductos) {
                     <input type="number" "rows="1" class="input-cant" value="1"/>
                     <button
                       type="button"
-                      class="mas"
+                      class="cantidad"
+                      name='cantidad'
                       label="Agregar una unidad"
                     >
                       <span>+</span>
@@ -63,3 +65,4 @@ function productosCarrito(arrayProductos) {
   const contenidoHTML = productosHTML.join(''); // Asignar el contenido HTML al elemento viandas una sola vez
   carrito.innerHTML = contenidoHTML;
 }
+function modificarCantidad() {}

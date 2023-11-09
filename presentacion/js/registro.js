@@ -1,4 +1,5 @@
 //VARIABLES
+const formulario = document.querySelector('#formulario');
 const opcionSeleccionada = document.querySelector('#documento');
 const formularioSeleccionado = document.getElementsByName('TipoFormulario');
 const email = document.querySelector('#email');
@@ -7,14 +8,15 @@ const password = document.querySelector('#password');
 const repetirPassword = document.querySelector('#password2');
 const btnSubmit = document.querySelector('#btnSubmit');
 const insertCliente = document.querySelector('#insertCliente');
-
+const InputsEmpresa = document.querySelectorAll('#empresa input');
+const InputsPersona = document.querySelectorAll('#persona input');
 const inputsPassword = document.querySelectorAll(
   '#formulario input[type="password"]'
 );
+
 //EVENTOS
 document.addEventListener('DOMContentLoaded', () => {
   validarCliente();
-  ValidarDocumento();
 });
 inputsPassword.forEach((campo) => {
   campo.addEventListener('keyup', validarFormulario);
@@ -22,6 +24,15 @@ inputsPassword.forEach((campo) => {
 
 inputs.forEach((inputActual) => {
   inputActual.addEventListener('input', validarFormulario);
+});
+
+formulario.addEventListener('submit', (e) => {
+  inputs.forEach((inputActual) => {
+    if (inputActual.value === '' && !inputActual.disabled) {
+      mostrarAlerta(`Falta rellenar campos`, e.target.parentElement);
+      e.preventDefault();
+    }
+  });
 });
 
 //FUNCIONES
@@ -63,16 +74,26 @@ function validarCliente() {
   formularioSeleccionado.forEach((bloqueSeleccionado) => {
     bloqueSeleccionado.addEventListener('change', function () {
       if (radioEmpresa.checked) {
-        empresa.setAttribute('style', 'display: block');
-        persona.setAttribute('style', 'display: none');
+        empresa.style.display = 'block';
+        persona.style.display = 'none';
         insertCliente.value = 'cliente-empresa';
+
+        // Deshabilitar campos de persona y habilitar campos de empresa
+        InputsPersona.forEach((input) => (input.disabled = true));
+        InputsEmpresa.forEach((input) => (input.disabled = false));
       } else {
-        persona.setAttribute('style', 'display: block');
-        empresa.setAttribute('style', 'display: none');
+        persona.style.display = 'block';
+        empresa.style.display = 'none';
         insertCliente.value = 'cliente-persona';
+
+        // Deshabilitar campos de empresa y habilitar campos de persona
+        InputsEmpresa.forEach((input) => (input.disabled = true));
+        InputsPersona.forEach((input) => (input.disabled = false));
       }
     });
   });
+
+  ValidarDocumento();
 }
 function validarEmail(email) {
   const regexEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
@@ -83,20 +104,16 @@ function validarEmail(email) {
 function validarFormulario(event) {
   if (event.target.id === 'email' && !validarEmail(event.target.value)) {
     mostrarAlerta('El email no es valido', event.target.parentElement);
-    return;
   }
   if (event.target.value.trim() === '') {
     mostrarAlerta(
       `El campo ${event.target.id} es obligatorio`,
       event.target.parentElement
     );
-
-    return;
   }
 
   if (password.value != repetirPassword.value) {
     mostrarAlerta(`Las contraseñas no coinciden`, event.target.parentElement);
-    return;
   }
 
   limpiarAlerta(event.target.parentElement);
@@ -118,5 +135,3 @@ function mostrarAlerta(mensaje, referencia) {
   //Agrega el error al formulario
   referencia.appendChild(error);
 }
-
-function enviarRegistro(event) {}
