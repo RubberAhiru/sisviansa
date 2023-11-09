@@ -13,12 +13,12 @@ class Cliente
     protected $calle;
     protected $numCalle;
     protected $barrio;
-    protected $conex;
+    //protected $conex;
 
     //Constructor
     protected function __construct()
     {
-        $this->conex = BaseDeDatos::conectar();
+        //$this->conex = BaseDeDatos::conectar();
     }
 
     //Setters
@@ -32,7 +32,7 @@ class Cliente
     }
     public function setContrasenia($cont)
     {
-        $this->contrasenia = $cont;
+        $this->contrasenia = password_hash($cont, PASSWORD_BCRYPT, ['cost' => 4]);
     }
     public function setTelefono($tel)
     {
@@ -63,8 +63,9 @@ class Cliente
     public function getContrasenia()
     {
         return $this->contrasenia;
+        //password_hash($this->contrasenia, PASSWORD_BCRYPT, ['cost' => 4]
     }
-    public function getTel()
+    public function getTelefono()
     {
         return $this->telefono;
     }
