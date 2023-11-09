@@ -8,8 +8,8 @@ const password = document.querySelector('#password');
 const repetirPassword = document.querySelector('#password2');
 const btnSubmit = document.querySelector('#btnSubmit');
 const insertCliente = document.querySelector('#insertCliente');
-const InputsEmpresa = document.querySelectorAll('#empresa input');
-const InputsPersona = document.querySelectorAll('#persona input');
+const inputsEmpresa = document.querySelectorAll('#empresa input[type="text"]');
+const inputsPersona = document.querySelectorAll('#persona input[type="text"]');
 const inputsPassword = document.querySelectorAll(
   '#formulario input[type="password"]'
 );
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   validarCliente();
 });
 inputsPassword.forEach((campo) => {
-  campo.addEventListener('keyup', validarFormulario);
+  campo.addEventListener('input', validarFormulario);
 });
 
 inputs.forEach((inputActual) => {
@@ -70,7 +70,7 @@ function validarCliente() {
   let persona = document.querySelector('#bloquePersona');
   let empresa = document.querySelector('#bloqueEmpresa');
   let radioEmpresa = document.querySelector('#radioEmpresa');
-
+  let radioPersona = document.querySelector('#radioPersona');
   formularioSeleccionado.forEach((bloqueSeleccionado) => {
     bloqueSeleccionado.addEventListener('change', function () {
       if (radioEmpresa.checked) {
@@ -79,16 +79,16 @@ function validarCliente() {
         insertCliente.value = 'cliente-empresa';
 
         // Deshabilitar campos de persona y habilitar campos de empresa
-        InputsPersona.forEach((input) => (input.disabled = true));
-        InputsEmpresa.forEach((input) => (input.disabled = false));
-      } else {
+        inputsPersona.forEach((input) => (input.disabled = true));
+        inputsEmpresa.forEach((input) => (input.disabled = false));
+      } else if (radioPersona.checked) {
         persona.style.display = 'block';
         empresa.style.display = 'none';
         insertCliente.value = 'cliente-persona';
 
         // Deshabilitar campos de empresa y habilitar campos de persona
-        InputsEmpresa.forEach((input) => (input.disabled = true));
-        InputsPersona.forEach((input) => (input.disabled = false));
+        inputsEmpresa.forEach((input) => (input.disabled = true));
+        inputsPersona.forEach((input) => (input.disabled = false));
       }
     });
   });
@@ -97,23 +97,37 @@ function validarCliente() {
 }
 function validarEmail(email) {
   const regexEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-  const resultado = regexEmail.test(email);
-  return resultado;
+  return regexEmail.test(email);
+}
+
+function validarCedulaUruguaya(cedula) {
+  const expresionRegular = /^\d{6,7}-?\d$/;
+  return expresionRegular.test(cedula);
 }
 
 function validarFormulario(event) {
   if (event.target.id === 'email' && !validarEmail(event.target.value)) {
     mostrarAlerta('El email no es valido', event.target.parentElement);
+    return;
   }
   if (event.target.value.trim() === '') {
     mostrarAlerta(
       `El campo ${event.target.id} es obligatorio`,
       event.target.parentElement
     );
+    return;
   }
 
   if (password.value != repetirPassword.value) {
     mostrarAlerta(`Las contraseñas no coinciden`, event.target.parentElement);
+    return;
+  }
+  if (
+    event.target.id === 'InputCi' &&
+    !validarCedulaUruguaya(event.target.value)
+  ) {
+    mostrarAlerta('La cedula no es valida', event.target.parentElement);
+    return;
   }
 
   limpiarAlerta(event.target.parentElement);
