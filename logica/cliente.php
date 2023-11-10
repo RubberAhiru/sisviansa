@@ -11,12 +11,11 @@ class Cliente
     protected $calle;
     protected $numCalle;
     protected $barrio;
-    //protected $conex;
 
     //Constructor
     protected function __construct()
     {
-        //$this->conex = BaseDeDatos::conectar();
+        
     }
 
     //Setters
