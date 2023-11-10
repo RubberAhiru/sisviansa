@@ -1,7 +1,5 @@
 <?php
 
-include '../persistencia/conexion.php';
-
 
 class Cliente
 {
