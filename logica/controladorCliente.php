@@ -71,6 +71,7 @@ if (($_POST['insert']) == 'cliente-persona') {
     $rut = $_POST['rut'];
     $rSocial = $_POST['razon-social'];
 
+
     $camposLlenos;
 
     foreach ($_POST as $campos) {
@@ -111,7 +112,7 @@ if (($_POST['insert']) == 'cliente-persona') {
         //echo "NO";
     }
 
-} else if (($_POST['login']) == 'cliente-persona') {
+} else if (($_POST['login']) == 'cliente') {
     
     $usu = $_POST['usuario'];
     $con = $_POST['contrasenia'];
