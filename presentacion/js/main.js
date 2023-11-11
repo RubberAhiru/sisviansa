@@ -1,17 +1,29 @@
-//VARIABLES
+////VARIABLES
 const ingresar = document.querySelector('#ingresar');
+let username;
 
 //EVENTOS
-ingresar.addEventListener('click', validarLogin());
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('../persistencia/usuarioJSON.php')
+    .then((response) => response.json())
+    .then((jsonUser) => {
+      username = jsonUser;
+      guardarUsuario(username);
+      mostrarUsuario();
+    });
+
+  ingresar.addEventListener('click', (e) => {
+    e.preventDefault();
+    validarLogin();
+  });
+});
 
 //FUNCIONES
+
 function validarLogin() {
   const usuario = document.querySelector('#usuario');
   const contrasenia = document.querySelector('#contrasenia');
-  let user = {
-    usuario: '',
-    contrasenia: '',
-  };
 
   if (usuario.value.trim() === '') {
     Swal.fire({
@@ -21,6 +33,7 @@ function validarLogin() {
       showConfirmButton: false,
       timer: 2000,
     });
+    return;
   } else if (contrasenia.value.trim() === '') {
     Swal.fire({
       position: 'top-end',
@@ -29,20 +42,26 @@ function validarLogin() {
       showConfirmButton: false,
       timer: 2000,
     });
+    return;
   }
-  user.usuario = usuario.value;
-  user.contrasenia = contrasenia.value;
+}
+function guardarUsuario(user) {
+  if (user !== null) {
+    usuario = JSON.stringify(user);
 
-  Swal.fire({
-    position: 'top-end',
-    icon: 'success',
-    title: 'Logeado con exito!!',
-    showConfirmButton: false,
-    timer: 2000,
-  });
+    localStorage.setItem('miUsuario', usuario);
 
-  localStorage.setItem('miUsuario', JSON.stringify(user));
-  return;
+    return;
+  }
+}
+function mostrarUsuario() {
+  const nombreUsuario = document.querySelector('#mostrarUsuario');
+  const formUsuario = document.querySelector('formUser');
+
+  let usuarioLocal = JSON.parse(localStorage.getItem('miUsuario'));
+
+  nombreUsuario.innerHTML = usuarioLocal;
+  formUsuario.style.display = 'none';
 }
 
 //Selector_de_Inicio:
