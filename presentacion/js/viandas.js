@@ -10,7 +10,7 @@ let objArrayViandas = [];
 btnVerMas.addEventListener('click', cargarViandas);
 
 //FETCH
-fetch('../persistencia/viandaJSON.php')
+fetch('../persistencia/json/viandaJSON.php')
   .then((response) => response.json())
   .then((jsonData) => {
     //Utilizar jSON
