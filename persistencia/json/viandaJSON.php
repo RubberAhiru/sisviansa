@@ -1,6 +1,6 @@
 <?php
 
-include 'viandaDAO.php';
+include '../dao/viandaDAO.php';
 
 $viandaDAO = new ViandaDAO();
 $contenido = $viandaDAO->listarTodas();

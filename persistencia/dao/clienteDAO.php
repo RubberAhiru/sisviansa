@@ -1,5 +1,7 @@
 <?php
 
+include_once('../conexion.php');
+
 class clienteDAO
 {
     private $conex;

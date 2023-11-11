@@ -1,6 +1,6 @@
 <?php
 
-include_once('conexion.php');
+include_once('../persistencia/conexion.php');
 
 class clientePersonaDAO
 {
