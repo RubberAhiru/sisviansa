@@ -5,7 +5,7 @@ let username;
 //EVENTOS
 
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('../persistencia/usuarioJSON.php')
+  fetch('../persistencia/json/usuarioJSON.php')
     .then((response) => response.json())
     .then((jsonUser) => {
       username = jsonUser;
