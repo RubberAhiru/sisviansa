@@ -3,9 +3,9 @@
 require 'funciones.php';
 require 'clientePersona.php';
 require 'clienteEmpresa.php';
-include '../persistencia/clienteDAO.php';
-include '../persistencia/clientePersonaDAO.php';
-include '../persistencia/clienteEmpresaDAO.php';
+include '../persistencia/dao/clienteDAO.php';
+include '../persistencia/dao/clientePersonaDAO.php';
+include '../persistencia/dao/clienteEmpresaDAO.php';
 
 //Tipos de datos que cliente-persona y cliente-empresa tienen en comun
 //nroCliente Es un dato autoincrement en la bd
@@ -113,7 +113,7 @@ if (($_POST['insert']) == 'cliente-persona') {
     }
 
 } else if (($_POST['login']) == 'cliente') {
-    
+    echo "login";
     $usu = $_POST['usuario'];
     $con = $_POST['contrasenia'];
     $clienteLogin = new clienteDAO();
