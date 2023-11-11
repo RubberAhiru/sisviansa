@@ -17,7 +17,7 @@ $nCalle = $_POST['numerocalle'];
 $barr   = $_POST['barrio'];
 
 
-if (($_POST['insert']) == 'cliente-persona') {
+if (($_POST['accion']) == 'insert-cliente-persona') {
     //////////////////////////////insert para cliente persona/////////////////////////////////////
     //tipos de datos de cliente-persona
     $nom = $_POST['nombre'];
@@ -65,7 +65,7 @@ if (($_POST['insert']) == 'cliente-persona') {
         //echo "N";
     }
 
-} else if (($_POST['insert']) == 'cliente-empresa') {
+} else if (($_POST['accion']) == 'insert-cliente-empresa') {
     //////////////////////////////insert para cliente empresa/////////////////////////////////////
     //tipos de datos de cliente-empresa
     $rut = $_POST['rut'];
@@ -112,7 +112,7 @@ if (($_POST['insert']) == 'cliente-persona') {
         //echo "NO";
     }
 
-} else if (($_POST['login']) == 'cliente') {
+} else if (($_POST['accion']) == 'login') {
     echo "login";
     $usu = $_POST['usuario'];
     $con = $_POST['contrasenia'];
