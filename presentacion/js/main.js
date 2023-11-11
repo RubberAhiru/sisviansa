@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((jsonUser) => {
       username = jsonUser;
       guardarUsuario(username);
+      console.log('first');
       mostrarUsuario();
     });
 
@@ -56,12 +57,14 @@ function guardarUsuario(user) {
 }
 function mostrarUsuario() {
   const nombreUsuario = document.querySelector('#mostrarUsuario');
-  const formUsuario = document.querySelector('formUser');
-
+  const formUsuario = document.querySelector('#formUser');
   let usuarioLocal = JSON.parse(localStorage.getItem('miUsuario'));
-
-  nombreUsuario.innerHTML = usuarioLocal;
-  formUsuario.style.display = 'none';
+  if (usuarioLocal !== null) {
+    nombreUsuario.innerHTML = usuarioLocal;
+    formUsuario.style.display = 'none';
+    console.log('no es null');
+  }
+  console.log('es null');
 }
 
 //Selector_de_Inicio:
