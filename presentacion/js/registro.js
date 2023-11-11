@@ -76,7 +76,7 @@ function validarCliente() {
       if (radioEmpresa.checked) {
         empresa.style.display = 'block';
         persona.style.display = 'none';
-        insertCliente.value = 'cliente-empresa';
+        insertCliente.value = 'insert-cliente-empresa';
 
         // Deshabilitar campos de persona y habilitar campos de empresa
         inputsPersona.forEach((input) => (input.disabled = true));
@@ -84,7 +84,7 @@ function validarCliente() {
       } else if (radioPersona.checked) {
         persona.style.display = 'block';
         empresa.style.display = 'none';
-        insertCliente.value = 'cliente-persona';
+        insertCliente.value = 'insert-cliente-persona';
 
         // Deshabilitar campos de empresa y habilitar campos de persona
         inputsEmpresa.forEach((input) => (input.disabled = true));
