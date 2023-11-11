@@ -146,9 +146,9 @@ h2{
 }
 
 footer {
+  margin-bottom:0;
+  margin-top: 50%;
   background-color: var(--black);
-  margin-bottom: 0;
-  bottom: 0;
   width: 100vw;
   height: 100px;
   color: gray;

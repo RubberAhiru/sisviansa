@@ -190,11 +190,9 @@ nav {
 
 form {
   border-color: #acd9b2;
-  width: 30vw;
-  height: 65vh;
-  /*margin-top: 110px;
-  margin-left: 100px;
-  margin-right: 50px;*/
+  width: 10px;
+  height: 65px;
+  margin-bottom: 10px;
 }
 
 h5 {
