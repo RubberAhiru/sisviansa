@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mostrarUsuario();
     });
 
-  ingresar.addEventListener('click', (e) => {
+  ingresar.addEventListener('submit', (e) => {
     e.preventDefault();
     validarLogin();
   });
@@ -28,7 +28,7 @@ function validarLogin() {
 
   if (usuario.value.trim() === '') {
     Swal.fire({
-      position: 'top-end',
+      position: 'center',
       icon: 'error',
       title: 'El usuario no puede estar vacio',
       showConfirmButton: false,
@@ -37,7 +37,7 @@ function validarLogin() {
     return;
   } else if (contrasenia.value.trim() === '') {
     Swal.fire({
-      position: 'top-end',
+      position: 'center',
       icon: 'error',
       title: 'La contraseña no puede estar vacia',
       showConfirmButton: false,
@@ -47,11 +47,20 @@ function validarLogin() {
   }
 }
 function guardarUsuario(user) {
-  if (user !== null) {
+  if (user !== null && user !== 'usuario incorrecto') {
     usuario = JSON.stringify(user);
 
     localStorage.setItem('miUsuario', usuario);
 
+    return;
+  } else if (user === 'usuario incorrecto') {
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Usuario y/o contraseña incorrectos',
+      showConfirmButton: false,
+      timer: 2000,
+    });
     return;
   }
 }
@@ -60,11 +69,16 @@ function mostrarUsuario() {
   const formUsuario = document.querySelector('#formUser');
   let usuarioLocal = JSON.parse(localStorage.getItem('miUsuario'));
   if (usuarioLocal !== null) {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Logueado con exito!',
+      showConfirmButton: false,
+      timer: 2000,
+    });
     nombreUsuario.innerHTML = usuarioLocal;
     formUsuario.style.display = 'none';
-    console.log('no es null');
   }
-  console.log('es null');
 }
 
 //Selector_de_Inicio:
