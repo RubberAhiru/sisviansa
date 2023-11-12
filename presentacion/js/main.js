@@ -9,18 +9,33 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((response) => response.json())
     .then((jsonUser) => {
       username = jsonUser;
-      guardarUsuario(username);
-      console.log('first');
+
       mostrarUsuario();
     });
 
-  ingresar.addEventListener('submit', (e) => {
+  ingresar.addEventListener('click', (e) => {
     e.preventDefault();
+    usuarioIncorrecto(username);
     validarLogin();
   });
 });
 
 //FUNCIONES
+
+function usuarioIncorrecto(usuario) {
+  if (usuario === 'usuario incorrecto') {
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Usuario y/o contraseña incorrectos',
+      showConfirmButton: false,
+      timer: 2000,
+    });
+
+    console.log('usuario incorrecto');
+    return;
+  }
+}
 
 function validarLogin() {
   const usuario = document.querySelector('#usuario');
@@ -34,6 +49,7 @@ function validarLogin() {
       showConfirmButton: false,
       timer: 2000,
     });
+    console.log('usuario vacio');
     return;
   } else if (contrasenia.value.trim() === '') {
     Swal.fire({
@@ -52,15 +68,6 @@ function guardarUsuario(user) {
 
     localStorage.setItem('miUsuario', usuario);
 
-    return;
-  } else if (user === 'usuario incorrecto') {
-    Swal.fire({
-      position: 'center',
-      icon: 'error',
-      title: 'Usuario y/o contraseña incorrectos',
-      showConfirmButton: false,
-      timer: 2000,
-    });
     return;
   }
 }
