@@ -537,6 +537,10 @@ h5 {
   box-shadow: 0px 0px 8px #ffffffa4;
 }
 
+.eleccion_menu{
+  margin-top: 35%;
+}
+
 footer {
   background-color: var(--black);
   margin-bottom: 0;
