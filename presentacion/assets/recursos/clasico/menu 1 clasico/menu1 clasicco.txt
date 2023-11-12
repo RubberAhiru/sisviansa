@@ -1,6 +1,0 @@
-MENU 1 CLASICO:
--magret de pato con salsa
--macarrones con tuco
--estofado de carne y verduras
--espagueti con tuco
--milanesas de carne con ensalada

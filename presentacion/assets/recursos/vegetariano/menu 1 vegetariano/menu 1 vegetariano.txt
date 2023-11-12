@@ -1,6 +1,0 @@
-menu 1 vegetariano:
--tortilla de calabacín y cebolla
--pastel de verduras
--berenjenas con tomate y queso al horno
--colifror rebozadas crujientes
--hamburguesa de lentejas y arroz

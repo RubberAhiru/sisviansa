@@ -1,6 +1,0 @@
-menu 3 clasico:
--ensalada de brócoli, atún y manzana
--tarta de atún y ricota
--milanesa de carne con papas fritas y ensalada
--pizza con chorizo, jamón y queso
--pescado con salsa de mango

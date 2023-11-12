@@ -1,6 +1,0 @@
-menu 2 vegano:
--albóndigas de lentejas con salsa de miso
--fideos con verduras
--cheesecake vegano
--tortilla de papas vegana
--hamburguesa de garbanzos vegana
