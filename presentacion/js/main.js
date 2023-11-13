@@ -1,5 +1,6 @@
 ////VARIABLES
 const ingresar = document.querySelector('#ingresar');
+const btnCerrarSesion = document.querySelector('cerrar-usuario');
 let username;
 
 //EVENTOS
@@ -85,7 +86,16 @@ function mostrarUsuario() {
     });
     nombreUsuario.innerHTML = usuarioLocal;
     formUsuario.style.display = 'none';
+    btnCerrarSesion.style.display = 'inline-block';
+    cerrarSesion();
   }
+}
+
+function cerrarSesion() {
+  btnCerrarSesion.addEventListener('click', () => {
+    localStorage.removeItem('miUsuario');
+    localStorage.removeItem('miCarrito');
+  });
 }
 
 //Selector_de_Inicio:

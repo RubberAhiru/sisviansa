@@ -27,7 +27,7 @@ function mostrarViandas(viandasJSON) {
       <legend>${viandaActual.nombre}</legend>
       <div>
         <div >
-          <img src="assets/viandas/${viandaActual.imagen}" class="img">
+          <img src="assets/recursos/viandas/${viandaActual.imagen}" class="img">
         </div>
       </div>
       <div>
