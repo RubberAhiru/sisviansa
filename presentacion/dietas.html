@@ -1,184 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/style_dietas.css" />
-    <script src="js/main.js"></script>
-    <link
-      rel="icon"
-      sizes="16x16 32x32 48x48"
-      type="imagen/png"
-      href="assets/recursos/logo_sisviansa.png"
-    />
-    <title>Dietas</title>
-  </head>
 
-  <body>
-    <header>
-      <nav>
-        <img src="./assets/icons/icon_menu.svg" alt="menu" class="menu" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/style_dietas.css" />
+  <script src="js/main.js"></script>
+  <link rel="icon" sizes="16x16 32x32 48x48" type="imagen/png" href="assets/iconos/logo_sisviansa.png" />
+  <title>Dietas</title>
+</head>
 
-        <div class="navbar-left">
-          <img
-            src="./assets/recursos/logo_sisviansa.png"
-            alt="logo"
-            class="logo"
-          />
+<body>
+  <header>
+    <nav>
+      <img src="./assets/iconos/icon_menu.svg" alt="menu" class="menu" />
 
-          <ul>
-            <li></li>
-            <li>
-              <a href="index.html">Inicio</a>
-            </li>
-            &nbsp;
-            <li>
-              <a href="dietas.html">Dietas</a>
-            </li>
-            &nbsp;
-            <li>
-              <a href="viandas.html">Viandas</a>
-            </li>
-            &nbsp;
-            <li>
-              <a href="nosotros.html">Nosotros</a>
-            </li>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="navbar-left">
+        <img src="./assets/iconos/logo_sisviansa.png" alt="logo" class="logo" />
 
-            <!--login-->
-            <li>
-              <input
-                class="control"
-                type="email"
-                name="usuario"
-                id="usuario"
-                placeholder="abc@example.com"
-              />
-            </li>
-            &nbsp;
-            <li>
-              <input
-                class="control"
-                type="password"
-                name="contrasenia"
-                id="contrasenia"
-                placeholder="*******"
-              />
-            </li>
-            &nbsp;
-            <li><input class="botons" type="submit" value="Ingresar" /></li>
-            &nbsp;
-            <!--<li class="navbar-email">sisviansa@gmail.com</li>-->
-            <p><a href="registro.html">Registrarse</a></p>
-            &nbsp;
-            <li class="navbar-shopping-cart">
-              <img
-                src="./assets/icons/icon_shopping_cart.svg"
-                alt="shopping cart"
-              />
-              <div id="cantCarrito"></div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <br />
-    </header>
+        <ul>
+          <li></li>
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+          &nbsp;
+          <li>
+            <a href="dietas.html">Dietas</a>
+          </li>
+          &nbsp;
+          <li>
+            <a href="viandas.html">Viandas</a>
+          </li>
+          &nbsp;
+          <li>
+            <a href="nosotros.html">Nosotros</a>
+          </li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-    <section>
-      <h2>Dietas:</h2>
-      <ul>
-        <li>Clasica (omnivora)</li>
-        <li>Sin sal</li>
-        <li>Celiaca</li>
-        <li>Mediterranea</li>
-        <li>Vegetariana</li>
-        <li>Vegana</li>
-        <li>Crudivegano</li>
-        <li>Flexivegetarianos</li>
-        <li>Pescetarianos</li>
-        <li>Apivegetariano</li>
-        <li>Lactovegetariano</li>
-        <li>Ovovegetariano</li>
-        <li>Ovolactovegetariano</li>
-      </ul>
+          <!--login-->
+          <li>
+            <input class="control" type="email" name="usuario" id="usuario" placeholder="abc@example.com" />
+          </li>
+          &nbsp;
+          <li>
+            <input class="control" type="password" name="contrasenia" id="contrasenia" placeholder="*******" />
+          </li>
+          &nbsp;
+          <li><input class="botons" type="submit" value="Ingresar" /></li>
+          &nbsp;
+          <!--<li class="navbar-email">sisviansa@gmail.com</li>-->
+          <p><a href="registro.html">Registrarse</a></p>
+          &nbsp;
+          <li class="navbar-shopping-cart">
+            <img src="./assets/iconos/icon_shopping_cart.svg" alt="shopping cart" />
+            <div id="cantCarrito"></div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br />
+  </header>
 
-      <fieldset>
-        <p>Clasica:</p>
-        Incluye alimentos vegetales y animales. Seguir este tipo de alimentación
-        de manera equilibrada aporta todos los nutrientes necesarios y
-        contribuye a la salud. Desde el punto de vista nutricional, la
-        importancia de consumir carnes deriva de sus proteínas porque son de
-        alta calidad. Esto se debe a que contienen los nueve aminoácidos
-        esenciales que nuestro cuerpo no puede producir, que necesita y que no
-        los tiene otro alimento.
-      </fieldset>
-      <fieldset>
-        <p>Sin sal:</p>
-        Comidas sin sal para hipertensos, el tratamiento dietético de la HTA
-        consiste en una dieta rica en verduras, frutas,legumbres,pescado,aceite
-        de oliva y alimentos que contienen poca grasa.
-      </fieldset>
-      <fieldset>
-        <p>Celiaca:</p>
-        El gluten y la gliadina son proteínas que se encuentran en ciertos
-        cereales y productos que contienen estos alimentos. Estas proteínas son
-        tóxicas para las células dentro del tracto intestinal de un individuo
-        que es «intolerante» y causan dificultad en la absorción de alimentos.
-        La enfermedad celíaca es causada por la intolerancia a estas proteínas.
-      </fieldset>
-      <fieldset>
-        <p>Mediterranea:</p>
-        De origen vegetal, consta de cereales integrales, verduras, legumbres,
-        frutas, frutos secos, semillas, hierbas y especias.
-      </fieldset>
-      <fieldset>
-        <p>Vegetariana:</p>
-        Cuando las personas piensan en una dieta vegetariana, normalmente creen
-        que no incluye carne de vaca, pollo o pescado. Pero las dietas
-        vegetarianas varían en cuanto a los alimentos que incluyen y excluyen
-      </fieldset>
-      <fieldset>
-        <p>Vegana:</p>
-        Que no incluyen ningún alimento de origen animal.
-      </fieldset>
-      <fieldset>
-        <p>Crudivegano:</p>
-        Alimentos crudos de origen vegetal (excluye todo alimento vegetal que
-        para consumirse necesiten ser sometidos a cocción).
-      </fieldset>
-      <fieldset>
-        <p>Flexivegetarianos:</p>
-        Tambien conocido como semivegano es una dieta que puede incluir un poco
-        de carne ocacionalmente.
-      </fieldset>
-      <fieldset>
-        <p>Pescetarianos:</p>
-        Incluyendo en pequeñas porciones carne de pescado y camarones.
-      </fieldset>
-      <fieldset>
-        <p>Apivegetariano:</p>
-        No consumen lácteos ni huevos pero sí miel.
-      </fieldset>
-      <fieldset>
-        <p>Lactovegetariano:</p>
-        incluyen leche y sus derivados (sin huevo o miel).
-      </fieldset>
-      <fieldset>
-        <p>Ovovegetariano:</p>
-        incluyen huevo.
-      </fieldset>
-      <fieldset>
-        <p>Ovolactovegetariano:</p>
-        incluye lácteos y huevo, pero no miel.
-      </fieldset>
-    </section>
-    <footer>
-      <b>Empresa de alimentos SISVIANSA sisviansa@gmail.com 093301602.</b>
-      <img src="./assets/recursos/isotipo.png" height="55px" width="55" />
-      <b
-        >Pagina web creada por Rubber Ahiru &copy;<br />
-        Todos los derechos reservados
-      </b>
-    </footer>
-  </body>
+  <section>
+    <h2>Dietas:</h2>
+    <ul>
+      <li>Clasica (omnivora)</li>
+      <li>Sin sal</li>
+      <li>Celiaca</li>
+      <li>Mediterranea</li>
+      <li>Vegetariana</li>
+      <li>Vegana</li>
+      <li>Crudivegano</li>
+      <li>Flexivegetarianos</li>
+      <li>Pescetarianos</li>
+      <li>Apivegetariano</li>
+      <li>Lactovegetariano</li>
+      <li>Ovovegetariano</li>
+      <li>Ovolactovegetariano</li>
+    </ul>
+
+    <fieldset>
+      <p>Clasica:</p>
+      Incluye alimentos vegetales y animales. Seguir este tipo de alimentación
+      de manera equilibrada aporta todos los nutrientes necesarios y
+      contribuye a la salud. Desde el punto de vista nutricional, la
+      importancia de consumir carnes deriva de sus proteínas porque son de
+      alta calidad. Esto se debe a que contienen los nueve aminoácidos
+      esenciales que nuestro cuerpo no puede producir, que necesita y que no
+      los tiene otro alimento.
+    </fieldset>
+    <fieldset>
+      <p>Sin sal:</p>
+      Comidas sin sal para hipertensos, el tratamiento dietético de la HTA
+      consiste en una dieta rica en verduras, frutas,legumbres,pescado,aceite
+      de oliva y alimentos que contienen poca grasa.
+    </fieldset>
+    <fieldset>
+      <p>Celiaca:</p>
+      El gluten y la gliadina son proteínas que se encuentran en ciertos
+      cereales y productos que contienen estos alimentos. Estas proteínas son
+      tóxicas para las células dentro del tracto intestinal de un individuo
+      que es «intolerante» y causan dificultad en la absorción de alimentos.
+      La enfermedad celíaca es causada por la intolerancia a estas proteínas.
+    </fieldset>
+    <fieldset>
+      <p>Mediterranea:</p>
+      De origen vegetal, consta de cereales integrales, verduras, legumbres,
+      frutas, frutos secos, semillas, hierbas y especias.
+    </fieldset>
+    <fieldset>
+      <p>Vegetariana:</p>
+      Cuando las personas piensan en una dieta vegetariana, normalmente creen
+      que no incluye carne de vaca, pollo o pescado. Pero las dietas
+      vegetarianas varían en cuanto a los alimentos que incluyen y excluyen
+    </fieldset>
+    <fieldset>
+      <p>Vegana:</p>
+      Que no incluyen ningún alimento de origen animal.
+    </fieldset>
+    <fieldset>
+      <p>Crudivegano:</p>
+      Alimentos crudos de origen vegetal (excluye todo alimento vegetal que
+      para consumirse necesiten ser sometidos a cocción).
+    </fieldset>
+    <fieldset>
+      <p>Flexivegetarianos:</p>
+      Tambien conocido como semivegano es una dieta que puede incluir un poco
+      de carne ocacionalmente.
+    </fieldset>
+    <fieldset>
+      <p>Pescetarianos:</p>
+      Incluyendo en pequeñas porciones carne de pescado y camarones.
+    </fieldset>
+    <fieldset>
+      <p>Apivegetariano:</p>
+      No consumen lácteos ni huevos pero sí miel.
+    </fieldset>
+    <fieldset>
+      <p>Lactovegetariano:</p>
+      incluyen leche y sus derivados (sin huevo o miel).
+    </fieldset>
+    <fieldset>
+      <p>Ovovegetariano:</p>
+      incluyen huevo.
+    </fieldset>
+    <fieldset>
+      <p>Ovolactovegetariano:</p>
+      incluye lácteos y huevo, pero no miel.
+    </fieldset>
+  </section>
+  <footer>
+    <b>Empresa de alimentos SISVIANSA sisviansa@gmail.com 093301602.</b>
+    <img src="./assets/iconos/isotipo.png" height="55px" width="55" />
+    <b>Pagina web creada por Rubber Ahiru &copy;<br />
+      Todos los derechos reservados
+    </b>
+  </footer>
+</body>
+
 </html>

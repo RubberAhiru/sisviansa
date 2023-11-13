@@ -1,190 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/style_nosotros.css" />
-    <script src="js/carrito.js"></script>
-    <link
-      rel="icon"
-      sizes="16x16 32x32 48x48"
-      type="imagen/png"
-      href="assets/recursos/logo_sisviansa.png"
-    />
-    <title>Sobre Nosotros</title>
-  </head>
 
-  <body>
-    <header>
-      <nav>
-        <img src="./assets/icons/icon_menu.svg" alt="menu" class="menu" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/style_nosotros.css" />
+  <script src="js/carrito.js"></script>
+  <link rel="icon" sizes="16x16 32x32 48x48" type="imagen/png" href="assets/iconos/logo_sisviansa.png" />
+  <title>Sobre Nosotros</title>
+</head>
 
-        <div class="navbar-left">
-          <img
-            src="./assets/recursos/logo_sisviansa.png"
-            alt="logo"
-            class="logo"
-          />
+<body>
+  <header>
+    <nav>
+      <img src="./assets/iconos/icon_menu.svg" alt="menu" class="menu" />
 
-          <ul>
-            <li></li>
-            <li>
-              <a href="index.html">Inicio</a>
-            </li>
-            &nbsp;
-            <li>
-              <a href="dietas.html">Dietas</a>
-            </li>
-            &nbsp;
-            <li>
-              <a href="viandas.html">Viandas</a>
-            </li>
-            &nbsp;
-            <li>
-              <a href="nosotros.html">Nosotros</a>
-            </li>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="navbar-left">
+        <img src="./assets/iconos/logo_sisviansa.png" alt="logo" class="logo" />
 
-            <!--login-->
-            <li>
-              <input
-                class="control"
-                type="email"
-                name="usuario"
-                id="usuario"
-                placeholder="abc@example.com"
-              />
-            </li>
-            &nbsp;
-            <li>
-              <input
-                class="control"
-                type="password"
-                name="contrasenia"
-                id="contrasenia"
-                placeholder="*******"
-              />
-            </li>
-            &nbsp;
-            <li><input class="botons" type="submit" value="Ingresar" /></li>
-            &nbsp;
-            <!--<li class="navbar-email">sisviansa@gmail.com</li>-->
-            <p><a href="registro.html">Registrarse</a></p>
-            &nbsp;
-            <li class="navbar-shopping-cart">
-              <img
-                src="./assets/icons/icon_shopping_cart.svg"
-                alt="shopping cart"
-              />
-              <div id="cantCarrito">0</div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <br />
-    </header>
+        <ul>
+          <li></li>
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+          &nbsp;
+          <li>
+            <a href="dietas.html">Dietas</a>
+          </li>
+          &nbsp;
+          <li>
+            <a href="viandas.html">Viandas</a>
+          </li>
+          &nbsp;
+          <li>
+            <a href="nosotros.html">Nosotros</a>
+          </li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-    <section>
-      <fieldset>
-        <div class="col">
-          <div class="home-contact">
-            <form
-              method="post"
-              class="contact-form clarfix ng-pristine ng-valid ng-scope"
-              ng-submit="vm.contactSubmit()"
-              ng-if="!vm.contactForm.sending && !vm.contactForm.send"
-            >
-              <div class="row">
-                <div class="col-1">
-                  <legend class="buzon">
-                    Buzon de quejas o recomendaciones:
-                  </legend>
-                  <div class="form-group">
-                    <label>Nombre y Apellido</label>
-                    <input
-                      type="text"
-                      ng-model="vm.contactForm.name"
-                      class="form-control input-lg ng-pristine ng-untouched ng-valid ng-empty"
-                      placeholder="Ingresé su nombre y apellido"
-                      aria-invalid="false"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label>Correo Electrónico</label>
-                    <input
-                      type="text"
-                      ng-model="vm.contactForm.name"
-                      class="form-control input-lg ng-pristine ng-untouched ng-valid ng-empty"
-                      placeholder="Ingresé su correo electrónico"
-                      aria-invalid="false"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label>Teléfono</label>
-                    <input
-                      type="text"
-                      ng-model="vm.contactForm.name"
-                      class="form-control input-lg ng-pristine ng-untouched ng-valid ng-empty"
-                      placeholder="Ingresé su teléfono"
-                      aria-invalid="false"
-                    />
-                  </div>
+          <!--login-->
+          <li>
+            <input class="control" type="email" name="usuario" id="usuario" placeholder="abc@example.com" />
+          </li>
+          &nbsp;
+          <li>
+            <input class="control" type="password" name="contrasenia" id="contrasenia" placeholder="*******" />
+          </li>
+          &nbsp;
+          <li><input class="botons" type="submit" value="Ingresar" /></li>
+          &nbsp;
+          <!--<li class="navbar-email">sisviansa@gmail.com</li>-->
+          <p><a href="registro.html">Registrarse</a></p>
+          &nbsp;
+          <li class="navbar-shopping-cart">
+            <img src="./assets/iconos/icon_shopping_cart.svg" alt="shopping cart" />
+            <div id="cantCarrito">0</div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br />
+  </header>
+
+  <section>
+    <fieldset>
+      <div class="col">
+        <div class="home-contact">
+          <form method="post" class="contact-form clarfix ng-pristine ng-valid ng-scope" ng-submit="vm.contactSubmit()"
+            ng-if="!vm.contactForm.sending && !vm.contactForm.send">
+            <div class="row">
+              <div class="col-1">
+                <legend class="buzon">
+                  Buzon de quejas o recomendaciones:
+                </legend>
+                <div class="form-group">
+                  <label>Nombre y Apellido</label>
+                  <input type="text" ng-model="vm.contactForm.name"
+                    class="form-control input-lg ng-pristine ng-untouched ng-valid ng-empty"
+                    placeholder="Ingresé su nombre y apellido" aria-invalid="false" />
                 </div>
-                <div class="col-2">
-                  <div class="form-group">
-                    <label>Mensaje</label>
-                    <textarea
-                      cols="6"
-                      rows="8"
-                      ng-model="vm.contactForm.message"
-                      class="form-control ol input-lg ng-pristine ng-untouched ng-valid ng-empty"
-                      placeholder="Comentarios"
-                      aria-invalid="false"
-                    ></textarea>
-                  </div>
+                <div class="form-group">
+                  <label>Correo Electrónico</label>
+                  <input type="text" ng-model="vm.contactForm.name"
+                    class="form-control input-lg ng-pristine ng-untouched ng-valid ng-empty"
+                    placeholder="Ingresé su correo electrónico" aria-invalid="false" />
+                </div>
+                <div class="form-group">
+                  <label>Teléfono</label>
+                  <input type="text" ng-model="vm.contactForm.name"
+                    class="form-control input-lg ng-pristine ng-untouched ng-valid ng-empty"
+                    placeholder="Ingresé su teléfono" aria-invalid="false" />
                 </div>
               </div>
-              <div class="row">
-                <div class="col-2">
-                  <h5>Atención al cliente</h5>
-                  <p>
-                    <i class="fa fa-envelope"></i>
-                    "sisviansa@gmail.com"<br />
-                    <i class="fa fa-phone"></i>
-                    "26225497"
-                  </p>
-                  <p>
-                    <span
-                      >Horario de atención telefónica: Lunes a viernes de 9 a
-                      18hs</span
-                    >
-                  </p>
-                </div>
-
-                <div class="col-1">
-                  <input
-                    type="hidden"
-                    ng-model="vm.contactForm.type"
-                    ng-init="vm.contactForm.type ='contact'"
-                    class="ng-pristine ng-untouched ng-valid ng-not-empty"
-                    aria-invalid="false"
-                  />
-                  <input type="submit" class="botons" value="Enviar mensaje" />
+              <div class="col-2">
+                <div class="form-group">
+                  <label>Mensaje</label>
+                  <textarea cols="6" rows="8" ng-model="vm.contactForm.message"
+                    class="form-control ol input-lg ng-pristine ng-untouched ng-valid ng-empty"
+                    placeholder="Comentarios" aria-invalid="false"></textarea>
                 </div>
               </div>
-            </form>
-          </div>
-        </div>
-      </fieldset>
-    </section>
+            </div>
+            <div class="row">
+              <div class="col-2">
+                <h5>Atención al cliente</h5>
+                <p>
+                  <i class="fa fa-envelope"></i>
+                  "sisviansa@gmail.com"<br />
+                  <i class="fa fa-phone"></i>
+                  "26225497"
+                </p>
+                <p>
+                  <span>Horario de atención telefónica: Lunes a viernes de 9 a
+                    18hs</span>
+                </p>
+              </div>
 
-    <footer>
-      <b>Empresa de alimentos SISVIANSA sisviansa@gmail.com 093301602.</b>
-      <img src="./assets/recursos/isotipo.png" height="55px" width="55" />
-      <b
-        >Pagina web creada por Rubber Ahiru &copy;<br />
-        Todos los derechos reservados
-      </b>
-    </footer>
-  </body>
+              <div class="col-1">
+                <input type="hidden" ng-model="vm.contactForm.type" ng-init="vm.contactForm.type ='contact'"
+                  class="ng-pristine ng-untouched ng-valid ng-not-empty" aria-invalid="false" />
+                <input type="submit" class="botons" value="Enviar mensaje" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </fieldset>
+  </section>
+
+  <footer>
+    <b>Empresa de alimentos SISVIANSA sisviansa@gmail.com 093301602.</b>
+    <img src="./assets/iconos/isotipo.png" height="55px" width="55" />
+    <b>Pagina web creada por Rubber Ahiru &copy;<br />
+      Todos los derechos reservados
+    </b>
+  </footer>
+</body>
+
 </html>

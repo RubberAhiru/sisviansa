@@ -1,305 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/style_registro.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script src="js/main.js"></script>
-    <link
-      rel="icon"
-      sizes="16x16 32x32 48x48"
-      type="imagen/png"
-      href="assets/recursos/logo_sisviansa.png"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Nuevo Cliente</title>
-  </head>
 
-  <body>
-    <header>
-      <nav>
-        <img src="./assets/icons/icon_menu.svg" alt="menu" class="menu" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/style_registro.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script src="js/main.js"></script>
+  <link rel="icon" sizes="16x16 32x32 48x48" type="imagen/png" href="assets/iconos/logo_sisviansa.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet" />
+  <title>Nuevo Cliente</title>
+</head>
 
-        <div class="navbar-left">
-          <img
-            src="./assets/recursos/logo_sisviansa.png"
-            alt="logo"
-            class="logo"
-          />
+<body>
+  <header>
+    <nav>
+      <img src="./assets/iconos/icon_menu.svg" alt="menu" class="menu" />
 
-          <ul>
-            <li></li>
-            <li>
-              &nbsp;
-              <a href="index.html">Inicio</a>
-            </li>
+      <div class="navbar-left">
+        <img src="./assets/iconos/logo_sisviansa.png" alt="logo" class="logo" />
+
+        <ul>
+          <li></li>
+          <li>
             &nbsp;
-            <li>
-              <a href="dietas.html">Dieta</a>
-            </li>
-            &nbsp;
-            <li>
-              <a href="viandas.html">Viandas</a>
-            </li>
-            &nbsp;
-            <li>
-              <a href="nosotros.html">Sobre Nosotros</a>
-            </li>
-          </ul>
-        </div>
+            <a href="index.html">Inicio</a>
+          </li>
+          &nbsp;
+          <li>
+            <a href="dietas.html">Dieta</a>
+          </li>
+          &nbsp;
+          <li>
+            <a href="viandas.html">Viandas</a>
+          </li>
+          &nbsp;
+          <li>
+            <a href="nosotros.html">Sobre Nosotros</a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="navbar-right">
-          <ul>
-            <li class="navbar-email">sisviansa@gmail.com</li>
-            <li class="navbar-shopping-cart">
-              <img
-                src="./assets/icons/icon_shopping_cart.svg"
-                alt="shopping cart"
-              />
-              <div id="cantCarrito"></div>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <div class="navbar-right">
+        <ul>
+          <li class="navbar-email">sisviansa@gmail.com</li>
+          <li class="navbar-shopping-cart">
+            <img src="./assets/iconos/icon_shopping_cart.svg" alt="shopping cart" />
+            <div id="cantCarrito"></div>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-      <section>
-        <h2>Formulario de registro</h2>
-        <form
-          action="../logica/controladorCliente.php"
-          method="post"
-          id="formulario"
-        >
-          <input
-            type="hidden"
-            name="accion"
-            id="insertCliente"
-            value="insert-cliente-persona"
-          />
-          <fieldset>
-            <input
-              type="radio"
-              name="TipoFormulario"
-              class="form-check-input"
-              value="persona"
-              id="radioPersona"
-              checked
-            />
-            <label for="TipoFormulario">Persona</label>
-            <input
-              type="radio"
-              name="TipoFormulario"
-              value="empresa"
-              id="radioEmpresa"
-            />
-            <label for="TipoFormulario">Empresa</label>
-          </fieldset>
+    <section>
+      <h2>Formulario de registro</h2>
+      <form action="../logica/controladorCliente.php" method="post" id="formulario">
+        <input type="hidden" name="accion" id="insertCliente" value="insert-cliente-persona" />
+        <fieldset>
+          <input type="radio" name="TipoFormulario" class="form-check-input" value="persona" id="radioPersona"
+            checked />
+          <label for="TipoFormulario">Persona</label>
+          <input type="radio" name="TipoFormulario" value="empresa" id="radioEmpresa" />
+          <label for="TipoFormulario">Empresa</label>
+        </fieldset>
 
-          <fieldset>
-            <legend>Cliente</legend>
+        <fieldset>
+          <legend>Cliente</legend>
+          <div>
+            <label for="telefono">Telefono</label>
+            <br />
+            <input type="text" id="telefono" minlength="8" maxlength="9" value="" name="telefono" />
+            <br />
+            <label for="email">Correo Electronico</label>
+            <br />
+            <input type="text" id="email" name="email" value="" />
+            <br />
+            <label>Dirección</label><br />
+            <input type="text" id="barrio" min="1" max="30" name="barrio" value="" placeholder="barrio" /><br />
+            <input type="text" id="calle" value="" min="1" max="30" name="calle" placeholder="calle" /><br />
+            <input type="text" id="num" name="numerocalle" value="" placeholder="número" minlength="3" maxlength="4" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>INICIAR SESIÓN</legend>
+          <div name="iniciarSesion">
+            <label for="password">Contraseña</label>
+            <br />
+            <input type="password" minlength="6" maxlength="12" id="password" value="" />
+            <br />
+            <label for="password2">Vuelva a escribir la contraseña</label>
+            <br />
+            <input type="password" id="password2" minlength="6" maxlength="12" name="contrasenia" value="" />
+          </div>
+        </fieldset>
+
+        <fieldset id="bloquePersona">
+          <legend>Persona</legend>
+          <div id="persona">
+            <label for="nombre">Nombre</label>
+            <br />
+            <input type="text" maxlength="18" id="nombre" name="nombre" value="" />
+            <br />
+            <label for="apellido">Apellido</label>
+            <br />
+            <input type="text" id="apellido" maxlength="18" name="apellido" value="" />
+            <br />
+            <label>Documento</label>
+            <br />
+            <select id="documento" name="tipodocumento">
+              <option value="ci" id="ci" selected="selected">CI</option>
+              <option value="dni" id="dni">DNI</option>
+              <option value="pasaporte" id="pasaporte">Pasaporte</option>
+              <input type="text" id="InputCi" name="nrodocumento" value="" placeholder="Introduce tu cedula"
+                minlength="8" maxlength="9" />
+              <input type="text" id="InputDni" name="nrodocumento" value="" maxlength="11"
+                placeholder="Introduce tu DNI" disabled />
+              <input type="text" id="InputPasaporte" maxlength="9" minlength="8" name="nrodocumento" value=""
+                placeholder="Introduce tu Pasaporte" disabled />
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset id="bloqueEmpresa" style="display: none">
+          <legend>Empresa</legend>
+          <div id="empresa">
+            <label>Razon Social</label>
+            <br />
+            <input type="text" minlength="1" maxlength="18" name="razon-social" id="razon_social" disabled />
+            <br />
+            <label for="rut">Rut</label>
+            <br />
+            <input type="text" minlength="12" maxlength="12" name="rut" id="rut" disabled />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>CONDICIONES DE REGISTRO</legend>
+          <div name="condicionesRegistro">
+            <label>Deseo recibir notificaciones</label>
+            <br />
+            <input type="radio" name="opcion" id="sip" value="si" />
+            <label for="sip">Si</label>
+            <br />
+            <input type="radio" name="opcion" id="nop" value="no" />
+            <label for="nop">No</label>
+            <br />
+            <input type="checkbox" name="cookies" id="cookies" value="cookies" />
+            <label for="cookies">Acepto el acuerdo de servicios, la declaracion de privacidad y
+              la declaracion de uso de cookies</label>
+            <br />
             <div>
-              <label for="telefono">Telefono</label>
-              <br />
-              <input
-                type="text"
-                id="telefono"
-                minlength="8"
-                maxlength="9"
-                value=""
-                name="telefono"
-              />
-              <br />
-              <label for="email">Correo Electronico</label>
-              <br />
-              <input type="text" id="email" name="email" value="" />
-              <br />
-              <label>Dirección</label><br />
-              <input
-                type="text"
-                id="barrio"
-                min="1"
-                max="30"
-                name="barrio"
-                value=""
-                placeholder="barrio"
-              /><br />
-              <input
-                type="text"
-                id="calle"
-                value=""
-                min="1"
-                max="30"
-                name="calle"
-                placeholder="calle"
-              /><br />
-              <input
-                type="text"
-                id="num"
-                name="numerocalle"
-                value=""
-                placeholder="número"
-                minlength="3"
-                maxlength="4"
-              />
+              <p><a href="login.html">¿Ya tienes cuenta?</a></p>
+              <input id="btnSubmit" type="submit" value="Enviar" class="primary-button login-button" />
             </div>
-          </fieldset>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </header>
 
-          <fieldset>
-            <legend>INICIAR SESIÓN</legend>
-            <div name="iniciarSesion">
-              <label for="password">Contraseña</label>
-              <br />
-              <input
-                type="password"
-                minlength="6"
-                maxlength="12"
-                id="password"
-                value=""
-              />
-              <br />
-              <label for="password2">Vuelva a escribir la contraseña</label>
-              <br />
-              <input
-                type="password"
-                id="password2"
-                minlength="6"
-                maxlength="12"
-                name="contrasenia"
-                value=""
-              />
-            </div>
-          </fieldset>
+  <script src="js/registro.js"></script>
+</body>
 
-          <fieldset id="bloquePersona">
-            <legend>Persona</legend>
-            <div id="persona">
-              <label for="nombre">Nombre</label>
-              <br />
-              <input
-                type="text"
-                maxlength="18"
-                id="nombre"
-                name="nombre"
-                value=""
-              />
-              <br />
-              <label for="apellido">Apellido</label>
-              <br />
-              <input
-                type="text"
-                id="apellido"
-                maxlength="18"
-                name="apellido"
-                value=""
-              />
-              <br />
-              <label>Documento</label>
-              <br />
-              <select id="documento" name="tipodocumento">
-                <option value="ci" id="ci" selected="selected">CI</option>
-                <option value="dni" id="dni">DNI</option>
-                <option value="pasaporte" id="pasaporte">Pasaporte</option>
-                <input
-                  type="text"
-                  id="InputCi"
-                  name="nrodocumento"
-                  value=""
-                  placeholder="Introduce tu cedula"
-                  minlength="8"
-                  maxlength="9"
-                />
-                <input
-                  type="text"
-                  id="InputDni"
-                  name="nrodocumento"
-                  value=""
-                  maxlength="11"
-                  placeholder="Introduce tu DNI"
-                  disabled
-                />
-                <input
-                  type="text"
-                  id="InputPasaporte"
-                  maxlength="9"
-                  minlength="8"
-                  name="nrodocumento"
-                  value=""
-                  placeholder="Introduce tu Pasaporte"
-                  disabled
-                />
-              </select>
-            </div>
-          </fieldset>
-
-          <fieldset id="bloqueEmpresa" style="display: none">
-            <legend>Empresa</legend>
-            <div id="empresa">
-              <label>Razon Social</label>
-              <br />
-              <input
-                type="text"
-                minlength="1"
-                maxlength="18"
-                name="razon-social"
-                id="razon_social"
-                disabled
-              />
-              <br />
-              <label for="rut">Rut</label>
-              <br />
-              <input
-                type="text"
-                minlength="12"
-                maxlength="12"
-                name="rut"
-                id="rut"
-                disabled
-              />
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>CONDICIONES DE REGISTRO</legend>
-            <div name="condicionesRegistro">
-              <label>Deseo recibir notificaciones</label>
-              <br />
-              <input type="radio" name="opcion" id="sip" value="si" />
-              <label for="sip">Si</label>
-              <br />
-              <input type="radio" name="opcion" id="nop" value="no" />
-              <label for="nop">No</label>
-              <br />
-              <input
-                type="checkbox"
-                name="cookies"
-                id="cookies"
-                value="cookies"
-              />
-              <label for="cookies"
-                >Acepto el acuerdo de servicios, la declaracion de privacidad y
-                la declaracion de uso de cookies</label
-              >
-              <br />
-              <div>
-                <p><a href="login.html">¿Ya tienes cuenta?</a></p>
-                <input
-                  id="btnSubmit"
-                  type="submit"
-                  value="Enviar"
-                  class="primary-button login-button"
-                />
-              </div>
-            </div>
-          </fieldset>
-        </form>
-      </section>
-    </header>
-
-    <script src="js/registro.js"></script>
-  </body>
 </html>

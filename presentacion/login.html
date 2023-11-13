@@ -1,105 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style_login.css" />
 
-    <link
-      rel="icon"
-      sizes="16x16 32x32 48x48"
-      type="imagen/png"
-      href="assets/recursos/logo_sisviansa.png"
-    />
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
- -->
-    <title>login</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/css/style_login.css" />
+  <link rel="icon" sizes="16x16 32x32 48x48" type="imagen/png" href="assets/iconos/logo_sisviansa.png" />
 
-  <body>
-    <header>
-      <nav>
-        <img src="./assets/icons/icon_menu.svg" alt="menu" class="menu" />
+  <title>login</title>
+</head>
 
-        <div class="navbar-left">
-          <img
-            src="./assets/recursos/logo_sisviansa.png"
-            alt="logo"
-            class="logo"
-          />
+<body>
+  <header>
+    <nav>
+      <img src="./assets/iconos/icon_menu.svg" alt="menu" class="menu" />
 
-          <ul>
-            <li></li>
-            <li>
-              <a href="index.html">Inicio</a>
-            </li>
-            <li>
-              <a href="dietas.html">Dieta</a>
-            </li>
-            <li>
-              <a href="emp_viandas.html">Viandas</a>
-            </li>
-          </ul>
-        </div>
-        <div class="navbar-right">
-          <ul>
-            <li class="navbar-email">sisviansa@gmail.com</li>
-            <li class="navbar-shopping-cart">
-              <img
-                src="./assets/icons/icon_shopping_cart.svg"
-                alt="shopping cart"
-              />
-              <div id="cantCarrito"></div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+      <div class="navbar-left">
+        <img src="./assets/iconos/logo_sisviansa.png" alt="logo" class="logo" />
 
-    <section class="form-login">
-      <h4>Iniciar sesión</h4>
-      <label>Rol</label>
-      <select id="rol" name="rol">
-        <!--<option value="cliente">Cliente</option>-->
-        <option value="gerente">Gerente</option>
-        <option value="administrativo">Administrativo</option>
-        <option value="jefe_cocina">Jefe Cocina</option>
-        <option value="cocinero">Cocinero</option>
-        <option value="atencion_al_publico">Atención al Publico</option>
-        <option value="informatico">Informatico</option></select
-      ><br />
-      <form action="../logica/controladorCliente.php" method="post">
-        <input type="hidden" name="login" value="cliente-persona" />
-        <input
-          class="control"
-          type="text"
-          name="usuario"
-          id="usuario"
-          placeholder="identificador"
-        /><br />
-        <input
-          class="control"
-          type="password"
-          name="contrasenia"
-          id="contrasenia"
-          placeholder="*******"
-        /><br />
-        <input class="botons" type="submit" value="Ingresar" />
-      </form>
-    </section>
+        <ul>
+          <li></li>
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+          <li>
+            <a href="dietas.html">Dieta</a>
+          </li>
+          <li>
+            <a href="emp_viandas.html">Viandas</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-right">
+        <ul>
+          <li class="navbar-email">sisviansa@gmail.com</li>
+          <li class="navbar-shopping-cart">
+            <img src="./assets/iconos/icon_shopping_cart.svg" alt="shopping cart" />
+            <div id="cantCarrito"></div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-    <footer>
-      <b>Empresa de alimentos SISVIANSA sisviansa@gmail.com 093301602.</b>
-      <img src="./assets/recursos/isotipo.png" height="55px" width="55" />
-      <b
-        >Pagina web creada por Rubber Ahiru &copy;<br />
-        Todos los derechos reservados
-      </b>
-    </footer>
-    <script src="js/login.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <section class="form-login">
+    <h4>Iniciar sesión</h4>
+    <label>Rol</label>
+    <select id="rol" name="rol">
+      <!--<option value="cliente">Cliente</option>-->
+      <option value="gerente">Gerente</option>
+      <option value="administrativo">Administrativo</option>
+      <option value="jefe_cocina">Jefe Cocina</option>
+      <option value="cocinero">Cocinero</option>
+      <option value="atencion_al_publico">Atención al Publico</option>
+      <option value="informatico">Informatico</option>
+    </select><br />
+    <form action="../logica/controladorCliente.php" method="post">
+      <input type="hidden" name="login" value="cliente-persona" />
+      <input class="control" type="text" name="usuario" id="usuario" placeholder="identificador" /><br />
+      <input class="control" type="password" name="contrasenia" id="contrasenia" placeholder="*******" /><br />
+      <input class="botons" type="submit" value="Ingresar" />
+    </form>
+  </section>
+
+  <footer>
+    <b>Empresa de alimentos SISVIANSA sisviansa@gmail.com 093301602.</b>
+    <img src="./assets/iconos/isotipo.png" height="55px" width="55" />
+    <b>Pagina web creada por Rubber Ahiru &copy;<br />
+      Todos los derechos reservados
+    </b>
+  </footer>
+  <script src="js/login.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>
