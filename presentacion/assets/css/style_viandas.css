@@ -142,17 +142,6 @@ nav {
 .secondary-button {
   background-color: var(--blue);
 }
-.controls {
-  width: 100%;
-  background: #24303c;
-  padding: 10px;
-  border-radius: 4px;
-  margin-bottom: 16px;
-  border: 1px solid #1f53c5;
-  font-family: 'calibri';
-  font-size: 18px;
-  color: white;
-}
 
 .form-login p {
   height: 40px;
@@ -229,15 +218,7 @@ label {
   font-weight: bold;
   margin-bottom: 10px;
 }
-.input {
-  margin-bottom: 10px;
-  background-color: var(--text-input-field);
-  border-color: #acd9b2;
-  border-radius: 10px;
-  height: 100px;
-  font-size: var(--md);
-  padding: 6px;
-}
+
 .img {
   width: 10vw;
   height: 10vh;
@@ -278,8 +259,12 @@ h2 {
   color: var(--white);
 }
 .control {
+  width: 180px;
+  height: 25px;
   border-color: var(--hospital-green);
   border-radius: 5px;
+  font-size: 18px;
+  font-family:'Times New Roman', Times, serif;
 }
 .agregar {
   display: inline;
@@ -346,7 +331,7 @@ h1 {
   justify-content: center;
   align-items: center;
   position: relative;
-  background-image: url('../recursos/dieta/menu1/garbanzos-con-tomatitos-y-atun.jpg');
+  background-image: url('../recursos/viandas/63.jpg');
   background-size: 165%;
   background-position: center;
   background-repeat: no-repeat;

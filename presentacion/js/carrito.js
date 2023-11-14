@@ -3,6 +3,8 @@ const cantidadCarrito = document.querySelector('#cantCarrito');
 const carrito = document.querySelector('#carrito');
 let articulosCarrito = JSON.parse(localStorage.getItem('miCarrito'));
 document.addEventListener('DOMContentLoaded', () => {
+ 
+
   mostrarCantidad();
   productosCarrito(articulosCarrito);
 });
@@ -51,7 +53,7 @@ function productosCarrito(arrayProductos) {
                       <span>+</span>
                     </button>
                     
-                    <img src="assets/viandas/${productoActual.imagen}"  class="img-carrito">
+                    <img src="assets/recursos/viandas/${productoActual.imagen}"  class="img-carrito">
                     <label for=""> ${productoActual.nombre}</label>
                     <div class="precio">
                       <span>$${productoActual.precio}</span>
