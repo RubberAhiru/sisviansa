@@ -20,29 +20,19 @@ fetch('../persistencia/json/usuarioJSON.php')
   });
 document.addEventListener('DOMContentLoaded', () => {
 
-  ingresar.addEventListener('submit', (e) => {
+  ingresar.addEventListener('submit', (e)=>{
     e.preventDefault();
-    usuarioIncorrecto(username);
     validarLogin();
-  });
+    guardarUsuario(username);
+  })
+
+  /*ingresar.addEventListener('click', (e) => {
+    e.preventDefault();
+  });*/
+
 });
 
 //FUNCIONES
-
-function usuarioIncorrecto(usuario) {
-  if (usuario === 'usuario incorrecto') {
-    Swal.fire({
-      position: 'center',
-      icon: 'error',
-      title: 'Usuario y/o contraseña incorrectos',
-      showConfirmButton: false,
-      timer: 2000,
-    });
-
-    console.log('usuario incorrecto');
-    return;
-  }
-}
 
 function validarLogin() {
   const usuario = document.querySelector('#usuario');
@@ -70,12 +60,24 @@ function validarLogin() {
   }
 }
 function guardarUsuario(user) {
+
+ validarLogin();
+
   if (user !== null && user !== 'usuario incorrecto') {
     usuario = JSON.stringify(user);
 
     localStorage.setItem('miUsuario', usuario);
 
     return;
+  }else if(user === 'usuario incorrecto'){
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Usuario y/o contraseña incorrectos',
+      showConfirmButton: false,
+      timer: 2000,
+    });
+    return
   }
 }
 function mostrarUsuario() {
