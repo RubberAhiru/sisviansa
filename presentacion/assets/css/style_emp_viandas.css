@@ -168,13 +168,6 @@ input:hover {
   background-color: var(--hospital-green);
   text-transform: uppercase;
 }
-.secondary-button {
-  background-color: var(--blue);
-  width: 50px;
-  height: 50px;
-  margin-left: 60px;
-  opacity: 0.5;
-}
 
 .login-button {
   margin-top: 14px;
@@ -299,6 +292,39 @@ label {
   display: flex;
   justify-content: space-between;
 }
+/* Estilos para el diseño del formulario */
+#bloqueAlta {
+  /* Ajusta el ancho según tus necesidades */
+  margin: 0 auto; /* Centrar el formulario en la página */
+}
+
+/* Estilos para la disposición de los campos de contenido */
+.contenido-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.contenido-input {
+  margin-bottom: 5px; /* Espacio entre los campos de contenido */
+}
+
+.contenido-input input {
+  flex: 1;
+}
+
+/* Estilos para la disposición de los botones debajo de la imagen */
+.contenido-botones {
+  text-align: center; /* Centrar los botones horizontalmente */
+  margin-left: 10px;
+}
+
+.contenido-botones button {
+  margin-top: 20px; /* Espacio entre la imagen y los botones */
+}
+div .contenido-botones {
+  display: grid;
+  grid-template-columns: repeat(2fr);
+}
 
 @media (max-width: 768px) {
   body {
@@ -328,37 +354,3 @@ label {
 
 }
 
-
-/* Estilos para el diseño del formulario */
-#bloqueAlta {
-  /* Ajusta el ancho según tus necesidades */
-  margin: 0 auto; /* Centrar el formulario en la página */
-}
-
-/* Estilos para la disposición de los campos de contenido */
-.contenido-inputs {
-  display: flex;
-  flex-direction: column;
-}
-
-.contenido-input {
-  margin-bottom: 5px; /* Espacio entre los campos de contenido */
-}
-
-.contenido-input input {
-  flex: 1;
-}
-
-/* Estilos para la disposición de los botones debajo de la imagen */
-.contenido-botones {
-  text-align: center; /* Centrar los botones horizontalmente */
-  margin-left: 10px;
-}
-
-.contenido-botones button {
-  margin-top: 10px; /* Espacio entre la imagen y los botones */
-}
-div .contenido-botones {
-  display: grid;
-  grid-template-columns: repeat(2fr);
-}
