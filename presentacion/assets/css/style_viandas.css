@@ -129,8 +129,7 @@ nav {
   text-align: start;
 }
 
-.primary-button,
-.secondary-button {
+.primary-button {
   border-radius: 8px;
   border: none;
   color: var(--white);
@@ -143,9 +142,6 @@ nav {
 }
 .primary-button {
   background-color: var(--hospital-green);
-}
-.secondary-button {
-  background-color: var(--blue);
 }
 
 .form-login p {
@@ -614,7 +610,7 @@ h1 {
 
 footer {
   background-color: var(--black);
-  margin-bottom: 0;
+  margin-top:290px;
   bottom: 0;
   width: 100vw;
   height: 100px;
