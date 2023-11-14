@@ -103,6 +103,7 @@ function cerrarSesion() {
     localStorage.removeItem('miUsuario');
     localStorage.removeItem('miCarrito');
     //$.post ruta del php con los parametros correspondientes
+    window.location.href = '../logica/controladorCliente.php?accion=logout';
   });
 }
 
