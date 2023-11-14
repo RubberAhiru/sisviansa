@@ -48,7 +48,6 @@ nav {
   z-index: 5;
 }
 
-
 .menu {
   display: none;
 }
@@ -69,16 +68,19 @@ nav {
   height: 64px;
   width: 202px;
 }
+
 .navbar-left {
   display: flex;
   margin-left: -5px;
 }
+
 .navbar-right ul {
   margin-right: 410px;
 }
+
 .navbar-left ul li a,
 .navbar-right ul li a {
-  margin: 0 ;
+  margin: 0;
   text-decoration: none;
   color: var(--hospital-green);
   border: 1px solid var(--hospital-green);
@@ -150,7 +152,8 @@ nav {
   margin: 0;
   margin-right: auto;
   display: contents;
-  justify-content: flex-start; /* Centrar horizontalmente los elementos */
+  justify-content: flex-start;
+  /* Centrar horizontalmente los elementos */
 }
 
 
@@ -174,6 +177,8 @@ nav {
   margin-right: 50px;
   transform-origin: top right;
   transform: skewY(-20deg);
+  flex-direction: inherit;
+  align-items: center;
 }
 
 form {
@@ -213,7 +218,7 @@ h5 {
 
 .pop-up {
   width: 800px;
-  height: 600px;
+  height: 500px;
   background: rgba(48, 48, 48, 0.5);
   position: fixed;
   top: 0;
@@ -224,7 +229,6 @@ h5 {
   justify-content: center;
   align-items: center;
   visibility: hidden;
-  /*overflow: hidden;*/
   z-index: 5;
 }
 
@@ -305,7 +309,7 @@ h5 {
   background: #fff;
   flex-basis: 0;
   flex-grow: 2;
-  height: 605px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -317,7 +321,7 @@ h5 {
 .sub-content {
   justify-content: center;
   width: 550px;
-  height: 450px;
+  height: 325px;
   display: flex;
   flex-direction: column;
   /* Las listas se apilarán verticalmente */
@@ -345,14 +349,13 @@ h5 {
   background: #ccc;
   margin-bottom: 15px;
 }
+
 .pagar {
-  margin-left: 50px;
-  width: 80px;
+  margin-left: -210px;
   padding: 15px;
   border: none;
   border-radius: 10px;
   color: #1f4068;
-  /*no funciona*/
   background: var(--hospital-green);
   color: #fff;
   font-size: 18px;
@@ -405,15 +408,17 @@ h5 {
 .carrito {
   width: 400px;
   height: 40px;
-  flex: 1; /*ocupa todo el espacio disponible horizontalmente*/
-  display: flex; /* Los elementos dentro de la lista se alinearán horizontalmente */
-  margin: 10px 0; /* Agrega un margen entre las listas */
+  flex: 1;
+  /*ocupa todo el espacio disponible horizontalmente*/
+  display: flex;
+  /* Los elementos dentro de la lista se alinearán horizontalmente */
+  margin: 10px 0;
+  /* Agrega un margen entre las listas */
   align-items: center;
   padding: 10px;
   border-color: var(--hospital-green);
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
   box-sizing: border-box;
   overflow: hidden;
   padding: 10px;
@@ -426,12 +431,14 @@ h5 {
   border-radius: 2px;
   background-color: var(--text-input-field);
 }
+
 .menos {
   border: none;
   border-radius: 7px 0 0 7px;
   color: var(--blue);
   background-color: var(--hospital-green);
 }
+
 .mas {
   border: none;
   border-radius: 0 7px 7px 0;
@@ -439,14 +446,16 @@ h5 {
   background-color: var(--hospital-green);
   margin-right: 10px;
 }
+
 .precio {
-  margin-left: 60px; /* Ajusta el valor del margen según tus preferencias */
+  margin-left: 60px;
+  /* Ajusta el valor del margen según tus preferencias */
   width: 50px;
   border-color: var(--hospital-green);
 }
 
 .eliminar {
-  margin-left: 70px;
+  margin-left: 60px;
   color: red;
   cursor: pointer;
   border-color: red;
@@ -455,9 +464,12 @@ h5 {
   height: 20px;
   font-size: 16px;
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
 }
+
 .eliminar:hover {
   text-decoration: underline;
 }
@@ -522,11 +534,12 @@ h5 {
   cursor: pointer;
   transition: all 0.4s ease-in-out;
 }
+
 .transp:hover {
   box-shadow: 0px 0px 8px #ffffffa4;
 }
 
-.eleccion_menu{
+.eleccion_menu {
   margin-top: 35%;
 }
 
@@ -541,15 +554,30 @@ footer {
   opacity: 0.5;
 }
 
-@media only screen and (max-width: 980px) {
-  .pop-up-title {
-    display: none;
-  }
-}
+
 
 @media only screen and (max-width: 320px) {
   .sub-content h2 {
     font-size: 30px;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .navbar-left {
+    display: none;
+  }
+  .carrusel {
+    margin-top: 20px;
+    justify-content: center;
+    position: absolute;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  .pop-up-title {
+    display: none;
   }
 }
 
@@ -565,16 +593,19 @@ footer {
     display: block;
   }
 
+  .navbar-left {
+    display: none;
+  }
+
   h2 {
     margin-top: 100px;
   }
 
   body {
-    margin-bottom: 0;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    overflow-x: hidden;
+    overflow-x: auto;
   }
 
   fieldset {
@@ -589,6 +620,7 @@ footer {
     position: center;
     width: 90px;
   }
+
   .navbar-left {
     display: none;
   }
@@ -604,9 +636,8 @@ footer {
   }
 
   .carrusel {
-    margin-top: 120px;
+    margin-top: 50px;
     justify-content: center;
-    position: absolute;
     margin-left: 0;
     margin-right: 0;
     width: 100%;
@@ -623,11 +654,14 @@ footer {
     justify-content: center;
     align-items: center;
   }
+
   .input_menues {
-    margin-top: 700px;
+    margin-top: 200px;
     justify-content: center;
+    align-items:end;
     transform: none;
   }
+
   input {
     margin-bottom: 10px;
   }

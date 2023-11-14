@@ -465,6 +465,8 @@ h1 {
 
 .pop-up.show {
   visibility: visible;
+  width: 100%;
+  height: 100%;
 }
 
 .pop-up-wrap.show {
@@ -493,7 +495,6 @@ h1 {
   align-items: center;
   padding: 10px;
   border-color: var(--hospital-green);
-
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   box-sizing: border-box;
@@ -528,7 +529,7 @@ h1 {
 }
 
 .eliminar {
-  margin-left: 70px;
+  margin-left: 60px;
   color: red;
   cursor: pointer;
   border-color: red;
