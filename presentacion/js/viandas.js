@@ -76,7 +76,7 @@ function cargarViandas(nuevasViandas) {
 }
 
 function agregarCarrito(array) {
-  if (JSON.parse(localStorage.getItem('miUsuario')) === null) {
+  /*if (JSON.parse(localStorage.getItem('miUsuario')) === null) {
     Swal.fire({
       title: 'Para agregar al carrito debe loguearse por favor!!!',
       icon: 'error',
@@ -85,7 +85,7 @@ function agregarCarrito(array) {
     });
     window.location.href = './index.html';
     return;
-  }
+  }*/
   let vianda = {
     id: array.id,
     nombre: array.nombre,
@@ -93,9 +93,10 @@ function agregarCarrito(array) {
     precio: array.precio,
     imagen: array.imagen,
     contenido: array.contenido,
+    cantidad: 1,
   };
 
-  objArrayViandas.push(vianda);
+  objArrayViandas = [...objArrayViandas, vianda];
   Swal.fire({
     title: 'Añadiendo al carrito',
     icon: 'success',
