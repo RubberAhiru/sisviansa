@@ -76,7 +76,16 @@ function cargarViandas(nuevasViandas) {
 }
 
 function agregarCarrito(array) {
-  console.log(array);
+  if (JSON.parse(localStorage.getItem('miUsuario')) === null) {
+    Swal.fire({
+      title: 'Para agregar al carrito debe loguearse por favor!!!',
+      icon: 'error',
+      timer: 3000,
+      showConfirmButton: false,
+    });
+    window.location.href = './index.html';
+    return;
+  }
   let vianda = {
     id: array.id,
     nombre: array.nombre,
@@ -85,7 +94,7 @@ function agregarCarrito(array) {
     imagen: array.imagen,
     contenido: array.contenido,
   };
-  console.log(vianda);
+
   objArrayViandas.push(vianda);
   Swal.fire({
     title: 'Añadiendo al carrito',
