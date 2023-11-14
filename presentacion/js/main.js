@@ -1,20 +1,26 @@
 ////VARIABLES
+const formUsuario = document.querySelector('#formUser');
 const ingresar = document.querySelector('#ingresar');
-const btnCerrarSesion = document.querySelector('cerrar-usuario');
+const btnCerrarSesion = document.querySelector('#cerrar-usuario');
 let username;
 
 //EVENTOS
 
+fetch('../persistencia/json/usuarioJSON.php')
+  .then((response) => response.json())
+  .then((jsonUser) => {
+    username = jsonUser;
+    console.log(username);
+    if(username === null){
+      formUsuario.style.display = 'contents';
+      return
+    }
+    mostrarUsuario();
+    guardarUsuario(username);
+  });
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('../persistencia/json/usuarioJSON.php')
-    .then((response) => response.json())
-    .then((jsonUser) => {
-      username = jsonUser;
 
-      mostrarUsuario();
-    });
-
-  ingresar.addEventListener('click', (e) => {
+  ingresar.addEventListener('submit', (e) => {
     e.preventDefault();
     usuarioIncorrecto(username);
     validarLogin();
@@ -74,7 +80,7 @@ function guardarUsuario(user) {
 }
 function mostrarUsuario() {
   const nombreUsuario = document.querySelector('#mostrarUsuario');
-  const formUsuario = document.querySelector('#formUser');
+  
   let usuarioLocal = JSON.parse(localStorage.getItem('miUsuario'));
   if (usuarioLocal !== null) {
     Swal.fire({
@@ -86,7 +92,8 @@ function mostrarUsuario() {
     });
     nombreUsuario.innerHTML = usuarioLocal;
     formUsuario.style.display = 'none';
-    btnCerrarSesion.style.display = 'inline-block';
+    btnCerrarSesion.style.display = 'inline';
+    btnCerrarSesion.classList.add('botons')
     cerrarSesion();
   }
 }
@@ -95,6 +102,7 @@ function cerrarSesion() {
   btnCerrarSesion.addEventListener('click', () => {
     localStorage.removeItem('miUsuario');
     localStorage.removeItem('miCarrito');
+    //$.post ruta del php con los parametros correspondientes
   });
 }
 
