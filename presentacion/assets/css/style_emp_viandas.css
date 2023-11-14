@@ -22,13 +22,17 @@ body {
 }
 nav {
   display: flex;
-  width: 100%;
+  width: 90%;
   height: 58px;
   justify-content: space-between;
   padding: 0 -100px;
-  margin-top: auto;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 20px;
+  border-radius: 20px;
   border-bottom: 1px solid var(--very-light-pink);
   background-color: papayawhip;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
 }
@@ -40,6 +44,9 @@ nav {
   height: 151px;
   margin-right: 0;
   opacity: 0.7;
+}
+h2{
+  margin-top: 10%;
 }
 .navbar-left ul,
 .navbar-right ul {
@@ -152,8 +159,7 @@ input:focus {
 input:hover {
   background-color: rgba(15, 22, 119, 0.5);
 }
-.primary-button,
-.secondary-button {
+.primary-button{
   display: inline-block;
   border-radius: 8px;
   border: none;
@@ -168,6 +174,7 @@ input:hover {
   background-color: var(--hospital-green);
   text-transform: uppercase;
 }
+
 
 .login-button {
   margin-top: 14px;

@@ -22,13 +22,17 @@ body {
 }
 nav {
   display: flex;
-  width: 100vw;
+  width: 90%;
   height: 58px;
   justify-content: space-between;
   padding: 0 -100px;
-  margin-top: auto;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 20px;
+  border-radius: 20px;
   border-bottom: 1px solid var(--very-light-pink);
   background-color: papayawhip;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   z-index: 5;
@@ -49,8 +53,6 @@ nav {
   margin: 0;
   display: flex;
   align-items: center;
-  /*height: 64px;
-    width: 600px;*/
 }
 
 .navbar-left {
@@ -67,6 +69,9 @@ nav {
 
 .navbar-left ul {
   margin-left: 12px;
+}
+.navbar-right ul {
+  margin-left: 30px;
 }
 
 .navbar-left ul li a,
@@ -293,6 +298,7 @@ h1 {
   display: inline-block;
   border: none;
   cursor: pointer;
+  border-radius: 18px;
 }
 
 .pop-up {
@@ -483,7 +489,6 @@ h1 {
 
 .carrito {
   width: 400px;
-
   margin-left: 80px;
   margin-bottom: 10px;
   flex: 1; /*ocupa todo el espacio disponible horizontalmente*/

@@ -35,16 +35,20 @@
   }
   nav {
     display: flex;
-    width: 100%;
+    width: 90%;
     height: 58px;
     justify-content: space-between;
     padding: 0 -100px;
-    margin-top: auto;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 20px;
+    border-radius: 20px;
     border-bottom: 1px solid var(--very-light-pink);
     background-color: papayawhip;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     position: fixed;
-    top:0;
-    z-index:5;
+    top: 0;
+    z-index: 5;
   }
   .menu {
     display: none;

@@ -16,7 +16,7 @@ body {
   position: relative;
   margin: 0;
   width: 100%;
-  height: 50px;
+  height: 100px;
   margin-right: 5px;
   overflow-x: hidden;
   box-sizing: border-box;
@@ -32,17 +32,22 @@ body {
 
 nav {
   display: flex;
-  width: 99.5%;
+  width: 90%;
   height: 58px;
   justify-content: space-between;
-  padding: 0 -100px;
-  margin-top: auto;
+  padding: 0;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 20px;
+  border-radius: 20px;
   border-bottom: 1px solid var(--very-light-pink);
   background-color: papayawhip;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   z-index: 5;
 }
+
 
 .menu {
   display: none;
@@ -58,32 +63,22 @@ nav {
 .navbar-left ul,
 .navbar-right ul {
   list-style: none;
-  padding: 0;
   margin: 0;
   display: flex;
   align-items: center;
-  /*height: 64px;
-    width: 600px;*/
-}
-
-.navbar-left {
-  display: flex;
   height: 64px;
   width: 202px;
 }
-
-.navbar-right {
+.navbar-left {
   display: flex;
-  height: 64px;
-  width: 46vw;
+  margin-left: -5px;
 }
-
-.navbar-left ul {
-  margin-left: 12px;
+.navbar-right ul {
+  margin-right: 410px;
 }
-
 .navbar-left ul li a,
 .navbar-right ul li a {
+  margin: 0 ;
   text-decoration: none;
   color: var(--hospital-green);
   border: 1px solid var(--hospital-green);
@@ -99,18 +94,19 @@ nav {
 
 .navbar-shopping-cart {
   position: relative;
+  border-radius: 50px;
 }
 
 .navbar-shopping-cart div {
   width: 16px;
   height: 16px;
   background-color: var(--hospital-green);
-  border-radius: 50%;
+  border-radius: 50px;
   font-size: var(--sm);
   font-weight: bold;
   position: absolute;
   top: -6px;
-  right: -3px;
+  right: -1px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,8 +139,6 @@ nav {
   margin-top: 65px;
   margin-left: 85px;
   margin-right: 50px;
-  /*border: solid 5px #ACD9B2;*/
-  /*position: relative;*/
   transform-origin: top right;
   transform: skewY(-20deg);
   z-index: 3;
@@ -159,29 +153,23 @@ nav {
   justify-content: flex-start; /* Centrar horizontalmente los elementos */
 }
 
-.form-list li {
-  margin: 0 10px; /* Espacio entre elementos */
-}
 
 .carousel-item {
   border: solid 5px #acd9b2;
-  /*width: 45vw;
-  height: 65vh;*/
 }
 
 .text {
   width: 50vw;
-  height: 200vh;
-  margin-top: 500px;
+  height: 70vh;
+  margin-top: 400px;
   text-align: center;
-  margin-left: 10px;
+  margin-left: 50px;
 }
 
 .input_menues {
   border-color: #acd9b2;
   width: 30vw;
   height: 65vh;
-  /*margin-top: 110px;*/
   margin-left: 100px;
   margin-right: 50px;
   transform-origin: top right;
@@ -219,6 +207,7 @@ h5 {
   padding: 10px;
   display: inline-block;
   border: none;
+  border-radius: 20px;
   cursor: pointer;
 }
 
