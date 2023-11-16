@@ -27,5 +27,6 @@ class clienteDAO
         //retorna variable verify como true o false
         return $verify;
     }
+    
 
 }

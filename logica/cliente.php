@@ -78,5 +78,6 @@ class Cliente
     {
         return $this->barrio;
     }
+    
 
 }

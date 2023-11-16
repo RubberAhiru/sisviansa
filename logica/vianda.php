@@ -11,12 +11,11 @@ class Vianda {
     protected $precio;
     protected $contenido;
     protected $imagen;
-    //protected $conex;
 
     //Constructor
     public function __construct()
     {
-        //$this->conex = BaseDeDatos::conectar();
+        
     }
 
     //Setters

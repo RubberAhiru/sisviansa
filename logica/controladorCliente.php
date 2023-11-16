@@ -40,7 +40,7 @@ include '../persistencia/dao/clienteEmpresaDAO.php';
             //VALIDACION
             //comprueba que todos los campos esten llenos y si los datos ingresados son validos
             if ($camposLlenos && $datosValidos) {
-           
+        
                 //crea objeto Persona
                 $persona = new Persona();
                 //setea atributos al objeto
@@ -63,8 +63,9 @@ include '../persistencia/dao/clienteEmpresaDAO.php';
                     $persona->getCalle(), $persona->getNumCalle(), $persona->getBarrio(), $persona->getNombre(),
                     $persona->getApellido(), $persona->getNroDocumento(), $persona->getTipoDocumento()
                 );
+                header('Location: ../presentacion/index.html');
             } else {
-                //echo "N";
+                //echo "error";
             }
 
             break;
@@ -81,11 +82,9 @@ include '../persistencia/dao/clienteEmpresaDAO.php';
             $rut = $_POST['rut'];
             $rSocial = $_POST['razon-social'];
 
-
             $camposLlenos;
 
             foreach ($_POST as $campos) {
-
                 if (!empty(trim($campos))) {
                     $camposLlenos = true;
                 } else {
@@ -115,9 +114,9 @@ include '../persistencia/dao/clienteEmpresaDAO.php';
                     $empresa->getEmail(), $empresa->getContrasenia(), $empresa->getTelefono(), $empresa->getCalle(),
                     $empresa->getNumCalle(), $empresa->getBarrio(), $empresa->getRut(), $empresa->getRazonSocial()
                 );
-
+                header('Location: ../presentacion/index.html');
             } else {
-                //echo "NO";
+                //echo "error";
             }
             break;
 
@@ -137,11 +136,10 @@ include '../persistencia/dao/clienteEmpresaDAO.php';
             header('Location: ../presentacion/index.html');
             break;
 
-        case ('cerrar-sesion'):
-
+        case ('logout'):
+        ////////////////////////////////Cierre de Sesión///////////////////////////////////////    
             session_start();
             session_destroy();
-            echo "lcdtm";
             header('Location: ../presentacion/index.html');
             break;
     }

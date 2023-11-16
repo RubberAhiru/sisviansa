@@ -51,5 +51,6 @@ class clientePersonaDAO
         $this->conex->close();
 
     }
+    
 
 }

@@ -1,9 +1,5 @@
 <?php
 
-/*function cerrarSesion () {
-    session_destroy();
-}*/
-
 function validaPersona($email, $cont, $calle, $nCalle, $tel, $barr, $nom, $ape, $nroDoc, $tipoDoc){
 //Comprueba si los datos ingresados son validos    
     if( //correo electronico 
