@@ -133,6 +133,7 @@ include '../persistencia/dao/clienteEmpresaDAO.php';
             }else{
                 $_SESSION['usuario'] = 'usuario incorrecto';
             }
+            sleep(2);
             header('Location: ../presentacion/index.html');
             break;
 
@@ -140,6 +141,7 @@ include '../persistencia/dao/clienteEmpresaDAO.php';
         ////////////////////////////////Cierre de Sesión///////////////////////////////////////    
             session_start();
             session_destroy();
+            sleep(2);
             header('Location: ../presentacion/index.html');
             break;
     }
