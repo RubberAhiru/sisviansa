@@ -4,7 +4,6 @@ const ingresar = document.querySelector('#ingresar');
 const btnCerrarSesion = document.querySelector('#cerrar-usuario');
 let username;
 
-//EVENTOS
 
 fetch('../persistencia/json/usuarioJSON.php')
   .then((response) => response.json())
@@ -15,22 +14,19 @@ fetch('../persistencia/json/usuarioJSON.php')
       formUsuario.style.display = 'contents';
       return
     }
-    mostrarUsuario();
-    guardarUsuario(username);
-  });
-document.addEventListener('DOMContentLoaded', () => {
-
-  ingresar.addEventListener('submit', (e)=>{
-    e.preventDefault();
-    validarLogin();
-    guardarUsuario(username);
-  })
-
-  /*ingresar.addEventListener('click', (e) => {
-    e.preventDefault();
-  });*/
-
+    //mostrarUsuario();
+    //guardarUsuario(username);
 });
+document.addEventListener('DOMContentLoaded', () => {
+  guardarUsuario(username);
+  mostrarUsuario();
+});
+
+ingresar.addEventListener('click', (e)=>{
+  e.preventDefault();
+  validarLogin();
+  guardarUsuario(username);
+})
 
 //FUNCIONES
 
@@ -57,11 +53,14 @@ function validarLogin() {
       timer: 2000,
     });
     return;
+  }else{
+    guardarUsuario(username);
+    formUsuario.submit();
   }
 }
 function guardarUsuario(user) {
 
- validarLogin();
+ //validarLogin();
 
   if (user !== null && user !== 'usuario incorrecto') {
     usuario = JSON.stringify(user);
@@ -70,6 +69,7 @@ function guardarUsuario(user) {
 
     return;
   }else if(user === 'usuario incorrecto'){
+
     Swal.fire({
       position: 'center',
       icon: 'error',
@@ -77,6 +77,7 @@ function guardarUsuario(user) {
       showConfirmButton: false,
       timer: 2000,
     });
+    window.location.href = '../logica/controladorCliente.php?accion=logout';
     return
   }
 }
@@ -104,7 +105,6 @@ function cerrarSesion() {
   btnCerrarSesion.addEventListener('click', () => {
     localStorage.removeItem('miUsuario');
     localStorage.removeItem('miCarrito');
-    //$.post ruta del php con los parametros correspondientes
     window.location.href = '../logica/controladorCliente.php?accion=logout';
   });
 }
